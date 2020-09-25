@@ -1,0 +1,11 @@
+body{
+    margin-top: 50px !important;
+}
+h3,h6{
+    text-align: center;
+    margin: 20px auto 10px auto;
+}
+a{
+    margin: auto;
+    transform: translateY(-200%);
+}

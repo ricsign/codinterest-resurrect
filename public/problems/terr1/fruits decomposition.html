@@ -1,0 +1,43 @@
+﻿<h2 id="fruits-decomposition">Fruits Decomposition</h2>
+<h3 id="problem-description">Problem Description</h3>
+<p>A rotten fruit will decompose in the soil, and provides the soil nutritions. Therefore other plants will have better growth. Every fruit has a nutrition value of <em>n</em>, where <em>n</em> is a positive integer. The process of decomposition yields to the following:</p>
+<p>1- A fruit piece has nutrition value of <em>n</em> will decompose into two smaller fruit pieces having nutrition values of <em>m</em> and <em>n/m</em>, where <em>m</em> is <em>n</em>’s smallest prime factor with <em>m</em> is strictly less than <em>n</em>. So now there’re 2 fruit pieces after decomposition.</p>
+<p>2- Keep decomposing the fruit pieces as many as possible, until no more fruit piece can be decomposed into smaller pieces.</p>
+<p>Return the sum of nutrition value of all final fruit pieces that cannot be further decomposed.</p>
+<p>(*Note: You can always re-decompose a decomposed fruit piece, as long as it meets the decomposition requirements)</p>
+<h3 id="example">Example</h3>
+<p><strong>Input 1:</strong>  <em>n</em> = 12<br>
+<strong>Output 1:</strong>  7<br>
+<strong>Explanation 1:</strong> Initially, the fruit has nutrition value of 12, it can decompose into pieces of 2 and 6, for the first piece, it cannot be decomposed again, but for the second piece, it can be further decomposed into pieces of 2 and 3, note both of these two pieces are not possible to re-decompose, so the final fruit pieces we cannot decompose further are with nutrition value of 2,2,3, and 2+2+3 = 7, therefore yield 7.<br>
+<strong>Input 2:</strong>  <em>n</em> = 32<br>
+<strong>Output 2:</strong>  10</p>
+<h3 id="testcases">Testcases</h3>
+<p><strong>Number of Testcases:</strong> 15<br>
+<strong>Specification:</strong> Every testcase consists one line, each line has a single number <em>n</em>, output the sum of nutrition value of all final fruit pieces that cannot be further decomposed<br>
+<strong>Input:</strong><br>
+6<br>
+100<br>
+396<br>
+899<br>
+1024<br>
+1309<br>
+6208<br>
+6930<br>
+25920<br>
+38891<br>
+209981<br>
+6720101<br>
+33554432<br>
+998137982<br>
+4294967295</p>
+<h3 id="expected-algorithms">Expected Algorithms</h3>
+<ul>
+<li>Loops</li>
+</ul>
+<h3 id="expected-time-complexity--space-complexity">Expected Time Complexity &amp; Space Complexity</h3>
+<p><strong>Time Complexity:</strong> O(n) ~ O(nlogn)<br>
+<strong>Space Complexity:</strong> O(1)</p>
+<p>Fun Fact: This problem can be solved using an advanced algorithm with time complexity of O(n^0.25)</p>
+<h3 id="reward">Reward</h3>
+<p>4</p>
+

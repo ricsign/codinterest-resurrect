@@ -1,0 +1,64 @@
+body{
+    background-color: #f6f6f6;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.52px;
+}
+
+p{
+    font-size: 17px;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1:after,
+h2:after{
+    border:none;
+}
+
+hr {
+    text-align: center;
+    border: none;
+}
+
+hr:before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #eee;
+    margin: 0 15px;
+}
+
+hr:after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #eee;
+    margin: 0 15px;
+}
+
+.main {
+    width: 85%;
+    text-align: center;
+    padding: 5%;
+    margin: auto;
+    background-color: white;
+    border-radius: 3%;
+}
+
+input.error {
+    border: 1px solid red;
+}
+
+label.error {
+    background: url("../imgs/site/incorrect.png") no-repeat 0 5px;
+    text-indent: 25px;
+    color: red;
+}
+
+

@@ -1,0 +1,7 @@
+/*css for only sign in page*/
+body{
+    background-image: url("../imgs/site/signupbg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}

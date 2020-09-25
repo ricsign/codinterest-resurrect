@@ -1,0 +1,23 @@
+h1{
+    margin-bottom: 50px;
+}
+
+hr{
+    margin-top: 70px;
+}
+
+.allproblems-area{
+    margin-top: 60px;
+}
+
+.card-deck-1,.card-deck-2{
+    margin-bottom: 30px !important;
+}
+
+.card{
+    min-width: 300px;
+}
+
+.title{
+    margin-bottom: 20px;
+}

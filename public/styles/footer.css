@@ -1,0 +1,14 @@
+.column{
+    margin-top: 25px;
+}
+.foot-container{
+    margin-top: 7%;
+    padding: 50px;
+    width: 100%;
+    background: #151965;
+    color: #edf2f7;
+}
+.description{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

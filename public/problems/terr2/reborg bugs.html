@@ -1,0 +1,52 @@
+﻿<h2 id="reborg-bugs">Reborg Bugs</h2>
+<h3 id="problem-description">Problem Description</h3>
+<p>A group of engineers designed a little robot called reborg that can turn left, right and move in one direction. Assume there is a plane with infinite grids, horizontally and vertically, and the engineers place reborg at grid (0,0) facing north.</p>
+<p>Reborg can recieve the following instructions:</p>
+<ul>
+<li><code>"G"</code>: go straight 1 unit;</li>
+<li><code>"L"</code>: turn 90 degrees to the left;</li>
+<li><code>"R"</code>: turn 90 degrees to the right.</li>
+</ul>
+<p>Reborg performs the <code>instructions</code> given in order, and repeats them forever.</p>
+<p>Reborg is having bugs<br>
+if and only if there exists a loop on the plane such that Reborg never leaves the loop.</p>
+<p>Given the <code>instructions</code>, return if reborg has bugs.</p>
+<h3 id="example">Example</h3>
+<p><strong>Input 1:</strong>  “GGRRGG”<br>
+<strong>Output 1:</strong> true<br>
+<strong>Explanation 1:</strong> Reborg moves from (0,0) to (0,2), turns 180 degrees, and then returns to (0,0). When repeating these instructions, the robot remains in the circle of radius 2 centered at the origin.<br>
+<strong>Input 2:</strong>  “GGGG”<br>
+<strong>Output 2:</strong>  false<br>
+<strong>Explanation 2:</strong> Reborg keeps moving north forever, no loop will occur.</p>
+<h3 id="testcases">Testcases</h3>
+<p><strong>Number of Testcases:</strong> 14<br>
+<strong>Specification:</strong> Every testcase consists one line, each line has a single string <code>instructions</code>, output if reborg has bugs<br>
+<strong>Input:</strong><br>
+“GGRR”<br>
+“LLRRGGLLRRGGLLRRGGLLRRGG”<br>
+“LGLLLGGGRRRR”<br>
+“RRGGLLGGRRGGLLGGRRGGRRGGLLGGLLGG”<br>
+“RRGGLLGGRRGGLLGGRRGGRRGGLLGGLLGGGRRG”<br>
+“GLRGLLLGRRGLRGLRRRLGGLRLLL”<br>
+“GLLLGLGGLLLLRLLRGLLRLRLRLGLLGLGLRGLRGLRRRLGLLLGR”<br>
+“GGGGGLGGGGGR”<br>
+“LGLGLGLGRGRGRGRGLRRRGLGLGRRGRGRRGRGRGRLGLRRRRGLGLGRRRRLGLGGGGRRRRGLG”<br>
+“GLLLLGRRRRGLLLLGRLGGGGGRLRLRLRRGGGGLRRLRRLRLGGGGGGR”<br>
+“GLLGGGGGRRGGGLGRRLRGGGGGGRRRGGGGRGGLLLLLLLLGGGGGLGRRRRGLLGGGRGGGGGLRGLRGRLGLGGLGLRRRRRR”<br>
+“GLLGRRRLRGRGGLGGLGRRRRGLLGGGGGLGLGRLGGGGGRGGLRLRLRGRGGGGLRRLRRLRLGGGGGGR”<br>
+“GLLGRRGGGLGRRLRGRGGLGGLGRRRRGLLGGGRGLRGLRGRLGLGGLGL”<br>
+“GLLGGGGGRRGGGLGRRLRGGGGGGGGGGRGGLLLLLLLLGGLGRRRRGLLGGGRGGGGGLRGLRGRLGLGGLGLRRRRRR”</p>
+<h3 id="expected-algorithms">Expected Algorithms</h3>
+<ul>
+<li>Hash Table</li>
+<li>Mathematics</li>
+</ul>
+<h3 id="expected-time-complexity--space-complexity">Expected Time Complexity &amp; Space Complexity</h3>
+<p><strong>Time Complexity:</strong> O(n)<br>
+<strong>Space Complexity:</strong> O(1)</p>
+<h3 id="reward">Reward</h3>
+<p>5</p>
+<h3 id="adaptation">Adaptation*</h3>
+<p><a href="https://leetcode.com/">Leetcode</a></p>
+<p>*An adaptation indicates that this problem’s idea was borrowed from other sources, edits and changes may be made.</p>
+

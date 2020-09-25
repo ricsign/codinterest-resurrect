@@ -1,0 +1,52 @@
+#ac-img{
+    margin: 0 auto 30px auto;
+}
+#description-container{
+    text-align: left;
+}
+
+#description-container h2{
+    text-align: center;
+    margin-bottom: 3%;
+}
+#description-container h3{
+    margin-bottom: 2%;
+}
+#description-container p{
+    margin-bottom: 3%;
+}
+#sub-tip-text{
+    text-align: left;
+    line-height: 2.25;
+    color: rgb(100,100,100);
+}
+#sub-tip-text li{
+    font-weight: bold;
+}
+#verdict,#verdict-description{
+    text-align: left;
+}
+
+.answer{
+    min-height: 80px;
+    max-height: 3000px;
+    width: 80% !important;
+}
+.input-group{
+    text-align: left;
+    margin-top: 8%;
+}
+.input-tip{
+    margin-top: 1%;
+    color: red;
+    font-size: 13px;
+}
+.submit{
+    margin-top: 2%;
+}
+.sub-tip{
+    margin-left: 20px;
+}
+
+
+

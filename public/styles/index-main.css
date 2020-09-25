@@ -1,0 +1,23 @@
+.jumbotron{
+    background: #f1f3f8;
+}
+
+.lead{
+    margin-top: 2.5%;
+}
+
+.section-img{
+    height: 80px;
+    margin: 40px auto 20px auto;
+}
+
+.section-title{
+    margin-bottom: 30px;
+}
+
+.section-text{
+    line-height: 1.8;
+}
+
+
+
