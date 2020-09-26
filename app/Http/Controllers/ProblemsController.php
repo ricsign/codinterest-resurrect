@@ -44,13 +44,15 @@ class ProblemsController extends Controller{
         if(!$problem) return redirect('/public/allproblems');
 
         // check if user is already accepted on this single problem
-        $ac = Submission::where([
-            ['pid','=',$pid],
-            ['uid','=',session()->get('user')->uid],
-            ['status','=',1]
-        ])->first();
-        if($ac) $is_ac = true;
-        else $is_ac = false;
+        $is_ac = false;
+        if(session()->get('user')){
+            $ac = Submission::where([
+                ['pid','=',$pid],
+                ['uid','=',session()->get('user')->uid],
+                ['status','=',1]
+            ])->first();
+            if($ac) $is_ac = true;
+        }
         return view('getsingleproblem',compact('problem','is_ac'));
     }
 

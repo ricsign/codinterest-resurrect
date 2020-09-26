@@ -15,7 +15,7 @@
                 <a class="nav-link" href="{{url('/public/allproblems')}}">Problems</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Ranking</a>
+                <a class="nav-link" href="{{url('/public/ranking')}}">Ranking</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('/public/redeem')}}">Redeem</a>

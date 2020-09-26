@@ -55,6 +55,9 @@ Route::group(['prefix'=>'public'],function () {
 
     // route of redeem page
     Route::get('redeem','RedeemController@redeempage');
+
+    // route of all ranking page
+    Route::get('ranking','RankingController@rankingpage');
 });
 
 // protected page route

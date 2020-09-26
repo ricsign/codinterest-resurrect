@@ -22,4 +22,8 @@ class UserInfo extends Model
     public function submission(){
         return $this->hasMany(Submission::class,'uid','uid');
     }
+
+    public function user(){
+        return $this->hasOne(UserSign::class,'uid','uid');
+    }
 }
