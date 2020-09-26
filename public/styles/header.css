@@ -5,4 +5,9 @@
 .nav-link{
     color: #edf2f7;
 }
+.input-sm{
+    margin-top: 5px;
+    margin-bottom: 4px;
+    height: 30px;
+}
 

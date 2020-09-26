@@ -17,7 +17,19 @@
         <tbody>
         @foreach($users as $user)
             <tr>
-                <th scope="row">{{$loop->iteration}}</th>
+                {{--ranking index--}}
+                @if(($users ->currentpage()-1) * $users ->perpage() + $loop->iteration == 1)
+                    <th scope="row" style="color: gold">{{($users ->currentpage()-1) * $users ->perpage() + $loop->iteration}}</th>
+                @elseif(($users ->currentpage()-1) * $users ->perpage() + $loop->iteration == 2)
+                    <th scope="row" style="color: silver">{{($users ->currentpage()-1) * $users ->perpage() + $loop->iteration}}</th>
+                @elseif(($users ->currentpage()-1) * $users ->perpage() + $loop->iteration == 3)
+                    <th scope="row" style="color: #cd7f32">{{($users ->currentpage()-1) * $users ->perpage() + $loop->iteration}}</th>
+                @elseif(($users ->currentpage()-1) * $users ->perpage() + $loop->iteration <= 50)
+                    <th scope="row" style="color: blue">{{($users ->currentpage()-1) * $users ->perpage() + $loop->iteration}}</th>
+                @else
+                    <th scope="row">{{$loop->iteration}}</th>
+                @endif
+
                 <td><a href="{{url('/public/myaccount/'.$user->user->uid)}}">{{$user->user->username}}</a></td>
                 <td>{{$user->userac}}</td>
                 @if($user->usersubmission == 0)
@@ -32,11 +44,13 @@
                     <td style="color: gold">Gold Coder</td>
                 @elseif($user->userprivil == 1)
                     <td style="color: silver">Silver Coder</td>
-                @else
+                @elseif($user->userprivil == 0)
                     <td>Coder</td>
                 @endif
             </tr>
         @endforeach
         </tbody>
     </table>
+    <br><br>
+    <div class="pagination justify-content-center">{{$users->links()}}</div>
 @endsection

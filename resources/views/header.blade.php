@@ -25,6 +25,7 @@
             </li>
         </ul>
 
+
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 @if(empty(session()->get('user')))
@@ -32,7 +33,28 @@
                 @else
                     <a class="nav-link" href="{{url('/public/myaccount/'.session()->get('user')->uid)}}">My Account</a>
                 @endif
+
+            </li>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2 input-sm" id="search-input" type="search" placeholder="Search Problem By ID" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" id="search-btn" type="submit">Search</button>
+                </form>
             </li>
         </ul>
     </div>
 </nav>
+
+<script>
+    // redirect based on user's input
+    $("#search-btn").click(function (){
+        let userInput = $("#search-input").val();
+        if(!userInput || !/^[0-9]*$/.test(userInput)){
+            alert('Please enter a valid Problem ID!');
+            return false;
+        }
+        location = '/public/getsingleproblem/'+userInput;
+        return false;
+    });
+</script>

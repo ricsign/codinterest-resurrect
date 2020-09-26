@@ -56,7 +56,12 @@ class SignController extends Controller
             'usertoken'=>md5('token'.$user->email.$user->username.time().'token2')
         ]);
 
-        if($res) return redirect('/public/signin')->with('msg','Congratulations! Account is activated, please sign back in!');
+        if($res){
+            UserInfo::where('uid','=',$user->uid)->update([
+                'userprivil' => 0
+            ]);
+            return redirect('/public/signin')->with('msg','Congratulations! Account is activated, please sign back in!');
+        }
         else return redirect('/public/signup')->withErrors("Sorry, we're currently unable to activate your account, please try again!");
     }
 
@@ -92,7 +97,9 @@ class SignController extends Controller
             'uid' => $user->uid,
             'usercoins'=> 0,
             'userac' => 0,
-            'usersubmission' => 0
+            'usersubmission' => 0,
+            'userprivil' => -1,
+            'userkeys' => 0
         ]);
         if(!$userinfo) return redirect('/public/signup')->withErrors('Unknown errors had occured');
 

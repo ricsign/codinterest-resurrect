@@ -27,8 +27,11 @@
                 @else
                     <td>{{floor($problem->pacc/$problem->psub*100)}}%</td>
                 @endif
+
                 @if (in_array($problem->pid,$solved))
                     <td><img src="{{asset('/imgs/site/correct.png')}}" alt="AC"></td>
+                @elseif(in_array($problem->pid,$attempted))
+                    <td><img src="{{asset('/imgs/site/wrong.png')}}" alt="AT"></td>
                 @else
                     <td></td>
                 @endif

@@ -7,6 +7,21 @@ use App\Models\Submission;
 use Illuminate\Http\Request;
 
 class ProblemsController extends Controller{
+    // get all attempted problems (not necessarily wrong), this is non-public, no route will be connected to this
+    private function getattempted(){
+        $attempted = array();
+        if(session()->get('user')){
+            $attempted_raw = Submission::where([
+                ['uid','=',session()->get('user')->uid],
+            ])->get('pid')->toArray();
+
+            // convert raw array
+            for ($i=0;$i<count($attempted_raw);$i++)
+                array_push($attempted,$attempted_raw[$i]['pid']);
+        }
+        return array_unique($attempted);
+    }
+
     // get all accepted problems, this is non-public, no route will be connected to this
     private function getsolved(){
         $solved = array();
@@ -20,7 +35,7 @@ class ProblemsController extends Controller{
             for ($i=0;$i<count($solved_raw);$i++)
                 array_push($solved,$solved_raw[$i]['pid']);
         }
-        return $solved;
+        return array_unique($solved);
     }
 
     // all problems page
@@ -28,14 +43,16 @@ class ProblemsController extends Controller{
         // every page contains 30 problems
         $problems = Problems::simplePaginate(30);
         $solved = $this->getsolved();
-        return view('allproblems',compact('problems','solved'));
+        $attempted = $this->getattempted();
+        return view('allproblems',compact('problems','solved','attempted'));
     }
 
     // getproblems page
     public function getproblems($pterrid){
         $problems = Problems::get()->where('pterrid',$pterrid);
         $solved = $this->getsolved();
-        return view('getproblems',compact('problems','solved'));
+        $attempted = $this->getattempted();
+        return view('getproblems',compact('problems','solved','attempted'));
     }
 
     // get single problem page

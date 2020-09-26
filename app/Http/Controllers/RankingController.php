@@ -10,10 +10,11 @@ class RankingController extends Controller
 {
     // ranking page, sort the user by total acceptance and acceptance rate
     public function rankingpage(){
-        $users = UserInfo::orderBy('userac','desc')->
+        $users = UserInfo::where('userprivil','<>',-1)->
+                 orderBy('userac','desc')->
                  orderBy('usersubmission','asc')->
                  orderBy('userprivil','desc')->
-                 simplePaginate(50);
+                 simplePaginate(100);
         return view('ranking',compact('users'));
     }
 }

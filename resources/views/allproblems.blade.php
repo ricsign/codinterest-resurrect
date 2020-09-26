@@ -74,6 +74,14 @@
     {{--all problems area--}}
     <div class="allproblems-area">
         <h2 class="title">All Problems</h2>
+
+        {{--attempted & rejected progress--}}
+        <div class="progress">
+            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" title="Solved {{count($solved)}}" style="width: {{count($solved)/count($problems)*100}}%" aria-valuenow="{{count($solved)/count($problems)*100}}" aria-valuemin="0" aria-valuemax="100">{{count($solved)}}</div>
+            <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" title="Rejected {{count($attempted)-count($solved)}}" style="width: {{(count($attempted)-count($solved))/count($problems)*100}}%" aria-valuenow="{{(count($attempted)-count($solved))/count($problems)*100}}" aria-valuemin="0" aria-valuemax="100">{{count($attempted)-count($solved)}}</div>
+            <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" role="progressbar" title="Unexplored {{count($problems)-count($attempted)}}" style="width: {{(count($problems)-count($attempted))/count($problems)*100}}%" aria-valuenow="{{(count($problems)-count($attempted))/count($problems)*100}}" aria-valuemin="0" aria-valuemax="100">{{count($problems)-count($attempted)}}</div>
+        </div>
+
         <table class="table table-striped">
             <thead>
             <tr>
@@ -99,8 +107,11 @@
                     @else
                         <td>{{floor($problem->pacc/$problem->psub*100)}}%</td>
                     @endif
+
                     @if (in_array($problem->pid,$solved))
                         <td><img src="{{asset('/imgs/site/correct.png')}}" alt="AC"></td>
+                    @elseif(in_array($problem->pid,$attempted))
+                        <td><img src="{{asset('/imgs/site/wrong.png')}}" alt="AT"></td>
                     @else
                         <td></td>
                     @endif
@@ -109,6 +120,6 @@
             </tbody>
         </table>
         <br><br>
-        {{$problems->links()}}
+        <div class="pagination justify-content-center">{{$problems->links()}}</div>
     </div>
 @endsection

@@ -18,6 +18,12 @@ hr{
     min-width: 300px;
 }
 
+.progress{
+    margin-bottom: 30px;
+    height: 30px;
+}
+
 .title{
     margin-bottom: 20px;
 }
+

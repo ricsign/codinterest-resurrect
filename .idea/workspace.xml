@@ -20,17 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f98f0c-19d7-45a2-9cd0-e9017ae10d2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/RankingController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/ranking.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/ranking.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imgs/site/wrong.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProblemsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProblemsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/UserInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserInfo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/problems/terr1 sol/armstrong numbers solution.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/problems/terr1 sol/armstrong numbers solution.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/root.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/root.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RankingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RankingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Submission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Submission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/allproblems.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/allproblems.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/allproblems.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/allproblems.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/getproblems.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/getproblems.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/ranking.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ranking.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +197,8 @@
       <option name="presentableId" value="Default" />
       <updated>1601008530026</updated>
       <workItem from="1601008544011" duration="3279000" />
-      <workItem from="1601079840605" duration="8429000" />
+      <workItem from="1601079840605" duration="8628000" />
+      <workItem from="1601139479896" duration="10675000" />
     </task>
     <servers />
   </component>
@@ -213,6 +215,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -222,6 +225,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="433" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1601084128330" />
+    <state x="331" y="257" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1" timestamp="1601150935850">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="331" y="257" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1/0.0.1366.728@0.0.1366.728" timestamp="1601150935850" />
     <state x="517" y="287" key="NewPhpFileDialog" timestamp="1601088762149">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
