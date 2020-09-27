@@ -5,4 +5,6 @@
     {!! $problem->psol !!}
 </div>
 @include('styles')
-<a href="{{url('/public/getproblems/'.$problem->pterrid)}}" class="btn btn-primary btn-lg btn-block">Return To Territory</a>
+@include('scripts')
+<a href="{{url('/public/getproblems/'.$problem->pterrid)}}" class="btn btn-primary btn-lg btn-block" style="width:70%">Return To Territory</a>
+

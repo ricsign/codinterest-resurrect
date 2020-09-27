@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Problems;
 use App\Models\Submission;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProblemsController extends Controller{
     // get all attempted problems (not necessarily wrong), this is non-public, no route will be connected to this
@@ -29,7 +30,7 @@ class ProblemsController extends Controller{
             $solved_raw = Submission::where([
                 ['uid','=',session()->get('user')->uid],
                 ['status','=',1]
-            ])->get('pid')->toArray();
+            ])->get()->toArray();
 
             // convert raw array
             for ($i=0;$i<count($solved_raw);$i++)
@@ -49,7 +50,7 @@ class ProblemsController extends Controller{
 
     // getproblems page
     public function getproblems($pterrid){
-        $problems = Problems::get()->where('pterrid',$pterrid);
+        $problems = Problems::where('pterrid',$pterrid)->get();
         $solved = $this->getsolved();
         $attempted = $this->getattempted();
         return view('getproblems',compact('problems','solved','attempted'));

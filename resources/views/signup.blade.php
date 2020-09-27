@@ -27,6 +27,7 @@
                 </ul>
             </div>
         @endif
+
         <form id="signupForm" action="{{url('/public/dosignup')}}" method="post">
             {{csrf_field()}}
             <h2 class="sign-header">Sign Up</h2>

@@ -46,7 +46,10 @@
             </p>
         </div>
     </div>
-    <small>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/dighital" title="Dighital">Dighital</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></small>
+    <small>
+        Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/dighital" title="Dighital">Dighital</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a><br>
+        The clicking animation used <a href="https://a-oss.zmki.cn/20190502/baozatexiao.js">Baozatexiao's</a> JS library
+    </small>
     <br>
     <small>This website is a non-commercial project</small>
 </div>

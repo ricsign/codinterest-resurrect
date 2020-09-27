@@ -77,9 +77,15 @@
 
         {{--attempted & rejected progress--}}
         <div class="progress">
-            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" title="Solved {{count($solved)}}" style="width: {{count($solved)/count($problems)*100}}%" aria-valuenow="{{count($solved)/count($problems)*100}}" aria-valuemin="0" aria-valuemax="100">{{count($solved)}}</div>
-            <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" title="Rejected {{count($attempted)-count($solved)}}" style="width: {{(count($attempted)-count($solved))/count($problems)*100}}%" aria-valuenow="{{(count($attempted)-count($solved))/count($problems)*100}}" aria-valuemin="0" aria-valuemax="100">{{count($attempted)-count($solved)}}</div>
-            <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" role="progressbar" title="Unexplored {{count($problems)-count($attempted)}}" style="width: {{(count($problems)-count($attempted))/count($problems)*100}}%" aria-valuenow="{{(count($problems)-count($attempted))/count($problems)*100}}" aria-valuemin="0" aria-valuemax="100">{{count($problems)-count($attempted)}}</div>
+            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" title="Solved {{count($solved)}}" style="width: {{count($solved)/count($problems)*100}}%" aria-valuenow="{{count($solved)/count($problems)*100}}" aria-valuemin="0" aria-valuemax="100">
+                <b>{{count($solved)}}</b>
+            </div>
+            <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" title="Rejected {{count($attempted)-count($solved)}}" style="width: {{(count($attempted)-count($solved))/count($problems)*100}}%" aria-valuenow="{{(count($attempted)-count($solved))/count($problems)*100}}" aria-valuemin="0" aria-valuemax="100">
+                <b>{{count($attempted)-count($solved)}}</b>
+            </div>
+            <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" title="Unexplored {{count($problems)-count($attempted)}}" style="width: {{(count($problems)-count($attempted))/count($problems)*100}}%" aria-valuenow="{{(count($problems)-count($attempted))/count($problems)*100}}" aria-valuemin="0" aria-valuemax="100">
+                <b>{{count($problems)-count($attempted)}}</b>
+            </div>
         </div>
 
         <table class="table table-striped">

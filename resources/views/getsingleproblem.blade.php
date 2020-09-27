@@ -3,6 +3,17 @@
 @section('main')
     <link rel="stylesheet" href="{{asset('styles/getsingleproblem.css')}}">
 
+    {{--deal with errors--}}
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     {{--problem description--}}
     <div id="description-container">
         {!! $problem->pdesc !!}
@@ -19,6 +30,12 @@
             <button class="btn btn-info btn-sm sub-tip" type="button" data-toggle="collapse" data-target="#sub-tip-text" aria-expanded="false" aria-controls="sub-tips-text">
                 Submission Tips
             </button>
+            {{--use key to skip--}}
+            @unless($is_ac)
+                <button relocate="{{url('/protected/skip/'.$problem->pid)}}" class="btn btn-success btn-sm" id="skip" type="button" onclick="conf(this)">
+                    Skip This Problem
+                </button>
+            @endunless
         </p>
         <div class="collapse" id="sub-tip-text">
             <div class="card card-body">
@@ -79,8 +96,14 @@
     </div>
 
     <script>
+        // using key to skip request
+        function conf(obj) {
+            if(confirm('You will not receive any coins, but this problem will be accepted. This operation is irreversible, are you sure to use 1 key to skip this problem? '))
+                location = obj.getAttribute('relocate');
+        }
+
         // ajax send submission to the server
-        $(document).ready(
+        $(document).ready(function () {
             $("#submit").click(function () {
                 $("#submit").attr('disabled','disabled'); // set the button to disabled
                 $("#submit").html('<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span><span class="sr-only">Loading...</span>') // set spinner
@@ -121,6 +144,6 @@
                     })
                 },2000); // set timeout prevents user from repeatedly clicking and constantly sending ajax
             })
-        )
+        })
     </script>
 @endsection

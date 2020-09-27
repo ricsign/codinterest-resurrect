@@ -25,4 +25,8 @@ class Submission extends Model
         });
     }
 
+    public function problem(){
+        return $this->belongsTo('problems','pid','pid');
+    }
+
 }

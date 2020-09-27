@@ -9,3 +9,6 @@
 <script src="{{asset('scripts/jquery.validate.min.js')}}"></script>
 <script src="{{asset('scripts/additional-methods.min.js')}}"></script>
 <script src="{{asset('scripts/validate-methods.js')}}"></script>
+{{--Animation--}}
+<canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
+<script type="text/javascript" src="{{url('https://a-oss.zmki.cn/20190502/baozatexiao.js')}}"></script>

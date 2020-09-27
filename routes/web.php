@@ -72,10 +72,15 @@ Route::group(['prefix'=>'protected','middleware'=>'checksigned'],function (){
     Route::post('submission','SubmissionController@submission');
 
     // get solution page
-    Route::get('solution/{pid}','ProblemsController@solution')->where('pid','[0-9]+');
+    Route::get('solution/{pid}','ProblemsController@solution')
+        ->where('pid','[0-9]+');
 
     // redeem item page
     // item 1: key, 2: 10 keys, 3: silver coder, 4: gold coder + 5 keys, 5: red coder + 50 keys
     Route::get('redeemitem/{item}','RedeemController@redeemitem')
         ->where('item','[12345]');
+
+    // skip problem page
+    Route::get('skip/{pid}','SubmissionController@skip')
+        ->where('pid','[0-9]+');
 });

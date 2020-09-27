@@ -22,7 +22,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Key</h5>
-                <h6 class="card-subtitle mb-2 text-muted">5 Coins</h6>
+                <h6 class="card-subtitle mb-2 text-muted">6 Coins</h6>
                 <p class="card-text">
                     Using keys to check the official solutions <br>
                     If you use key, the corresponding problem will not give you any rewards.
@@ -33,7 +33,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">10 Keys</h5>
-                <h6 class="card-subtitle mb-2 text-muted">45 Coins</h6>
+                <h6 class="card-subtitle mb-2 text-muted">55 Coins</h6>
                 <p class="card-text">
                     Using keys to check the official solutions <br>
                     If you use key, the corresponding problem will not give you any rewards.

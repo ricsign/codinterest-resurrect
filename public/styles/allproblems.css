@@ -23,6 +23,10 @@ hr{
     height: 30px;
 }
 
+.progress-bar:hover{
+    cursor: help;
+}
+
 .title{
     margin-bottom: 20px;
 }
