@@ -12,3 +12,16 @@
 {{--Animation--}}
 <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
 <script type="text/javascript" src="{{url('https://a-oss.zmki.cn/20190502/baozatexiao.js')}}"></script>
+{{--Character--}}
+<script src="{{url('https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js')}}"></script>
+<script>
+    L2Dwidget.init({
+        "model": {
+            jsonPath: "https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json",
+            "scale": 1 },
+        "display": {
+            "position": "right", "width": 98, "height": 135,
+            "hOffset": 0, "vOffset": -20 }, "mobile": { "show": true, "scale": 0.6, "motion": true},
+        "react": { "opacityDefault": 1, "opacityOnHover": 0.8 }
+    });
+</script>
