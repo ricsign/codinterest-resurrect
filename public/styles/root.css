@@ -52,10 +52,11 @@ ol>li{
     text-align: center;
     padding: 5%;
     margin: auto;
-    background-color: white;
+    background-color: rgba(255,255,255,0.7);
     border-radius: 50px;
     -webkit-box-shadow: 0 0 10px rgba(202, 203, 203, .5);
     -moz-box-shadow: 0 0 10px rgba(202, 203, 204, .5);
+    position: relative;
 }
 
 input.error {

@@ -12,6 +12,9 @@
 {{--Animation--}}
 <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
 <script type="text/javascript" src="{{url('https://a-oss.zmki.cn/20190502/baozatexiao.js')}}"></script>
+@unless(url()->full() == url('/public/signin') || url()->full() == url('/public/signup'))
+    <script type="text/javascript" color="47,135,193" opacity='0.5' zIndex="-2" count="199" src="{{url('http://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js')}}"></script>
+@endunless
 {{--Character--}}
 <script src="{{url('https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js')}}"></script>
 <script>
@@ -25,3 +28,4 @@
         "react": { "opacityDefault": 1, "opacityOnHover": 0.8 }
     });
 </script>
+

@@ -22,7 +22,7 @@
             </h2>
             <p class="description">
                 Codinterest is built using PHP framework Laravel.
-                The website also built using HTML, CSS, JavaScript,
+                The website is also built using HTML, CSS, JavaScript,
                 Blade, Bootstrap, JQuery, MySQL and Markdown. The Markdown editor
                 I used is StackEdit. The solutions
                 are all written by myself, using C++ 11.

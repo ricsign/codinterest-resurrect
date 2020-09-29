@@ -21,7 +21,7 @@
                 <a class="nav-link" href="{{url('/public/redeem')}}">Redeem</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Resources</a>
+                <a class="nav-link" href="{{url('/public/articles')}}">Articles</a>
             </li>
         </ul>
 

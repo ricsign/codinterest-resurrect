@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class ProblemsController extends Controller{
-    // get all attempted problems (not necessarily wrong), this is non-public, no route will be connected to this
-    private function getattempted(){
+    // get all attempted problems (not necessarily wrong), no route will be connected to this
+    public static function getattempted(){
         $attempted = array();
         if(session()->get('user')){
             $attempted_raw = Submission::where([
@@ -23,8 +23,8 @@ class ProblemsController extends Controller{
         return array_unique($attempted);
     }
 
-    // get all accepted problems, this is non-public, no route will be connected to this
-    private function getsolved(){
+    // get all accepted problems, no route will be connected to this
+    public static function getsolved(){
         $solved = array();
         if(session()->get('user')){
             $solved_raw = Submission::where([

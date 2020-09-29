@@ -58,6 +58,9 @@ Route::group(['prefix'=>'public'],function () {
 
     // route of all ranking page
     Route::get('ranking','RankingController@rankingpage');
+
+    // route of articles page
+    Route::get('articles','ArticlesController@allarticles');
 });
 
 // protected page route

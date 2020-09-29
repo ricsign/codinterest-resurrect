@@ -22,7 +22,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Key</h5>
-                <h6 class="card-subtitle mb-2 text-muted">6 Coins</h6>
+                <h6 class="card-subtitle mb-2 text-muted">10 Coins</h6>
                 <p class="card-text">
                     Using keys to check the official solutions <br>
                     If you use key, the corresponding problem will not give you any rewards.
@@ -33,7 +33,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">10 Keys</h5>
-                <h6 class="card-subtitle mb-2 text-muted">55 Coins</h6>
+                <h6 class="card-subtitle mb-2 text-muted">90 Coins</h6>
                 <p class="card-text">
                     Using keys to check the official solutions <br>
                     If you use key, the corresponding problem will not give you any rewards.
@@ -50,6 +50,7 @@
                 <p class="card-text">
                     To certify you as one of the elite at Codinterest. <br>
                     Your username will be shown in silver color. <br>
+                    Profile photo will be upgraded<br>
                     <b>You can only redeem once. </b>
                 </p>
                 <a value="{{url('/protected/redeemitem/3')}}" class="card-link btn btn-primary" onclick="conf(this)">Redeem</a>
@@ -62,6 +63,7 @@
                 <p class="card-text">
                     To certify you as one of the global elites at Codinterest. <br>
                     Your username will be shown in golden color. <br>
+                    Profile photo will be upgraded<br>
                     You must be a Silver Coder first. <br>
                     <b>You can only redeem once.</b>
                 </p>
@@ -79,6 +81,7 @@
                     To certify you as one of the best coders at Codinterest. <br>
                     Your username will be shown in red color. <br>
                     Your username will be on the first page. <br>
+                    Profile photo will be upgraded<br>
                     You will be sincerely invited to collaborate. <br>
                     You must be a Gold Coder first. <br>
                     <b>You can only redeem once. </b>

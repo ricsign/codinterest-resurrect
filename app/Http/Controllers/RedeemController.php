@@ -14,8 +14,8 @@ class RedeemController extends Controller
     // item 1: key, 2: 10 keys, 3: silver coder, 4: gold coder + 5 keys, 5: red coder + 50 keys
     public function redeemitem($item){
         // prices
-        $keycost = 6;
-        $tenkeyscost = 55;
+        $keycost = 10;
+        $tenkeyscost = 90;
         $silvercost = 1000;
         $goldcost = 2000;
         $redcost = 4500;
