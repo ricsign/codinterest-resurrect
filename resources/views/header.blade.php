@@ -18,10 +18,16 @@
                 <a class="nav-link" href="{{url('/public/ranking')}}">Ranking</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('/public/redeem')}}">Redeem</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="{{url('/public/articles')}}">Articles</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Explore
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{url('/public/contribute')}}">Contribute</a>
+                    <a class="dropdown-item" href="{{url('/public/redeem')}}">Redeem</a>
+                </div>
             </li>
         </ul>
 

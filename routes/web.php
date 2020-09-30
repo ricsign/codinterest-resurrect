@@ -61,6 +61,11 @@ Route::group(['prefix'=>'public'],function () {
 
     // route of articles page
     Route::get('articles','ArticlesController@allarticles');
+
+    // route of contribute page
+    Route::get('contribute',function (){
+        return view('contribute');
+    });
 });
 
 // protected page route
