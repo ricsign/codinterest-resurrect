@@ -3,7 +3,7 @@
 @section('main')
     <link rel="stylesheet" href="{{asset('styles/allproblems.css')}}">
 
-    <h1>Problem Set</h1>
+    <h2>Problem Set</h2>
 
     {{--classified problems area--}}
     <div class="card-deck card-deck-1">

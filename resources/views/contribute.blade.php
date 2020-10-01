@@ -3,8 +3,8 @@
 @section('main')
     <link rel="stylesheet" href="{{asset('styles/contribute.css')}}">
 
-    <h1 class="title">Contribute Center</h1>
-    <br><br>
+    <h2 class="title">Contribute Center</h2>
+    <br>
     <div class="card-group">
         <div class="card">
             <img src="{{asset('imgs/site/contribute1.jpg')}}" class="card-img-top" alt="Contribute 1" height="43%">

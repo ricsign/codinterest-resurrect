@@ -13,7 +13,7 @@
 
     {{--Main Block--}}
     <div class="main-block">
-        <h1>User Profile</h1>
+        <h2>User Profile</h2>
         {{--User Basic Information--}}
         <div id="user-sign">
             <h3>Basic Information</h3>
@@ -21,7 +21,7 @@
             <ul>
                 <li>User ID: <span class="badge badge-pill badge-success">{{$user->uid}}</span></li>
                 <li>Username: <span class="badge badge-pill badge-success">{{$user->username}}</span></li>
-                <li>Account Created At: <span class="badge badge-pill badge-success">{{date('Y-m-d', strtotime($user->created_at))}}</span></li>
+                <li>Account Created At: <span class="badge badge-pill badge-success">{{$user->created_at}}</span></li>
             </ul>
         </div>
         {{--Codinterest User Stat/User Info--}}
@@ -64,7 +64,7 @@
                 <tr>
                     <th scope="col">Submission ID</th>
                     <th scope="col">Problem ID</th>
-                    <th scope="col">Date</th>
+                    <th scope="col">UTC Date</th>
                     <th scope="col">Result</th>
                 </tr>
                 </thead>
