@@ -1,3 +1,6 @@
+.problems-container{
+    clear: left;
+}
 .title{
     margin-bottom: 3%;
 }

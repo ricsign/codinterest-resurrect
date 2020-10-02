@@ -1,20 +1,42 @@
 #ac-img{
     margin: 0 auto 30px auto;
 }
+
 #description-container{
     text-align: left;
+    line-height: 1.7;
+    clear: left;
 }
 
 #description-container h2{
     text-align: center;
     margin-bottom: 3%;
 }
+
 #description-container h3{
     margin-bottom: 2%;
 }
+
 #description-container p{
     margin-bottom: 3%;
 }
+
+#description-container img{
+    margin: 20px 0 20px 0;
+}
+
+#description-container ol>li{
+    list-style: decimal;
+    margin: 5px 0 5px 50px;
+    text-indent: 10px;
+}
+
+#description-container ul>li{
+    list-style: disc;
+    margin: 5px 0 5px 50px;
+    text-indent: 10px;
+}
+
 #sub-tip-text{
     text-align: left;
     line-height: 2.25;

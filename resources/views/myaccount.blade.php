@@ -11,6 +11,7 @@
         @endif
     </div>
 
+    <img id="previous" src="{{asset('imgs/site/previous.png')}}" alt="previous" title="Return to the last page visited">
     {{--Main Block--}}
     <div class="main-block">
         <h2>User Profile</h2>
@@ -56,8 +57,8 @@
                     <li>Coins Balance: <span class="badge badge-pill badge-primary">{{$user_info->usercoins}}</span></li>
                     <li>Keys Balance: <span class="badge badge-pill badge-primary">{{$user_info->userkeys}}</span></li>
                 </ul>
+                <br>
             @endif
-
             <h4>Recent Submission</h4>
             <table class="table table-striped">
                 <thead>

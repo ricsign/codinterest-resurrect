@@ -14,6 +14,8 @@
         </div>
     @endif
 
+    <img id="previous" src="{{asset('imgs/site/previous.png')}}" alt="previous" title="Return to the last page visited">
+
     {{--problem description--}}
     <div id="description-container">
         {!! $problem->pdesc !!}

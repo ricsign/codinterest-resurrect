@@ -60,7 +60,12 @@ Route::group(['prefix'=>'public'],function () {
     Route::get('ranking','RankingController@rankingpage');
 
     // route of articles page
-    Route::get('articles','ArticlesController@allarticles');
+    Route::get('allarticles','ArticlesController@allarticles');
+
+
+    // route of a single article page
+    Route::get('getsinglearticle/{aid}','ArticlesController@getsinglearticle')
+        ->where('aid','[0-9]+');
 
     // route of contribute page
     Route::get('contribute',function (){

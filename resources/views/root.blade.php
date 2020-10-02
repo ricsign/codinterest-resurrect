@@ -18,4 +18,6 @@
     </div>
     @include('footer')
 </body>
+{{--scripts deal with DOM--}}
+@include('dom-root')
 </html>
