@@ -1,3 +1,9 @@
+#characters-len{
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 18px;
+}
+
 #content-container{
     clear: left;
     text-align: left;
@@ -39,6 +45,43 @@
 }
 
 .article-footer div{
+    display: inline-block;
+}
+
+.display-comments{
+    text-align: left;
+}
+
+.display-comments h1, .display-comments h2, .display-comments h3{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.display-comments h4, .display-comments h5, .display-comments h6{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.display-comment-content{
+    background: rgb(245,245,245);
+    padding: 15px 15px 2px 40px;
+    margin: 20px auto 0 auto;
+    border-radius: 20px;
+}
+
+.level-number{
+    color: #f08a5d;
+    float: right;
+}
+
+.profile{
+    display: inline;
+    clear: both;
+}
+
+.post-time{
+    color: silver;
+    margin: 5px auto 20px 5px;
     display: inline-block;
 }
 

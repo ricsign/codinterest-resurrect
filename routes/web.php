@@ -96,4 +96,7 @@ Route::group(['prefix'=>'protected','middleware'=>'checksigned'],function (){
     // skip problem page
     Route::get('skip/{pid}','SubmissionController@skip')
         ->where('pid','[0-9]+');
+
+    // post comment
+    Route::post('postcomment','CommentsController@postcomment');
 });
