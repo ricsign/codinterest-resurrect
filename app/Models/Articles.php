@@ -11,4 +11,5 @@ class Articles extends Model
     protected $keyType = 'int';
     public $incrementing = true;
     public $timestamps = false;
+
 }

@@ -33,4 +33,12 @@
     text-indent: 10px;
 }
 
+.article-footer{
+    margin-left: 0;
+    text-align: left;
+}
+
+.article-footer div{
+    display: inline-block;
+}
 

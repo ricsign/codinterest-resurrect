@@ -20,24 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f98f0c-19d7-45a2-9cd0-e9017ae10d2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Models/Articles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/imgs/site/previous.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/imgs/site/previous2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/getsinglearticle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dom-root.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/getsinglearticle.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imgs/site/articledate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imgs/site/author.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imgs/site/comments.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imgs/site/views.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/getproblems.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/getproblems.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/getsingleproblem.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/getsingleproblem.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/myaccount.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/myaccount.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/root.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/root.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/getproblems.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/getproblems.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/getsingleproblem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/getsingleproblem.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/myaccount.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/myaccount.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/root.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/root.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Articles.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Articles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/getsinglearticle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/getsinglearticle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/getsinglearticle.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/getsinglearticle.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,6 +209,7 @@
       <workItem from="1601434186738" duration="5248000" />
       <workItem from="1601512466515" duration="6544000" />
       <workItem from="1601591285569" duration="8481000" />
+      <workItem from="1601691899215" duration="3489000" />
     </task>
     <servers />
   </component>
