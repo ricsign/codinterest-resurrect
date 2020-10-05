@@ -13,6 +13,7 @@
 </head>
 <body>
     @include('header')
+    @include('sidebar')
     <div class="main">
         @yield('main')
     </div>

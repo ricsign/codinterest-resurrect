@@ -49,6 +49,16 @@
     <br>
     <hr>
     <br>
+    {{--Popular articles--}}
+    <h3>Popular Articles</h3>
+    <br>
+    <div class="popular-articles-container">
+    </div>
+
+
+    <br>
+    <hr>
+    <br>
     {{--cards--}}
     <h3>Categories</h3>
     <br>
@@ -101,12 +111,7 @@
             </div>
         </div>
     </div>
-    <br><hr><br>
-    {{--Popular articles--}}
-    <h3>Popular Articles</h3>
-    <br>
-    <div class="popular-articles-container">
-    </div>
+
 
 @endsection
 

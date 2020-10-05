@@ -2,6 +2,9 @@
     margin-bottom: 5%;
     background: #151965;
 }
+.navbar-brand:hover{
+    cursor: pointer;
+}
 .nav-link{
     color: #edf2f7;
 }

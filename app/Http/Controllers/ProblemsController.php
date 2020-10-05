@@ -6,6 +6,7 @@ use App\Models\Problems;
 use App\Models\Submission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class ProblemsController extends Controller{
     // get all attempted problems (not necessarily wrong), no route will be connected to this
@@ -46,6 +47,11 @@ class ProblemsController extends Controller{
         $solved = $this->getsolved();
         $attempted = $this->getattempted();
         return view('allproblems',compact('problems','solved','attempted'));
+    }
+
+    // all problems page(from a view)
+    public static function allproblemsFromView(){
+        return Problems::all();
     }
 
     // getproblems page

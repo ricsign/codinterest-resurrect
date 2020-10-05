@@ -12,6 +12,10 @@ class ArticlesController extends Controller
         return view('articles');
     }
 
+    public static function allarticlesFromView(){
+        return Articles::orderBy('aid','desc')->get();
+    }
+
     public function getsinglearticle($aid){
 
         // get articles
@@ -19,8 +23,6 @@ class ArticlesController extends Controller
         if(!$article) return redirect('/public/allarticles');
 
         // get comments
-        $parser = new \Parsedown();
-        $parser->setSafeMode(true);
         $comments = Comments::where('aid',$aid)->orderBy('created_at','desc')->simplePaginate(20);
         $comments_size = count(Comments::where('aid',$aid)->get('cid'));
 

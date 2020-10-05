@@ -2,6 +2,23 @@ body{
     background-color: #f6f6f6;
     font-family: 'Lato', sans-serif;
     letter-spacing: 0.51px;
+    transition: 0.8s;
+}
+
+body::-webkit-scrollbar{
+    width:12px;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius:5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background:rgba(0,0,0,0.2);
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius:0;
+    background:rgba(0,0,0,0.1);
 }
 
 p{
@@ -43,7 +60,7 @@ hr:after {
 }
 
 .main {
-    width: 80%;
+    width: 85%;
     text-align: center;
     padding: 5%;
     margin: auto;
