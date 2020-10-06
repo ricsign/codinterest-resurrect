@@ -50,9 +50,87 @@
     <hr>
     <br>
     {{--Popular articles--}}
-    <h3>Popular Articles</h3>
+    <h3>Articles Recommendation</h3>
     <br>
-    <div class="popular-articles-container">
+    <div class="articles-container">
+        <div class="list-group popular">
+            <a href="javascript:" class="list-group-item list-group-item-action bg-primary">
+                <div class="d-flex w-100 justify-content-between">
+                    <h4 style="text-align: center;margin: auto;padding: 50px;color: white;">Popular</h4>
+                </div>
+            </a>
+            @foreach($populararticles as $article)
+                <a href="{{url('/public/getsinglearticle/'.$article->aid)}}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{$article->atit}}</h5>
+                        @switch($article->catid)
+                            @case(1)
+                                <small>Computer Science</small>
+                                @break
+                            @case(2)
+                                <small>Mathematics</small>
+                                @break
+                            @case(3)
+                                <small>Sciences & Technologies</small>
+                                @break
+                            @case(4)
+                                <small>Assorted Topics</small>
+                                @break
+                        @endswitch
+                    </div>
+                    <br>
+                    <div>{{$article->aintro}}...</div>
+                    <br>
+                    <div>
+                        <img src="{{asset('imgs/site/views.png')}}" alt="Views: " width="14px"> &nbsp;
+                        <span class="badge badge-pill badge-primary">{{$article->aviews}}</span>
+                    </div>
+                    <div>
+                        <img src="{{asset('imgs/site/comments.png')}}" alt="Comments: " width="14px"> &nbsp;
+                        <span class="badge badge-pill badge-primary">{{$article->acomments}}</span>
+                    </div>
+                </a>
+            @endforeach
+        </div>
+        <div class="list-group new">
+            <a href="javascript:" class="list-group-item list-group-item-action bg-success">
+                <div class="d-flex w-100 justify-content-between">
+                    <h4 style="text-align: center;margin: auto;padding: 50px;color: white;">New</h4>
+                </div>
+            </a>
+            @foreach($newarticles as $article)
+                <a href="{{url('/public/getsinglearticle/'.$article->aid)}}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{$article->atit}}</h5>
+                        @switch($article->catid)
+                            @case(1)
+                            <small>Computer Science</small>
+                            @break
+                            @case(2)
+                            <small>Mathematics</small>
+                            @break
+                            @case(3)
+                            <small>Sciences & Technologies</small>
+                            @break
+                            @case(4)
+                            <small>Assorted Topics</small>
+                            @break
+                        @endswitch
+                    </div>
+                    <br>
+                    <div>{{$article->aintro}}...</div>
+                    <br>
+                    <div>
+                        <img src="{{asset('imgs/site/views.png')}}" alt="Views: " width="14px"> &nbsp;
+                        <span class="badge badge-pill badge-primary">{{$article->aviews}}</span>
+                    </div>
+                    <div>
+                        <img src="{{asset('imgs/site/comments.png')}}" alt="Comments: " width="14px"> &nbsp;
+                        <span class="badge badge-pill badge-primary">{{$article->acomments}}</span>
+                    </div>
+                </a>
+            @endforeach
+        </div>
     </div>
 
 
@@ -60,10 +138,10 @@
     <hr>
     <br>
     {{--cards--}}
-    <h3>Categories</h3>
+    <h3 class="cate-h3">Categories</h3>
     <br>
     <div class="card-group">
-        <div class="card">
+        <div class="card cs">
             <div class="card-body">
                 <h5 class="card-title">Computer Sciences</h5>
                 <p class="card-text">
@@ -73,7 +151,7 @@
                 <a value="{{url('/protected/redeemitem/1')}}" class="card-link btn btn-primary" onclick="conf(this)">Redeem</a>
             </div>
         </div>
-        <div class="card">
+        <div class="card math">
             <div class="card-body">
                 <h5 class="card-title">Mathematics</h5>
                 <p class="card-text">
@@ -85,7 +163,7 @@
         </div>
     </div>
     <div class="card-group">
-        <div class="card">
+        <div class="card sci">
             <div class="card-body">
                 <h5 class="card-title">Sciences & Technologies</h5>
                 <p class="card-text">
@@ -97,7 +175,7 @@
                 <a value="{{url('/protected/redeemitem/3')}}" class="card-link btn btn-primary" onclick="conf(this)">Redeem</a>
             </div>
         </div>
-        <div class="card">
+        <div class="card else">
             <div class="card-body">
                 <h5 class="card-title">Assorted Topics</h5>
                 <p class="card-text">

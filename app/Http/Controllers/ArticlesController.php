@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class ArticlesController extends Controller
 {
     public function allarticles(){
-        return view('articles');
+        $newarticles = Articles::orderBy('aid','desc')->limit(6)->get();
+        $populararticles = Articles::orderBy('aviews','desc')->orderBy('acomments','desc')->limit(6)->get();
+        return view('articles',compact('populararticles','newarticles'));
     }
 
     public static function allarticlesFromView(){

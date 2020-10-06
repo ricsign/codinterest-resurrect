@@ -1,0 +1,33 @@
+.list-group{
+    width: 40%;
+    margin: 0 5% 50px 5%;
+}
+
+.popular{
+    float: left;
+}
+
+.new{
+    float: right;
+}
+
+.card{
+    color: rgb(50,50,50);
+}
+
+.cs{
+    background-color: #fae3d9;
+}
+
+.math{
+    background-color: #fefdca;
+}
+
+.sci{
+    background-color: #e0f9b5;
+}
+
+.else{
+    background-color: #e4f9f5;
+}
+

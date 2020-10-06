@@ -20,24 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f98f0c-19d7-45a2-9cd0-e9017ae10d2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/sidebar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codinterest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codinterest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProblemsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProblemsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/root.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/root.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/articles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/articles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/articles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/articles.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dom-root.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dom-root.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/root.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/root.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/styles.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,6 +219,7 @@
       <workItem from="1601743761944" duration="17108000" />
       <workItem from="1601855053016" duration="900000" />
       <workItem from="1601857947785" duration="9217000" />
+      <workItem from="1601948838124" duration="6117000" />
     </task>
     <servers />
   </component>
