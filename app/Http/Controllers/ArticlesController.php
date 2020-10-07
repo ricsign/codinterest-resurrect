@@ -9,9 +9,14 @@ use Illuminate\Http\Request;
 class ArticlesController extends Controller
 {
     public function allarticles(){
-        $newarticles = Articles::orderBy('aid','desc')->limit(6)->get();
-        $populararticles = Articles::orderBy('aviews','desc')->orderBy('acomments','desc')->limit(6)->get();
-        return view('articles',compact('populararticles','newarticles'));
+        $pop = Articles::orderBy('aviews','desc')->orderBy('acomments','desc');
+        $new = Articles::orderBy('aid','desc');
+        $topfivepopular = $pop->limit(5)->get();
+        $topfivenew = $new->limit(5)->get();
+        $newarticles = $new->simplePaginate(10);
+        $populararticles = $pop->simplePaginate(10);
+        $allpopular = $pop->get();
+        return view('articles',compact('populararticles','newarticles','topfivenew','topfivepopular','allpopular'));
     }
 
     public static function allarticlesFromView(){

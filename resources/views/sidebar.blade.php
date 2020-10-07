@@ -3,7 +3,7 @@
     $problems = \App\Http\Controllers\ProblemsController::allproblemsFromView();
     $articles = \App\Http\Controllers\ArticlesController::allarticlesFromView();
 @endphp
-<ul id="sidebar" class="layui-nav layui-nav-tree layui-bg-cyan layui-inline hide" lay-filter="sidebar">
+<ul id="sidebar" class="layui-nav layui-nav-tree layui-bg-cyan layui-inline hide-sidebar" lay-filter="sidebar">
     <li class="menu">
         Menu
     </li>

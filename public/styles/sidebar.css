@@ -26,13 +26,13 @@
 }
 
 
-.hide{
+.hide-sidebar{
     display: none;
     width: 0;
     transition: 0.8s;
 }
 
-.show{
+.show-sidebar{
     display: block;
     width: 220px;
     transition: 0.8s;

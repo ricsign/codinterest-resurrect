@@ -31,16 +31,16 @@
         let main = $('.main')[0];
 
         // close sidebar
-        if(sidebar.hasClass('show')){
-            sidebar.removeClass('show');
-            sidebar.addClass('hide');
+        if(sidebar.hasClass('show-sidebar')){
+            sidebar.removeClass('show-sidebar');
+            sidebar.addClass('hide-sidebar');
             document.body.style.marginLeft = "auto";
             document.body.style.backgroundColor = "#f6f6f6";
         }
         // open sidebar
         else{
-            sidebar.removeClass('hide');
-            sidebar.addClass('show');
+            sidebar.removeClass('hide-sidebar');
+            sidebar.addClass('show-sidebar');
             document.body.style.marginLeft = "220px";
             document.body.style.backgroundColor = "rgba(0,0,0,0.3)";
         }

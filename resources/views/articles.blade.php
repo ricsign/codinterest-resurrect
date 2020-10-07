@@ -59,7 +59,7 @@
                     <h4 style="text-align: center;margin: auto;padding: 50px;color: white;">Popular</h4>
                 </div>
             </a>
-            @foreach($populararticles as $article)
+            @foreach($topfivepopular as $article)
                 <a href="{{url('/public/getsinglearticle/'.$article->aid)}}" class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">{{$article->atit}}</h5>
@@ -92,13 +92,14 @@
                 </a>
             @endforeach
         </div>
+
         <div class="list-group new">
             <a href="javascript:" class="list-group-item list-group-item-action bg-success">
                 <div class="d-flex w-100 justify-content-between">
                     <h4 style="text-align: center;margin: auto;padding: 50px;color: white;">New</h4>
                 </div>
             </a>
-            @foreach($newarticles as $article)
+            @foreach($topfivenew as $article)
                 <a href="{{url('/public/getsinglearticle/'.$article->aid)}}" class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">{{$article->atit}}</h5>
@@ -137,59 +138,95 @@
     <br>
     <hr>
     <br>
-    {{--cards--}}
-    <h3 class="cate-h3">Categories</h3>
+    {{--categories--}}
+
+    <h3>Categories</h3>
     <br>
-    <div class="card-group">
-        <div class="card cs">
-            <div class="card-body">
-                <h5 class="card-title">Computer Sciences</h5>
-                <p class="card-text">
-                    Using keys to check the official solutions <br>
-                    If you use key, the corresponding problem will not give you any rewards.
-                </p>
-                <a value="{{url('/protected/redeemitem/1')}}" class="card-link btn btn-primary" onclick="conf(this)">Redeem</a>
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">All Articles</li>
+            <li>Computer Sciences</li>
+            <li>Mathematics</li>
+            <li>Sciences & Technologies</li>
+            <li>Assorted Topics</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Article ID</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Views</th>
+                        <th scope="col">Comments</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($populararticles as $article)
+                        <tr>
+                            <th scope="row">{{$article->aid}}</th>
+                            <td><a href="{{url('/public/getsinglearticle/'.$article->aid)}}">{{$article->atit}}</a></td>
+                            <td>
+                                @switch($article->catid)
+                                    @case(1)
+                                        Computer Science
+                                    @break
+                                    @case(2)
+                                        Mathematics
+                                    @break
+                                    @case(3)
+                                        Sciences & Technologies
+                                    @break
+                                    @case(4)
+                                        Assorted Topics
+                                    @break
+                                @endswitch
+                            </td>
+                            <td>{{$article->aviews}}</td>
+                            <td>{{$article->acomments}}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+                <br>
+                <div class="pagination justify-content-center">{{$populararticles->links()}}</div>
             </div>
-        </div>
-        <div class="card math">
-            <div class="card-body">
-                <h5 class="card-title">Mathematics</h5>
-                <p class="card-text">
-                    Using keys to check the official solutions <br>
-                    If you use key, the corresponding problem will not give you any rewards.
-                </p>
-                <a value="{{url('/protected/redeemitem/2')}}" class="card-link btn btn-primary" onclick="conf(this)">Redeem</a>
-            </div>
-        </div>
-    </div>
-    <div class="card-group">
-        <div class="card sci">
-            <div class="card-body">
-                <h5 class="card-title">Sciences & Technologies</h5>
-                <p class="card-text">
-                    To certify you as one of the elite at Codinterest. <br>
-                    Your username will be shown in silver color. <br>
-                    Profile photo will be upgraded<br>
-                    <b>You can only redeem once. </b>
-                </p>
-                <a value="{{url('/protected/redeemitem/3')}}" class="card-link btn btn-primary" onclick="conf(this)">Redeem</a>
-            </div>
-        </div>
-        <div class="card else">
-            <div class="card-body">
-                <h5 class="card-title">Assorted Topics</h5>
-                <p class="card-text">
-                    To certify you as one of the global elites at Codinterest. <br>
-                    Your username will be shown in golden color. <br>
-                    Profile photo will be upgraded<br>
-                    You must be a Silver Coder first. <br>
-                    <b>You can only redeem once.</b>
-                </p>
-                <a value="{{url('/protected/redeemitem/4')}}" class="card-link btn btn-primary" onclick="conf(this)">Redeem</a>
-            </div>
+
+            {{--iterate all categories--}}
+            @for($i=1; $i<5; $i++)
+                <div class="layui-tab-item">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Article ID</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Views</th>
+                            <th scope="col">Comments</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($allpopular->where('catid',$i) as $article)
+                            <tr>
+                                <th scope="row">{{$article->aid}}</th>
+                                <td><a href="{{url('/public/getsinglearticle/'.$article->aid)}}">{{$article->atit}}</a></td>
+                                <td>{{$article->aviews}}</td>
+                                <td>{{$article->acomments}}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            @endfor
         </div>
     </div>
 
+    {{--JS--}}
+    <script>
+        layui.use('element', function(){
+            let element = layui.element;
+        });
+    </script>
 
 @endsection
 

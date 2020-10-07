@@ -40,6 +40,7 @@
 #sub-tip-text{
     text-align: left;
     line-height: 2.25;
+    width:100%;
     color: rgb(100,100,100);
 }
 #sub-tip-text li{
