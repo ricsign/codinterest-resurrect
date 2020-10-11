@@ -83,9 +83,18 @@
             <div>
                 <img src="{{asset('imgs/site/userprivil'.$comment->user->userprivil.'.png')}}" alt="user-profile-photo" width="20px" height="20px" class="profile"> &nbsp;&nbsp;&nbsp;
                 <a href="{{url('/public/myaccount/'.$comment->uid)}}"><b>{{$comment->user->user->username}}</b></a>
-                <small class="level-number">#{{$comments_size-(($comments ->currentpage()-1) * $comments ->perpage() + $loop->iteration)+1}}</small>
+                <small class="level-number">
+                    #{{$comments_size-(($comments ->currentpage()-1) * $comments ->perpage() + $loop->iteration)+1}}
+                    @if(session()->get('user') && session()->get('user')->uid == $comment->uid)
+                        &nbsp;(Me)
+                    @endif
+                </small>
                 <div class="display-comment-content">{!! \App\Tools\GeneralTools::convert_markdown_to_html($comment->ccontent) !!}</div>
                 <small class="post-time">{{$comment->created_at}}</small>
+                @if(session()->get('user') && session()->get('user')->uid == $comment->uid)
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <small class="delete" onclick="deleteComment({{$comment->cid}});">Delete</small>
+                @endif
             </div>
         @endforeach
         <div class="pagination justify-content-center">{{$comments->links()}}</div>
@@ -116,6 +125,11 @@
             else{
                 $('#characters-len').html('<span style="color:red">'+len+'/2000</span>');
             }
+        }
+
+        function deleteComment(cid){
+            if(confirm("Are you sure to delete this comment?"))
+                location = "/protected/deletecomment/"+cid;
         }
     </script>
 

@@ -85,6 +85,31 @@
                 </tbody>
             </table>
             <div class="pagination justify-content-center">{{$submission->links()}}</div>
+            <br>
+
+            <h4>Recent Comments</h4>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Article</th>
+                    <th scope="col">Content(MarkDown Syntax)</th>
+                    <th scope="col">Post Time</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($comments as $comment)
+                    <tr>
+                        <td><a href="{{url('/public/getsinglearticle/'.$comment->aid)}}">{{$comment->article->atit}}</a></td>
+                        @if(mb_strlen($comment->ccontent) <= 80)
+                            <td>{{$comment->ccontent}}</td>
+                        @else
+                            <td>{{mb_substr($comment->ccontent,0,80)}} ...</td>
+                        @endif
+                        <td>{{$comment->created_at}}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
         </div>
         {{--Account--}}
         @if($is_signed)

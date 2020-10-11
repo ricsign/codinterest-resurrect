@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comments;
 use App\Models\Problems;
 use App\Models\Submission;
 use App\Models\UserInfo;
@@ -29,7 +30,11 @@ class InfoController extends Controller
             ['uid','=',$uid]
         ])->orderBy('sid','desc')->limit(30)->simplePaginate(10);
 
+        // 5. get user's most recent 10 comments
+        $numcomments = 10;
+        $comments = Comments::where('uid',$uid)->orderBy('cid','desc')->limit($numcomments)->get();
+
         // 5. success and redirect
-        return view('myaccount',compact('user','user_info','is_signed','submission'));
+        return view('myaccount',compact('user','user_info','is_signed','submission','comments'));
     }
 }

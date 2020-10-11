@@ -14,6 +14,7 @@
 <body>
     @include('header')
     @include('sidebar')
+    @yield('index-poster')
     <div class="main">
         @yield('main')
     </div>

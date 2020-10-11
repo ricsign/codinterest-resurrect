@@ -1,7 +1,33 @@
 {{--This is the main area of index page, extending the root template--}}
 @extends('root')
+@section('index-poster')
+    <div class="index-poster container-fluid">
+        <div class="row">
+            <div class="index-poster-left-container col-lg-6">
+                <h1 id="index-poster-title"></h1>
+                <br><br><br>
+                <h4>Codinterest dedicates to let you explore computer sciences and problems solving!</h4>
+                <br><br><br>
+                <a href="{{url('https://github.com/ricsign')}}" class="btn btn-lg btn-outline-light" id="githubButton" style="margin-right: 5%">
+                    <img src="{{asset('imgs/site/github.png')}}" alt="" id="githubImg">&nbsp;&nbsp;
+                    GitHub
+                </a>
+                <a href="mailto:qq1955283190@gmail.com" class="btn btn-lg btn-outline-light" id="emailButton">
+                    <img src="{{asset('imgs/site/email.png')}}" alt="" id="emailImg">&nbsp;&nbsp;
+                    Email
+                </a>>
+            </div>
+            <div class="index-poster-right-container col-lg-6">
+                <img src="{{asset('imgs/site/coding.png')}}" alt="">
+            </div>
+        </div>
+
+    </div>
+@endsection
+
+
 @section('main')
-    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('styles/index-main.css')}}">
+    <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('styles/index-main.css')}}" class="">
 
     @unless(empty(session()->get('success_signin')))
         <div class="alert alert-success alert-dismissible fade show">{{session()->get('success_signin')}}</div>
@@ -67,5 +93,39 @@
             languages. The main focus of Codinterest is based on pure personal experiences share instead of frustration of linguistics.
         </p>
     </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#githubButton").hover(function (){
+                $("#githubImg").attr("src","{{asset('imgs/site/github-black.png')}}");
+                $("#githubButton")[0].style.color = "black";
+            }, function (){
+                $("#githubImg").attr("src","{{asset('imgs/site/github.png')}}");
+                $("#githubButton")[0].style.color = "white";
+            });
+
+            $("#emailButton").hover(function (){
+                $("#emailImg").attr("src","{{asset('imgs/site/email-black.png')}}");
+                $("#emailButton")[0].style.color = "black";
+            }, function (){
+                $("#emailImg").attr("src","{{asset('imgs/site/email.png')}}");
+                $("#emailButton")[0].style.color = "white";
+            });
+
+            let i = 0, content = "Hello World !", speed = 200, title = document.getElementById("index-poster-title");
+            function typeWriter() {
+                if (i < content.length) {
+                    title.innerHTML += content.charAt(i++);
+                    setTimeout(typeWriter, speed);
+                }
+                else{
+                    title.innerHTML = content.charAt(0);
+                    i = 1;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+            typeWriter();
+        });
+    </script>
 
 @endsection

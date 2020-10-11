@@ -6,20 +6,15 @@ body{
 }
 
 body::-webkit-scrollbar{
-    width:12px;
+    width:15px;
 }
 
 body::-webkit-scrollbar-thumb {
-    border-radius:5px;
+    border-radius: 0;
     -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-    background:rgba(0,0,0,0.2);
+    background:darkblue;
 }
 
-body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-    border-radius:0;
-    background:rgba(0,0,0,0.1);
-}
 
 p{
     font-size: 17px;

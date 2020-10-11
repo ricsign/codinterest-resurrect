@@ -25,4 +25,8 @@ class Comments extends Model
     public function user(){
         return $this->belongsTo(UserInfo::class,'uid','uid');
     }
+
+    public function article(){
+        return $this->belongsTo(Articles::class,'aid','aid');
+    }
 }

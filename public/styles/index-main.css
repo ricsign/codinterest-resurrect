@@ -1,3 +1,28 @@
+
+.index-poster {
+    padding: 8% 10% 8% 10%;
+    background-color: #151965;
+    margin-top: -5%;
+    margin-bottom: 5%;
+}
+
+.index-poster-left-container h1{
+    font-family: 'Fredoka One', cursive;
+    color: #f1f3f8;
+    font-size: 83px;
+}
+
+.index-poster-left-container h4{
+    font-family: 'Lato', sans-serif;
+    color: #f1f3f8;
+}
+
+.index-poster-right-container img{
+    transform: rotate(10deg) translateX(50px);
+    width: 90%;
+}
+
+
 .jumbotron{
     background: #f1f3f8;
 }

@@ -71,6 +71,11 @@ Route::group(['prefix'=>'public'],function () {
     Route::get('contribute',function (){
         return view('contribute');
     });
+
+    // route of recreation page
+    Route::get('recreation',function (){
+        return view('recreation');
+    });
 });
 
 // protected page route
@@ -99,4 +104,8 @@ Route::group(['prefix'=>'protected','middleware'=>'checksigned'],function (){
 
     // post comment
     Route::post('postcomment','CommentsController@postcomment');
+
+    // delete comment
+    Route::get('deletecomment/{cid}','CommentsController@deletecomment')
+        ->where('cid','[0-9]+');
 });

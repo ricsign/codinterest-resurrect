@@ -48,6 +48,14 @@
     display: inline-block;
 }
 
+.delete{
+    color: red;
+}
+
+.delete:hover{
+    cursor: pointer;
+}
+
 .display-comments{
     text-align: left;
 }
