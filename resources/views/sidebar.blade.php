@@ -14,7 +14,7 @@
         <li>
             <br>
             <a href="{{url('/public/myaccount/'.session()->get('user')->uid)}}" class="d-flex justify-content-center" style="font-size: 20px;color: white">My Account</a>
-            <hr><br>
+            <br><hr><br>
         </li>
     @endif
     <li class="menu" onclick="toggleSideBar()">

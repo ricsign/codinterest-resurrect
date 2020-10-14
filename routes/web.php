@@ -113,4 +113,7 @@ Route::group(['prefix'=>'protected','middleware'=>'checksigned'],function (){
     // delete comment
     Route::get('deletecomment/{cid}','CommentsController@deletecomment')
         ->where('cid','[0-9]+');
+
+    // post a talk
+    Route::get('createtalk','TalksController@createtalkpage');
 });

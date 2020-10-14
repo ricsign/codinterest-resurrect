@@ -32,7 +32,7 @@
                     <p style="color: wheat">Share the beauty of this moment.</p>
                 </div>
                 <div class="col">
-                    <a class="btn btn-lg btn-outline-light" style="margin: 30px">Let's Talk!</a>
+                    <a href="{{url('/protected/createtalk')}}" class="btn btn-lg btn-outline-light" style="margin: 30px">Let's Talk!</a>
                 </div>
             </div>
         </div>
