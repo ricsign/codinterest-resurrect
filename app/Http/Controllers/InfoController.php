@@ -11,6 +11,13 @@ use Illuminate\Http\Request;
 
 class InfoController extends Controller
 {
+    // retreive user's information statically
+    public static function getUserInfoFromView($uid){
+        $user = UserInfo::where('uid','=',$uid)->first();
+        if(!$user) return false;
+        return $user;
+    }
+
     // assumed user is signed in, this was checked by middleware checksigned
     public function myaccount($uid){
         // 1. is $uid passed a signed in account

@@ -42,7 +42,7 @@
             <div class="card-body">
                 <h5 class="card-title">Desert</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Territory 4</h6>
-                <p class="card-text">Dynamic Programming & Memoization. This territory is full of danger. You might realize how inefficient naive recursion is, dynamic programming is a crucial technique to reduce the time complexity.</p>
+                <p class="card-text">Dynamic Programming, Memoization and Greedy. This territory is full of danger. You might realize how inefficient naive recursion is, dynamic programming is a crucial technique to reduce the time complexity, while greedy algorithm allows you to find the best solution quickly.</p>
                 <a href="{{url('/public/getproblems/4')}}" class="btn btn-primary">Explore Desert</a>
             </div>
         </div>
@@ -55,7 +55,7 @@
             <div class="card-body">
                 <h5 class="card-title">Plateau</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Territory 5</h6>
-                <p class="card-text">Greedy & Mathematics. The explorer with power of strong logical reasoning shall enter. When you finish this territory where mathematics and computer science intersects, you will realize how beautiful this subject is.</p>
+                <p class="card-text">Mathematics. Math and Computer Sciences are intertwined, a great computer scientist shall master mathematics. <span style="color: red">In this territory, you will not need programming to solve the problems.</span></p>
                 <a href="{{url('/public/getproblems/5')}}" class="btn btn-primary">Explore Plateau</a>
             </div>
         </div>
@@ -64,7 +64,7 @@
             <div class="card-body">
                 <h5 class="card-title">Ocean</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Territory 6</h6>
-                <p class="card-text">Extensive Topics. This is the territory where extensive topics are introduced. Some examples to that are: Euler's path, Euler's circuit, A* Search, advanced data structures and etc.</p>
+                <p class="card-text">Extensive Topics. This is the territory where extensive topics are introduced. Some examples to that are: Euler's path, basic artificial intelligence, advanced data structures such as Union-Find, Trie and etc.</p>
                 <a href="{{url('/public/getproblems/6')}}" class="btn btn-primary">Explore Ocean</a>
             </div>
         </div>
@@ -73,7 +73,7 @@
     <hr>
     {{--all problems area--}}
     <div class="allproblems-area">
-        <h2 class="title">All Problems</h2>
+        <h3 class="title">All Problems</h3>
 
         {{--attempted & rejected progress--}}
         <div class="progress">

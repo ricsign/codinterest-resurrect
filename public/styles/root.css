@@ -1,8 +1,9 @@
 body{
-    background-color: #f6f6f6;
     font-family: 'Lato', sans-serif;
-    letter-spacing: 0.51px;
+    letter-spacing: 0.52px;
     transition: 0.8s;
+    margin-left: 220px;
+    background: #f8f8f8;
 }
 
 body::-webkit-scrollbar{
@@ -22,6 +23,10 @@ p{
 
 a,a:hover{
     text-decoration: none;
+}
+
+h1,h2{
+    font-weight: bold;
 }
 
 h1:after,

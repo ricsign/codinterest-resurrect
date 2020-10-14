@@ -23,6 +23,14 @@
         else{
             sidebar.style.overflow = "auto";
         }
+
+        // left 5 percent toggles sidebar
+        $(document).click(function(e){
+            let x = e.clientX;
+            let target = e.target;
+            if(x <= document.body.clientWidth*0.05 && ($('#sidebar').hasClass('hide-sidebar') || !$.contains(sidebar,target)))
+                toggleSideBar();
+        });
     });
 
     // sidebar
@@ -42,7 +50,7 @@
             sidebar.removeClass('hide-sidebar');
             sidebar.addClass('show-sidebar');
             document.body.style.marginLeft = "220px";
-            document.body.style.backgroundColor = "rgba(0,0,0,0.3)";
+            document.body.style.backgroundColor = "#f8f8f8";
         }
     }
 </script>

@@ -2,9 +2,22 @@
 @php
     $problems = \App\Http\Controllers\ProblemsController::allproblemsFromView();
     $articles = \App\Http\Controllers\ArticlesController::allarticlesFromView();
+    $user = false;
+    if(session()->get('user'))
+        $user = \App\Http\Controllers\InfoController::getUserInfoFromView(session()->get('user')->uid);
 @endphp
-<ul id="sidebar" class="layui-nav layui-nav-tree layui-bg-cyan layui-inline hide-sidebar" lay-filter="sidebar">
-    <li class="menu">
+<ul id="sidebar" class="layui-nav layui-nav-tree layui-bg-cyan layui-inline show-sidebar" lay-filter="sidebar" title="Click the brand, empty space on the left of the screen or simply 'Menu' to toggle sidebar">
+    @if($user)
+        <li>
+            <img src="{{asset('imgs/site/userprivil'.$user->userprivil.'.png')}}" alt="" class="rounded mx-auto d-block">
+        </li>
+        <li>
+            <br>
+            <a href="{{url('/public/myaccount/'.session()->get('user')->uid)}}" class="d-flex justify-content-center" style="font-size: 20px;color: white">My Account</a>
+            <hr><br>
+        </li>
+    @endif
+    <li class="menu" onclick="toggleSideBar()">
         Menu
     </li>
     <li class="layui-nav-item"><a href="{{url('/public/index')}}">Home</a></li>

@@ -76,6 +76,11 @@ Route::group(['prefix'=>'public'],function () {
     Route::get('recreation',function (){
         return view('recreation');
     });
+
+    // route of talk page
+    Route::get('talks',function (){
+        return view('talks');
+    });
 });
 
 // protected page route

@@ -61,6 +61,7 @@
             </a>
             @foreach($topfivepopular as $article)
                 <a href="{{url('/public/getsinglearticle/'.$article->aid)}}" class="list-group-item list-group-item-action">
+                    <img src="{{asset('imgs/articles/aid'.$article->aid.'.jpg')}}" alt="" style="height:100%; width: 100%; margin-bottom: 20px">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">{{$article->atit}}</h5>
                         @switch($article->catid)
@@ -96,12 +97,14 @@
         <div class="list-group new">
             <a href="javascript:" class="list-group-item list-group-item-action bg-success">
                 <div class="d-flex w-100 justify-content-between">
-                    <h4 style="text-align: center;margin: auto;padding: 50px;color: white;">New</h4>
+                    <h4 style="text-align: center;margin: auto;padding: 50px;color: white;">Recent</h4>
                 </div>
             </a>
             @foreach($topfivenew as $article)
                 <a href="{{url('/public/getsinglearticle/'.$article->aid)}}" class="list-group-item list-group-item-action">
+                    <img src="{{asset('imgs/articles/aid'.$article->aid.'.jpg')}}" height="200px" alt="" style="width: 100%; margin-bottom: 20px">
                     <div class="d-flex w-100 justify-content-between">
+                        <br>
                         <h5 class="mb-1">{{$article->atit}}</h5>
                         @switch($article->catid)
                             @case(1)
@@ -144,11 +147,11 @@
     <br>
     <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
         <ul class="layui-tab-title">
-            <li class="layui-this">All Articles</li>
-            <li>Computer Sciences</li>
-            <li>Mathematics</li>
-            <li>Sciences & Technologies</li>
-            <li>Assorted Topics</li>
+            <li class="layui-this"><b>All Articles</b></li>
+            <li><b>Computer Sciences</b></li>
+            <li><b>Mathematics</b></li>
+            <li><b>Sciences & Technologies</b></li>
+            <li><b>Assorted Topics</b></li>
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
