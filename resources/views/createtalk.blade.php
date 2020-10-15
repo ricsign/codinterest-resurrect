@@ -4,12 +4,22 @@
     <link rel="stylesheet" href="{{asset('styles/createtalk.css')}}">
 
     <h2 class="title">Create A New Talk</h2>
-    <br><br>
-
-    <form id="createtalk-form">
+    <br>
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    <br>
+    <form id="createtalk-form" action="{{url('/protected/newtalk')}}" method="post">
+        @csrf
         <div class="form-group">
             <label for="talktitle">Talk Title</label>
-            <input type="text" class="form-control" id="talktitle" name="talktitle" aria-describedby="talktitle-small" placeholder="My First Talk" style="width: 40%" >
+            <input type="text" class="form-control" id="talktitle" name="talktitle" aria-describedby="talktitle-small" placeholder="My First Talk" style="width: 40%" value="{{old('talktitle')}}">
             <small id="talktitle-small" class="form-text text-muted" style="width: 40%">Name your talk with an appropriate title with length of 5 to 50.</small>
         </div>
         <div class="form-group">
@@ -18,7 +28,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"><b>#</b></span>
                 </div>
-                <input type="text" class="form-control" id="maintopic" name="maintopic" aria-label="maintopic" aria-describedby="topic-small">
+                <input type="text" class="form-control" id="maintopic" name="maintopic" aria-label="maintopic" aria-describedby="topic-small" value="{{old('maintopic')}}">
                 <small id="topic-small" class="form-text text-muted">Length 2 to 30. If no one used your topic entered, we will create a new one for you.</small>
             </div>
         </div>
@@ -26,13 +36,12 @@
             <div class="row">
                 <div class="col">
                     <label for="content">Content(Markdown Supported)</label>
-                    <textarea class="form-control" id="content" name="content" rows="15"></textarea>
+                    <textarea class="form-control" id="content" name="content" rows="15" value="{{old('content')}}"></textarea>
                 </div>
                 <div class="col">
                     <label for="preview">Preview HTML</label>
                     <textarea class="form-control" id="preview" rows="15" DISABLED></textarea>
                 </div>
-
             </div>
 
         </div>
@@ -40,13 +49,27 @@
             <input type="checkbox" class="form-check-input" id="confirmation" onclick="toggleSubmit()">
             <label class="form-check-label" for="confirmation">Yes, I am sure to share my talk!</label>
         </div>
+
+        {{--MarkDown References--}}
+        <button class="btn btn-success md-ref" type="button" data-toggle="collapse" data-target="#md-ref" aria-expanded="false" aria-controls="md-ref">
+            MarkDown References
+        </button>
+
         <button id="post-talk" type="submit" class="btn btn-primary" disabled="disabled">Submit</button>
     </form>
 
+    <div class="collapse" id="md-ref">
+        <div class="card card-body">
+
+        </div>
+    </div>
 
 
     <script>
         $(document).ready(function (){
+            // load md syntax file
+            $('#md-ref').load('{{asset('html/markdown-syntax.html')}}');
+
             // convert markdown to html
             $("#content").keyup(function (e){
                 let md = window.markdownit();
@@ -62,7 +85,7 @@
                         required: true,
                         minlength: 5,
                         maxlength: 50,
-                        regex: "^\\w{5,50}$"
+                        regex: "^[A-Za-z0-9\\s]{5,50}$"
                     },
                     maintopic:{
                         required: true,
@@ -73,7 +96,7 @@
                     content:{
                         required: true,
                         minlength: 20,
-                        maxlength: 50000
+                        maxlength: 20000
                     }
                 }
             });

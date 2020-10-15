@@ -78,9 +78,7 @@ Route::group(['prefix'=>'public'],function () {
     });
 
     // route of talk page
-    Route::get('talks',function (){
-        return view('talks');
-    });
+    Route::get('talks','TalksController@talks');
 });
 
 // protected page route
@@ -114,6 +112,9 @@ Route::group(['prefix'=>'protected','middleware'=>'checksigned'],function (){
     Route::get('deletecomment/{cid}','CommentsController@deletecomment')
         ->where('cid','[0-9]+');
 
-    // post a talk
+    // post a talk(page)
     Route::get('createtalk','TalksController@createtalkpage');
+
+    // post a talk(handling)
+    Route::post('newtalk','TalksController@newtalk');
 });

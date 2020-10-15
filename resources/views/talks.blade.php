@@ -44,44 +44,80 @@
                 <li class="layui-this"><b>Popular</b></li>
                 <li><b>Recent</b></li>
                 <li><b>Most Replies</b></li>
+                <li><b>Latest Update</b></li>
                 <li><b>Search Result</b></li>
             </ul>
             <div class="layui-tab-content">
-                <div class="layui-tab-item layui-show">
-                    {{--Individuals--}}
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-2 col-md-1 d-flex align-items-center">
-                                    <img src="{{asset('imgs/site/userprivil2.png')}}" height="32px" width="32px" alt="">
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <a href="javascript:void(0);">
-                                        <h5 style="color: #0779e4; font-weight: bold">Example title, a day in the life: Math</h5>
-                                    </a>
-                                    <small style="color: darkgray">By <b style="color: #4F4F4F">Jack Thomason</b></small>
-                                </div>
-                                <div class="col-5 col-md-2 d-flex align-items-center" style="font-weight: bold;color: #4F4F4F"><h5>#&nbsp;Topic</h5></div>
-                                <div class="col-5 col-md-3 d-flex align-items-center">
+                @foreach(array($talksPopular,$talksRecent,$talksMostReplies,$talksLatestUpdate) as $talks)
+                    {{--The first element, namely $talkPopular will show--}}
+                    @if($loop->iteration == 1)
+                        <div class="layui-tab-item layui-show">
+                    @else
+                        <div class="layui-tab-item">
+                    @endif
+                        {{--Individuals--}}
+                        @foreach($talks as $talk)
+                            <div class="card">
+                                <div class="card-body">
                                     <div class="row">
-                                        <div class="col"><b style="color: #111d5e;font-size: 18px">18129</b></div>
-                                        <div class="col" style="color: darkgray"><small>Views</small></div>
-                                        <div class="w-100"></div>
-                                        <div class="col"><b style="color: #111d5e;font-size: 18px">3118</b></div>
-                                        <div class="col" style="color: darkgray"><small>Replies</small></div>
+                                        <div class="col-2 col-md-1 d-flex align-items-center">
+                                            <img src="{{asset('imgs/site/userprivil'.$talk->user->userprivil.'.png')}}" height="32px" width="32px" alt="">
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <a href="javascript:void(0);">
+                                                <h5 style="color: #0779e4; font-weight: bold">{{$talk->ttit}}</h5>
+                                            </a>
+                                            <small style="color: darkgray">By
+                                                <a href="{{url('/public/myaccount/'.$talk->uid)}}" style="color: #4F4F4F; font-weight: bold">
+                                                    {{$talk->user->user->username}}
+                                                </a>
+                                            </small>
+                                        </div>
+                                        <div class="col-5 col-md-2 d-flex align-items-center" style="font-weight: bold;color: #4F4F4F"><h5>#&nbsp;{{$talk->topic->topicname}}</h5></div>
+                                        <div class="col-5 col-md-3 d-flex align-items-center">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <b style="color: #111d5e;font-size: 18px">
+                                                        {{$talk->tviews}}
+                                                    </b>
+                                                </div>
+                                                <div class="col" style="color: darkgray">
+                                                    <small>Views</small>
+                                                </div>
+                                                <div class="w-100"></div>
+                                                <div class="col">
+                                                    <b style="color: #111d5e;font-size: 18px">
+                                                        {{$talk->treplies}}
+                                                    </b>
+                                                </div>
+                                                <div class="col" style="color: darkgray">
+                                                    <small>Replies</small>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
+                        {{--end of individuals--}}
                     </div>
-                    {{--end of individuals--}}
+                @endforeach
 
-                </div>
-                <div class="layui-tab-item"></div>
-                <div class="layui-tab-item"></div>
-                <div class="layui-tab-item"></div>
+                {{--Search Result--}}
                 <div class="layui-tab-item"></div>
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function (){
+            // sending ajax to server if search bar is typed
+            $("#search-input").keyup(function (e){
+
+            });
+
+
+        })
+
+    </script>
 @endsection
