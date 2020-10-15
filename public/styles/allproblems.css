@@ -2,12 +2,12 @@ h2{
     margin-bottom: 50px;
 }
 
-hr{
-    margin-top: 70px;
-}
-
 .allproblems-area{
     margin-top: 60px;
+}
+
+.allproblems-area hr{
+    margin-top: 70px;
 }
 
 .card-deck-1,.card-deck-2{

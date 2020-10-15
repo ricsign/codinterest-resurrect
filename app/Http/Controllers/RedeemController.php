@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\UserInfo;
-use Illuminate\Http\Request;
 
 class RedeemController extends Controller
 {
-    public function redeempage(){
+    public function redeempage()
+    {
         return view('redeem');
     }
 
     // item 1: key, 2: 10 keys, 3: silver coder, 4: gold coder + 5 keys, 5: red coder + 50 keys
-    public function redeemitem($item){
+    public function redeemitem($item)
+    {
         // prices
         $keycost = 10;
         $tenkeyscost = 90;
@@ -22,7 +23,7 @@ class RedeemController extends Controller
 
         // 1. retrieve user's information
         $uid = session()->get('user')->uid;
-        $user = UserInfo::where('uid',$uid)->first();
+        $user = UserInfo::where('uid', $uid)->first();
         $usercoins = intval($user->usercoins);
         $userprivil = $user->userprivil;
         $userkeys = $user->userkeys;
@@ -39,7 +40,7 @@ class RedeemController extends Controller
                     if ($res) return redirect('/public/redeem')->with(
                         'successmsg',
                         'Congratulations, you have successfully redeemed 1 X Key,
-                         your current balance is ' . ($usercoins-$keycost) . ' coins'
+                         your current balance is ' . ($usercoins - $keycost) . ' coins'
                     );
                     else return redirect('/public/redeem')->with('errormsg', 'Sorry, there is an error occured. Please try again later');
                 } else return redirect('/public/redeem')->with('errormsg', 'Sorry, you are not qualified or your balance is not enough to redeem this item.');

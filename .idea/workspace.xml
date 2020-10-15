@@ -20,11 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f98f0c-19d7-45a2-9cd0-e9017ae10d2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Models/Talks.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Topics.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InfoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InfoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProblemsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProblemsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RankingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RankingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RedeemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RedeemController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubmissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubmissionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TalksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TalksController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/createtalk.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/createtalk.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/allproblems.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/allproblems.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/root.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/root.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/allproblems.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/allproblems.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/createtalk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/createtalk.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/talks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/talks.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -230,6 +238,7 @@
       <workItem from="1602636262485" duration="11519000" />
       <workItem from="1602687612040" duration="9537000" />
       <workItem from="1602724353389" duration="7483000" />
+      <workItem from="1602774371405" duration="8691000" />
     </task>
     <servers />
   </component>

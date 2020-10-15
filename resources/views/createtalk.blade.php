@@ -29,14 +29,15 @@
                     <span class="input-group-text" id="basic-addon1"><b>#</b></span>
                 </div>
                 <input type="text" class="form-control" id="maintopic" name="maintopic" aria-label="maintopic" aria-describedby="topic-small" value="{{old('maintopic')}}">
-                <small id="topic-small" class="form-text text-muted">Length 2 to 30. If no one used your topic entered, we will create a new one for you.</small>
+                <small id="topic-small" class="form-text text-muted">Length 2 to 20. If no one used your topic entered, we will create a new one for you.</small>
             </div>
         </div>
         <div class="form-group">
             <div class="row">
                 <div class="col">
                     <label for="content">Content(Markdown Supported)</label>
-                    <textarea class="form-control" id="content" name="content" rows="15" value="{{old('content')}}"></textarea>
+                    <textarea class="form-control" id="content" name="content" rows="15" value="{{old('content')}}" onkeyup="getLength();"></textarea>
+                    <small id="characters-len" style="color: red">0/20000</small>
                 </div>
                 <div class="col">
                     <label for="preview">Preview HTML</label>
@@ -90,7 +91,7 @@
                     maintopic:{
                         required: true,
                         minlength: 2,
-                        maxlength: 30,
+                        maxlength: 20,
                         regex: "^\\w{2,30}$"
                     },
                     content:{
@@ -109,5 +110,21 @@
             else
                 $("#post-talk").attr('disabled',false);
         }
+
+        // remind user the length
+        function getLength(){
+            let len = $('#content').val().length;
+            if(len <= 20000 && len >= 20){
+                $('#characters-len').html('<span style="color:green">'+len+'/20000</span>');
+            }
+            else{
+                $('#characters-len').html('<span style="color:red">'+len+'/20000</span>');
+            }
+        }
+
+        // prevent from leaving the page
+        window.onbeforeunload = function() {
+
+        };
     </script>
 @endsection

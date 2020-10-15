@@ -79,6 +79,9 @@ Route::group(['prefix'=>'public'],function () {
 
     // route of talk page
     Route::get('talks','TalksController@talks');
+
+    // route handling topic search result
+    Route::get('topicsearchresult','TalksController@topicsearchresult');
 });
 
 // protected page route
