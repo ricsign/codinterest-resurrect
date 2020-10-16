@@ -3,6 +3,7 @@ body{
     background-image: url("../imgs/site/signupbg.jpg");
     background-position: center;
     background-repeat: no-repeat;
+    margin-left: 0;
 }
 .sign-container{
     width: 40%;

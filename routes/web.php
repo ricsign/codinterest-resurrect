@@ -80,6 +80,10 @@ Route::group(['prefix'=>'public'],function () {
     // route of talk page
     Route::get('talks','TalksController@talks');
 
+    // route of single talk page
+    Route::get('getsingletalk/{tid}','TalksController@getsingletalk')
+        ->where('tid','[0-9]+');
+
     // route handling topic search result
     Route::get('topicsearchresult','TalksController@topicsearchresult');
 });

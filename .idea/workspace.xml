@@ -20,20 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f98f0c-19d7-45a2-9cd0-e9017ae10d2c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/styles/getsingletalk.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/getsingletalk.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InfoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InfoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProblemsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProblemsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RankingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RankingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RedeemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RedeemController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubmissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubmissionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TalksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TalksController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/allproblems.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/allproblems.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/root.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/root.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/allproblems.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/allproblems.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/createtalk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/createtalk.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/sign.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/sign.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/solution.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/solution.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/signup.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/signup.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/talks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/talks.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -239,6 +233,8 @@
       <workItem from="1602687612040" duration="9537000" />
       <workItem from="1602724353389" duration="7483000" />
       <workItem from="1602774371405" duration="8691000" />
+      <workItem from="1602813675154" duration="7119000" />
+      <workItem from="1602860629311" duration="8473000" />
     </task>
     <servers />
   </component>
@@ -277,17 +273,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="474" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1601757829324" />
-    <state x="514" y="376" key="NewPhpFileDialog" timestamp="1602690524456">
+    <state x="514" y="376" key="NewPhpFileDialog" timestamp="1602864644315">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="514" y="376" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1602690524456" />
+    <state x="514" y="376" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1602864644315" />
     <state x="149" y="0" key="SettingsEditor" timestamp="1601080244374">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="149" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1601080244374" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602729916961">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602865626431">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602729916961" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602865626431" />
   </component>
 </project>

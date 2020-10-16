@@ -64,7 +64,7 @@
                                             <img src="{{asset('imgs/site/userprivil'.$talk->user->userprivil.'.png')}}" height="32px" width="32px" alt="">
                                         </div>
                                         <div class="col-9 col-md-4">
-                                            <a href="javascript:void(0);">
+                                            <a href="{{url('/public/getsingletalk/'.$talk->tid)}}">
                                                 <h5 style="color: #0779e4; font-weight: bold">
                                                     @if(mb_strlen($talk->ttit) > 30)
                                                         {{mb_substr($talk->ttit,0,30)}}...
@@ -108,8 +108,10 @@
                 @endforeach
 
                 {{--Search Result--}}
-                <div class="layui-tab-item">
-                    <div><h3 style="margin-top: 50px;color: #7F7F7F;text-align: center" id="topic-msg-box">No Result</h3></div>
+                <div class="layui-tab-item search-res-tab">
+                    <h3 style="margin-top: 50px;color: #7F7F7F;text-align: center" id="topic-msg-box">
+                        No Result
+                    </h3>
                 </div>
             </div>
         </div>
@@ -121,7 +123,7 @@
             $("#topic-search").keyup(function (){
                 // 1. get input and validate
                 let userInput = $('#topic-search').val();
-                // 2. send ajax to the server
+                // 2. send ajax to the server, receive msg, change `search result` tab
                 $.ajax({
                     url: "{{url('/public/topicsearchresult')}}",
                     dataType: 'json',
@@ -132,14 +134,19 @@
                         "userInput": userInput,
                     },
                     success:function (data){
+                        $('.layui-tab-item').removeClass('layui-show');
+                        $('.search-res-tab').addClass('layui-show');
 
+                        if(data.status === -1){
+                            $('#topic-msg-box').html(data.data);
+                        } else{
+                            $('.search-res-tab').html(data.data);
+                        }
                     },
                     error: function (){
                         $('#topic-msg-box').text('ಠ_ಠ An Error Just Occurred');
                     }
                 });
-
-                // 3. receive msg, change `search result` tab
             });
         })
     </script>

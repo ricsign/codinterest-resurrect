@@ -89,9 +89,33 @@ class TalksController extends Controller
             }
         }
 
-        if(count($res) > 0)
-            return ['status'=>1, 'data'=>$res];
+
+        if(count($res) > 0){
+            $data = "";
+            foreach($res as $talk){
+                $data .= '<a href="'.url('/public/getsingletalk/'.$talk->tid).'" style="color: #0779e4; font-weight: bold">'.
+                    $talk->ttit.
+                    '</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span style="color:darkgray">By</span>&nbsp;&nbsp;&nbsp;
+                    <a href="'.url('/public/myaccount/'.$talk->uid).'">'.
+                    $talk->user->user->username.
+                    '</a><br><br>';
+            }
+            return ['status'=>1, 'data' => $data];
+        }
         else
             return ['status'=>-1, 'data'=>'No Result'];
+    }
+
+
+    // getsingle talk view
+    function getsingletalk($tid){
+
+
+        $talk = Talks::where('tid',$tid)->first();
+        if(!$talk) return redirect('/public/talks');
+        // add talk's view count
+        $talk->increment('tviews');
+        return view('getsingletalk',compact('talk'));
     }
 }
