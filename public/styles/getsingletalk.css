@@ -1,3 +1,22 @@
+.talk-content{
+    clear: both;
+    text-align: left;
+    margin: auto;
+    text-indent: 40px;
+    line-height: 1.7;
+    width: 100%;
+}
+
 .talk-content h1, .talk-content h2, .talk-content h3{
     font-size: 20px;
+}
+
+
+.talk-footer{
+    margin-left: 0;
+    text-align: left;
+}
+
+.talk-footer div{
+    display: inline-block;
 }

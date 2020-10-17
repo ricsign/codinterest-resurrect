@@ -30,7 +30,7 @@
                     <th scope="row">{{$loop->iteration}}</th>
                 @endif
 
-                <td><a href="{{url('/public/myaccount/'.$user->user->uid)}}">{{$user->user->username}}</a></td>
+                <td><a href="{{url('/public/myaccount/'.$user->user->uid)}}">{{$user->user->username}} {{session()->get('user') && session()->get('user')->uid == $user->uid ? " (me)":""}}</a></td>
                 <td>{{$user->userac}}</td>
                 @if($user->usersubmission == 0)
                     <td>N/A</td>

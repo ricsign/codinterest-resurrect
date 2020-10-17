@@ -122,6 +122,12 @@ Route::group(['prefix'=>'protected','middleware'=>'checksigned'],function (){
     // post a talk(page)
     Route::get('createtalk','TalksController@createtalkpage');
 
+    // edit a talk(page)
+    Route::get('edittalk/{tid}','TalksController@edittalkpage');
+
     // post a talk(handling)
     Route::post('newtalk','TalksController@newtalk');
+
+    // edit a talk(page)
+    Route::post('handleedittalk','TalksController@handleedittalk');
 });

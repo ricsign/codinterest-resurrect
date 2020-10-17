@@ -20,15 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f98f0c-19d7-45a2-9cd0-e9017ae10d2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/styles/getsingletalk.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/getsingletalk.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imgs/site/edit.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TalksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TalksController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/sign.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/sign.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/solution.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/solution.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/scripts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/signup.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/signup.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/talks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/talks.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/getsingletalk.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/getsingletalk.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/createtalk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/createtalk.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/getsingletalk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/getsingletalk.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/ranking.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ranking.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -235,6 +233,8 @@
       <workItem from="1602774371405" duration="8691000" />
       <workItem from="1602813675154" duration="7119000" />
       <workItem from="1602860629311" duration="8473000" />
+      <workItem from="1602900359060" duration="3732000" />
+      <workItem from="1602951226074" duration="9042000" />
     </task>
     <servers />
   </component>

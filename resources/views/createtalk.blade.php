@@ -3,7 +3,12 @@
 @section('main')
     <link rel="stylesheet" href="{{asset('styles/createtalk.css')}}">
 
-    <h2 class="title">Create A New Talk</h2>
+    @if(isset($oldttit))
+        <h2 class="title">Edit Talk</h2>
+    @else
+        <h2 class="title">Create A New Talk</h2>
+    @endif
+
     <br>
     @if (count($errors) > 0)
         <div class="alert alert-danger">
@@ -15,11 +20,13 @@
         </div>
     @endif
     <br>
-    <form id="createtalk-form" action="{{url('/protected/newtalk')}}" method="post">
+
+    <form id="createtalk-form" action="{{isset($oldtid) ? url('/protected/handleedittalk'): url('/protected/newtalk')}}" method="post">
         @csrf
+        <input type="hidden" name="oldtid" value="{{isset($oldtid) ? $oldtid : -1}}">
         <div class="form-group">
             <label for="talktitle">Talk Title</label>
-            <input type="text" class="form-control" id="talktitle" name="talktitle" aria-describedby="talktitle-small" placeholder="My First Talk" style="width: 40%" value="{{old('talktitle')}}">
+            <input type="text" class="form-control" id="talktitle" name="talktitle" aria-describedby="talktitle-small" placeholder="My First Talk" style="width: 40%" value="{{isset($oldttit) ? $oldttit : old('talktitle')}}">
             <small id="talktitle-small" class="form-text text-muted" style="width: 40%">Name your talk with an appropriate title with length of 5 to 50.</small>
         </div>
         <div class="form-group">
@@ -28,7 +35,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"><b>#</b></span>
                 </div>
-                <input type="text" class="form-control" id="maintopic" name="maintopic" aria-label="maintopic" aria-describedby="topic-small" value="{{old('maintopic')}}">
+                <input type="text" class="form-control" id="maintopic" name="maintopic" aria-label="maintopic" aria-describedby="topic-small" value="{{isset($oldtopicname)? $oldtopicname: old('maintopic')}}">
                 <small id="topic-small" class="form-text text-muted">Length 2 to 20. If no one used your topic entered, we will create a new one for you.</small>
             </div>
         </div>
@@ -36,7 +43,7 @@
             <div class="row">
                 <div class="col">
                     <label for="content">Content(Markdown Supported)</label>
-                    <textarea class="form-control" id="content" name="content" rows="15" value="{{old('content')}}" onkeyup="getLength();"></textarea>
+                    <textarea class="form-control" id="content" name="content" rows="15" onkeyup="getLength();">{{isset($oldtcontent)? $oldtcontent: old('content')}}</textarea>
                     <small id="characters-len" style="color: red">0/20000</small>
                 </div>
                 <div class="col">
