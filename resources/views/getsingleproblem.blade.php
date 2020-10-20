@@ -77,7 +77,11 @@
                 Only core idea will be shown, the solution trims the non-algorithmic part
                 such as handling input, prompt, and etc.
             </h6>
-            <a href="{{url('/protected/solution/'.$problem->pid)}}" class="btn btn-primary btn-lg btn-block submit">Check Core Solution</a>
+            <a href="{{url('/protected/solution/'.$problem->pid)}}" class="btn btn-primary btn-lg btn-block submit" >Check Core Solution</a>
+            <br>
+            <button class="btn btn-success btn-lg btn-block" onclick="location = '{{url('/public/getsingleproblem/'.strval($problem->pid+1))}}'" style="margin-top:20px">
+                Next Problem
+            </button>
         @else
             <div class="input-group-prepend">
                 <span class="input-group-text">Your Answer</span>
@@ -92,12 +96,19 @@
             <button class="btn btn-primary btn-lg btn-block submit" id="submit">
                 Submit
             </button>
+            <br>
+            <button class="btn btn-success btn-lg btn-block" onclick="location = '{{url('/public/getsingleproblem/'.strval($problem->pid+1))}}'" style="margin-top:20px">
+                Next Problem
+            </button>
+            <br>
             {{--verdict--}}
             <div>
                 <div id="verdict"></div><br>
                 <div id="verdict-description"></div>
             </div>
+
         @endif
+
     </div>
 
     <script>

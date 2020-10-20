@@ -86,6 +86,11 @@ Route::group(['prefix'=>'public'],function () {
 
     // route handling topic search result
     Route::get('topicsearchresult','TalksController@topicsearchresult');
+
+    // choose topics
+    Route::get('choosetopics/{tids}','TalksController@choosetopics')
+        ->where('tids','[0-9&]+');
+    Route::get('choosetopics','TalksController@choosetopics');
 });
 
 // protected page route

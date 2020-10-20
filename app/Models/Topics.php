@@ -12,7 +12,7 @@ class Topics extends Model
     public $incrementing = true;
     public $timestamps = false;
 
-    protected $fillable = ['topicid','topicname','uid','topicbelongsto'];
+    protected $fillable = ['topicid','topicname','topiccolor','uid','topicbelongsto'];
 
     // only enable created_at, not updated_at
     public static function boot(){

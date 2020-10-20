@@ -11,7 +11,7 @@
         <br>
         <h2>{{$talk->ttit}}</h2>
         <br>
-        <div style="font-weight: bold;color: #4F4F4F; float:right"><h5>#&nbsp;{{$talk->topic->topicname}}</h5></div>
+        <div style="font-weight: bold;color: white; float:right"><h5 style=" background-color: rgb({{$talk->topic->topiccolor}}); padding: 5px 10px; border-radius: 10px">#&nbsp;{{$talk->topic->topicname}}</h5></div>
         <br><br>
         <div class="talk-content">
             {!! \App\Tools\GeneralTools::convert_markdown_to_html($talk->tcontent) !!}
@@ -85,8 +85,6 @@
             </div>
         </div>
     </div>
-
-
 
 
 

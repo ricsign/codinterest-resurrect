@@ -66,7 +66,8 @@ class TalksController extends Controller
             $topic = Topics::create([
                 'topicname' => ucfirst(strtolower(trim($request->input('maintopic')))),
                 'uid' => session()->get('user')->uid,
-                'topicbelongsto' => 0
+                'topicbelongsto' => 0,
+                'topiccolor' => rand(0,150).','.rand(0,150).','.rand(0,150)
             ]);
             $topicId = $topic->topicid;
         }
@@ -128,7 +129,8 @@ class TalksController extends Controller
                 $topic = Topics::create([
                     'topicname' => ucfirst(strtolower(trim($request->input('maintopic')))),
                     'uid' => session()->get('user')->uid,
-                    'topicbelongsto' => 0
+                    'topicbelongsto' => 0,
+                    'topiccolor' => rand(0,150).','.rand(0,150).','.rand(0,150)
                 ]);
                 $topicId = $topic->topicid;
             }
@@ -190,8 +192,6 @@ class TalksController extends Controller
 
     // getsingle talk view
     function getsingletalk($tid){
-
-
         $talk = Talks::where('tid',$tid)->first();
         if(!$talk) return redirect('/public/talks');
         // add talk's view count
@@ -199,6 +199,22 @@ class TalksController extends Controller
         $talk->timestamps = false;
         $talk->save();
         return view('getsingletalk',compact('talk'));
+    }
+
+
+    // choosing topics
+    function choosetopics($tids=null){
+        $populartopics = Topics::orderBy("topicbelongsto","desc")->limit(30)->get();
+        $newtopics = Topics::orderBy("topicId","desc")->limit(30)->get();
+        if(!$tids) return view('choosetopics',compact('populartopics','newtopics'));
+
+        $tidsarray = array_unique(explode('&',$tids));
+
+        $talks = Talks::whereIn("topicid",$tidsarray)->orderBy("tviews","desc")->limit(50)->get();
+        $selectedtopics = Topics::whereIn("topicid",$tidsarray)->get();
+
+        return view('choosetopics',compact('populartopics','newtopics',"talks","selectedtopics"));
+
     }
 
 

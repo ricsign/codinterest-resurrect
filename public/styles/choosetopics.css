@@ -1,0 +1,4 @@
+.topics-tabs .list-group-item:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+}

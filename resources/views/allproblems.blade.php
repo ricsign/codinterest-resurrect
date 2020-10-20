@@ -79,13 +79,15 @@
             </div>
         </div>
     </div>
-
+    <br>
     <hr>
     {{--all problems area--}}
     <div class="allproblems-area">
         <h3 class="title">All Problems</h3>
 
         {{--attempted & rejected progress--}}
+        <a redirect="{{url('/public/getsingleproblem/')}}" onclick="jumptoproblem(this)"  class="btn btn-primary">Random Problem</a>
+        <br><br>
         <div class="progress">
             <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar"
                  title="Solved {{count($solved)}}" style="width: {{count($solved)/count($problems)*100}}%"
@@ -148,4 +150,10 @@
         <br><br>
         <div class="pagination justify-content-center">{{$problems->links()}}</div>
     </div>
+
+    <script>
+        function jumptoproblem(obj){
+            location = obj.getAttribute('redirect') + "/" + (Math.floor(Math.random() * {{count($problems)}}) + 1);
+        }
+    </script>
 @endsection
