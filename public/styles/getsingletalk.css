@@ -20,3 +20,48 @@
 .talk-footer div{
     display: inline-block;
 }
+
+.delete{
+    color: red;
+}
+
+.delete:hover{
+    cursor: pointer;
+}
+
+.display-replies{
+    text-align: left;
+}
+
+.display-replies h1, .display-replies h2, .display-replies h3{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.display-replies h4, .display-replies h5, .display-replies h6{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.display-reply-content{
+    background: rgb(245,245,245);
+    padding: 15px 15px 2px 40px;
+    margin: 20px auto 0 auto;
+    border-radius: 20px;
+}
+
+.level-number{
+    color: #f08a5d;
+    float: right;
+}
+
+.profile{
+    display: inline;
+    clear: both;
+}
+
+.post-time{
+    color: silver;
+    margin: 5px auto 20px 5px;
+    display: inline-block;
+}

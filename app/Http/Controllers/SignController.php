@@ -47,6 +47,8 @@ class SignController extends Controller
         $builder->output();
     }
 
+
+    // activate account info
     public function emailactivation(Request $request)
     {
         // find user
@@ -66,6 +68,8 @@ class SignController extends Controller
         } else return redirect('/public/signup')->withErrors("Sorry, we're currently unable to activate your account, please try again!");
     }
 
+
+    // function that handle sign up request
     public function dosignup(Request $request)
     {
         // 1. validate user's input
@@ -107,7 +111,7 @@ class SignController extends Controller
 
         // 3. send activation link
         Mail::send('nonsite.emailactivation', ['user' => $user], function ($m) use ($user) {
-            $m->from('codinterest@noreply.com', 'Account Validation');
+            $m->from('codinterest@noreply.com', 'Account Activation');
             $m->to($user->email, $user->username)->subject('Codinterest Account Activation');
         });
         // 4. redirect to signin page
@@ -155,6 +159,55 @@ class SignController extends Controller
         session()->flush();
         return redirect('/public/signin');
     }
+
+    // reset the password page
+    public function resetpassword(Request $request){
+        // 1. find the user
+        $user = UserSign::where('uid',$request->input('uid'))->first();
+        if(!$user) return ['status'=>-1,'msg'=>'Failed to send the reset link, please try again!'];
+
+        // 2. send the reset link
+        Mail::send('nonsite.emailreset', ['user' => $user], function ($m) use ($user) {
+            $m->from('codinterest@noreply.com', 'Reset Your Password Now');
+            $m->to($user->email, $user->username)->subject('Codinterest Reset Password');
+        });
+        return ['status'=>1,'msg'=>'Reset email sent, please click the link to reset the password!'];
+    }
+
+    // reset password handling
+    public function handlereset(Request $request){
+        // 1. find user
+        $user = UserSign::findOrFail($request->uid);
+        if ($request->usertoken != $user->usertoken) return 'Invalid Activation! Please try again!';
+
+        // 2. return view to let user re-enter the password
+        return view('reenter-password',compact('user'));
+    }
+
+    // finish reset password
+    public function finishreset(Request $request){
+        // 1. validate
+        $this->validate($request, [
+            'password' => 'required|min:6',
+            'repassword' => 'required|same:password'
+        ]);
+
+        // 2. find user and compare token
+        $user = UserSign::where('uid',$request->input('uid'))->first();
+        if(!$user) return redirect('/public/signin')->withErrors('Failed to reset your password, please try again!');
+        if($request->input('usertoken') != $user->usertoken) return redirect('/public/signin')->withErrors('Failed to reset your password, please try again!');
+
+        // 3. update user's data, clear the session and redirect
+        $res = $user->update([
+            'password' => Hash::make($request->input('password')),
+            'usertoken' => md5('token' . $user->email . $user->username . time() . 'token2')
+        ]);
+        session()->flush();
+        if($res) return redirect('/public/signin')->with('msg','Congratulations! You successfully reset your password!');
+        return redirect('/public/signin')->withErrors('Failed to reset your password, please try again!');
+
+    }
+
 }
 
 

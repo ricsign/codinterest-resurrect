@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Replies;
 use App\Models\Talks;
 use App\Models\Topics;
 use Illuminate\Http\Request;
@@ -198,7 +199,11 @@ class TalksController extends Controller
         $talk->tviews++;
         $talk->timestamps = false;
         $talk->save();
-        return view('getsingletalk',compact('talk'));
+
+        // get replies
+        $replies = Replies::where('tid', $tid)->orderBy('created_at', 'desc')->simplePaginate(20);
+        $replies_size = count(Replies::where('tid', $tid)->get('rid'));
+        return view('getsingletalk',compact('talk','replies','replies_size'));
     }
 
 

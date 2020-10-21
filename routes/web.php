@@ -91,6 +91,17 @@ Route::group(['prefix'=>'public'],function () {
     Route::get('choosetopics/{tids}','TalksController@choosetopics')
         ->where('tids','[0-9&]+');
     Route::get('choosetopics','TalksController@choosetopics');
+
+    // reset password email sender
+    Route::get('resetpassword','SignController@resetpassword');
+
+    // reset password handler
+    Route::get('handlereset','SignController@handlereset');
+
+    // reset password finisher
+    Route::post('finishreset','SignController@finishreset');
+
+
 });
 
 // protected page route
@@ -135,4 +146,12 @@ Route::group(['prefix'=>'protected','middleware'=>'checksigned'],function (){
 
     // edit a talk(page)
     Route::post('handleedittalk','TalksController@handleedittalk');
+
+    // post a reply
+    Route::post('postreply','CommentsController@postreply');
+
+    // delete reply
+    Route::get('deletereply/{crid}','CommentsController@deletereply')
+        ->where('rid','[0-9]+');
+
 });

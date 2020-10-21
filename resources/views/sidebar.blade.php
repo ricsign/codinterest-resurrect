@@ -37,6 +37,13 @@
             @endforeach
         </dl>
     </li>
+    <li class="layui-nav-item">
+        <a href="javascript:">Talks</a>
+        <dl class="layui-nav-child">
+            <dd><a href="{{url('/public/talks')}}">All Talks</a></dd>
+            <dd><a href="{{url('/public/choosetopics')}}">Topic Searcher</a></dd>
+        </dl>
+    </li>
     <li class="layui-nav-item"><a href="{{url('/public/ranking')}}">Ranking</a></li>
     <li class="layui-nav-item">
         <a href="javascript:">Explore</a>

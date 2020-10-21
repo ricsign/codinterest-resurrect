@@ -67,7 +67,23 @@
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
-                <form action="" method="post">
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @elseif (session()->get('reply-success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{session()->get('reply-success')}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+                <form action="{{'/protected/postreply'}}" method="post">
                     {{csrf_field()}}
                     <input type="hidden" value="{{$talk->tid}}" name="tid">
                     <label for="compose-textarea">Reply (Maximum 2000 characters, Markdown is supported)</label>
@@ -84,6 +100,29 @@
             <div class="layui-tab-item" id="markdown-syntax">
             </div>
         </div>
+    </div>
+
+    {{--replies section (displaying)--}}
+    <div class="display-replies">
+        @foreach($replies as $reply)
+            <div>
+                <img src="{{asset('imgs/site/userprivil'.$reply->user->userprivil.'.png')}}" alt="user-profile-photo" width="20px" height="20px" class="profile"> &nbsp;&nbsp;&nbsp;
+                <a href="{{url('/public/myaccount/'.$reply->uid)}}"><b>{{$reply->user->user->username}}</b></a>
+                <small class="level-number">
+                    #{{$replies_size-(($replies ->currentpage()-1) * $replies ->perpage() + $loop->iteration)+1}}
+                    @if(session()->get('user') && session()->get('user')->uid == $reply->uid)
+                        &nbsp;(Me)
+                    @endif
+                </small>
+                <div class="display-reply-content">{!! \App\Tools\GeneralTools::convert_markdown_to_html($reply->rcontent) !!}</div>
+                <small class="post-time">{{$reply->created_at}}</small>
+                @if(session()->get('user') && session()->get('user')->uid == $reply->uid)
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <small class="delete" onclick="deleteReply({{$reply->rid}})">Delete</small>
+                @endif
+            </div>
+        @endforeach
+        <div class="pagination justify-content-center">{{$replies->links()}}</div>
     </div>
 
 
@@ -110,6 +149,11 @@
             else{
                 $('#characters-len').html('<span style="color:red">'+len+'/2000</span>');
             }
+        }
+
+        function deleteReply(rid){
+            if(confirm("Are you sure to delete this reply?"))
+                location = "/protected/deletereply/"+rid;
         }
     </script>
 @endsection

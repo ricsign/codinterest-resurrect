@@ -20,16 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f98f0c-19d7-45a2-9cd0-e9017ae10d2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/styles/choosetopics.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/choosetopics.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Replies.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imgs/site/resetform.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/reset-password.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/nonsite/emailreset.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/reenter-password.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TalksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TalksController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Topics.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Topics.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/talks.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/talks.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/allproblems.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/allproblems.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/getsingleproblem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/getsingleproblem.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/getsingletalk.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/getsingletalk.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/getsingletalk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/getsingletalk.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/talks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/talks.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/myaccount.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/myaccount.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/nonsite/emailactivation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/nonsite/emailactivation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/scripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -240,6 +246,8 @@
       <workItem from="1602951226074" duration="12757000" />
       <workItem from="1603120087606" duration="8850000" />
       <workItem from="1603156764195" duration="4831000" />
+      <workItem from="1603206413705" duration="9218000" />
+      <workItem from="1603235992570" duration="6562000" />
     </task>
     <servers />
   </component>
@@ -270,6 +278,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="433" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1601084128330" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603208950049">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1603208950049" />
     <state x="331" y="257" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1" timestamp="1601150935850">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -278,14 +290,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602725140437" />
-    <state x="474" y="87" key="NewPhpClassDialog" timestamp="1601757829324">
+    <state x="474" y="87" key="NewPhpClassDialog" timestamp="1603208553145">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="474" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1601757829324" />
-    <state x="514" y="376" key="NewPhpFileDialog" timestamp="1603124777608">
+    <state x="474" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1603208553145" />
+    <state x="579" y="407" width="331" height="151" key="NewPhpFileDialog" timestamp="1603247074831">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="514" y="376" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1603124777608" />
+    <state x="579" y="407" width="331" height="151" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1603247074831" />
     <state x="149" y="0" key="SettingsEditor" timestamp="1601080244374">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

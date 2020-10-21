@@ -118,8 +118,12 @@
                 <h3>Account Operation</h3>
                 <p>You're signed in as a member.</p>
                 @if($is_signed)
+                    <button class="btn btn-success btn-lg" onclick="resetpassword()">Reset My Password</button><br><br>
                     <button class="btn btn-danger btn-lg" onclick="conf()">Sign Out</button>
                 @endif
+            </div>
+            <div id="reset-msg">
+
             </div>
             {{--footnote--}}
             <small>
@@ -134,9 +138,43 @@
 
 
     <script>
-        function conf() {
-            if(confirm('Are you sure to sign out? Your session will be closed.'))
-                location = '/protected/signout';
-        }
+        @if($is_signed)
+            function conf() {
+                if(confirm('Are you sure to sign out? Your session will be closed.'))
+                    location = '/protected/signout';
+            }
+
+
+            function resetpassword(){
+                $.ajax({
+                    url:"/public/resetpassword",
+                    type:"GET",
+                    dataType:"json",
+                    cache:false,
+                    async:false,
+                    data:{
+                        'uid':{{$user->uid}}
+                    },
+                    success: function (data){
+                        if(data.status === -1){
+                            $("#reset-msg").html(
+                                "<h5 class=\"text-danger\" style=\"margin: 50px 0 0 0\">" +
+                                data.msg +
+                                "</h5>");
+                        }else{
+                            $("#reset-msg").html("<h5 class=\"text-success\" style=\"margin: 50px 0 0 0\">" +
+                            data.msg +
+                            "</h5>");
+                        }
+                    },
+                    error: function (){
+                        $("#reset-msg").html("" +
+                            "<h5 class=\"text-danger\" style=\"margin: 50px 0 0 0\">" +
+                            "Sorry, we could not process your request right now, please try again later!" +
+                            "</h5>");
+                    }
+                });
+            }
+        @endif
     </script>
 @endsection

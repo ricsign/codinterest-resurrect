@@ -44,7 +44,8 @@
             We appreciate your support!
         </p>
         <hr>
-        <a href="http://127.0.0.1:8000/public/emailactivation?uid={{$user->uid??''}}&activate=instant_activation&usertoken={{$user->usertoken??''}}&validate=true">
+        <a href="{{url('/public/emailactivation?uid='.$user->uid.'&activate=instant_activation&usertoken='.$user->usertoken.'&validate=true')}}">
+
             <button type="button" id="activation-button">Activate</button>
         </a> {{--Change href after setting up the website--}}
     </div>
