@@ -1,16 +1,21 @@
 <?php
 
+// This controller controls all the logics regarding the redemption
+
 namespace App\Http\Controllers;
 
 use App\Models\UserInfo;
 
 class RedeemController extends Controller
 {
+    // return thr redeem view page
     public function redeempage()
     {
         return view('redeem');
     }
 
+
+    // redeem logic function
     // item 1: key, 2: 10 keys, 3: silver coder, 4: gold coder + 5 keys, 5: red coder + 50 keys
     public function redeemitem($item)
     {

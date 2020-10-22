@@ -1,5 +1,8 @@
 <?php
 
+// This controller controls all the logics regarding the sign in, sign out, sign up, and reset password
+// or all operations regarding account manipulations
+
 namespace App\Http\Controllers;
 
 use App\Models\UserInfo;
@@ -15,16 +18,21 @@ use function session;
 
 class SignController extends Controller
 {
+    // sign-up page
     public function signup()
     {
         return view('signup');
     }
 
+
+    // sign-in page
     public function signin()
     {
         return view('signin');
     }
 
+
+    // verification code
     public function vercode()
     {
         $phrase = new PhraseBuilder();
@@ -48,7 +56,7 @@ class SignController extends Controller
     }
 
 
-    // activate account info
+    // activate account information
     public function emailactivation(Request $request)
     {
         // find user
@@ -69,7 +77,7 @@ class SignController extends Controller
     }
 
 
-    // function that handle sign up request
+    // function that handle sign up request logic
     public function dosignup(Request $request)
     {
         // 1. validate user's input
@@ -120,6 +128,8 @@ class SignController extends Controller
         return redirect('/public/signin')->with('msg', 'You have successfully signed up, please check your email to activate your account, then sign back in again. (The activation email might be in the spams folder, the link may take up to 5 minutes to deliver.)');
     }
 
+
+    // handle sign in logic
     public function dosignin(Request $request)
     {
         // 1. validate user's input
@@ -154,11 +164,14 @@ class SignController extends Controller
         return redirect('/public/index')->with('success_signin', 'Welcome back, ' . $user->username . '!');
     }
 
+
+    // handle sign out logic
     public function signout()
     {
         session()->flush();
         return redirect('/public/signin');
     }
+
 
     // reset the password page
     public function resetpassword(Request $request){
@@ -174,7 +187,8 @@ class SignController extends Controller
         return ['status'=>1,'msg'=>'Reset email sent, please click the link to reset the password!'];
     }
 
-    // reset password handling
+
+    // reset password handling logic
     public function handlereset(Request $request){
         // 1. find user
         $user = UserSign::findOrFail($request->uid);
@@ -183,6 +197,7 @@ class SignController extends Controller
         // 2. return view to let user re-enter the password
         return view('reenter-password',compact('user'));
     }
+
 
     // finish reset password
     public function finishreset(Request $request){

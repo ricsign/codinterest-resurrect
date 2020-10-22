@@ -153,5 +153,4 @@ Route::group(['prefix'=>'protected','middleware'=>'checksigned'],function (){
     // delete reply
     Route::get('deletereply/{crid}','CommentsController@deletereply')
         ->where('rid','[0-9]+');
-
 });

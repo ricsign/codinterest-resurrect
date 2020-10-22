@@ -1,15 +1,18 @@
 <?php
 
+// This controller controls all the logics regarding the user's personal information
+
 namespace App\Http\Controllers;
 
 use App\Models\Comments;
 use App\Models\Submission;
+use App\Models\Talks;
 use App\Models\UserInfo;
 use App\Models\UserSign;
 
 class InfoController extends Controller
 {
-    // retreive user's information statically
+    // retrieve user's information statically
     public static function getUserInfoFromView($uid)
     {
         $user = UserInfo::where('uid', '=', $uid)->first();
@@ -17,7 +20,8 @@ class InfoController extends Controller
         return $user;
     }
 
-    // assumed user is signed in, this was checked by middleware checksigned
+
+    // myaccount page, assumed user is signed in, this was checked by middleware checksigned
     public function myaccount($uid)
     {
         // 1. is $uid passed a signed in account
@@ -41,7 +45,11 @@ class InfoController extends Controller
         $numcomments = 10;
         $comments = Comments::where('uid', $uid)->orderBy('cid', 'desc')->limit($numcomments)->get();
 
+        // 6. get user's most recent 10 talks
+        $numtalks = 10;
+        $talks = Talks::where('uid',$uid)->orderBy('tid','desc')->limit($numtalks)->get();
+
         // 5. success and redirect
-        return view('myaccount', compact('user', 'user_info', 'is_signed', 'submission', 'comments'));
+        return view('myaccount', compact('user', 'user_info', 'is_signed', 'submission', 'comments','talks'));
     }
 }

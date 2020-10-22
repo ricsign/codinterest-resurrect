@@ -1,5 +1,7 @@
 <?php
 
+// This controller controls all the logics regarding the ranking
+
 namespace App\Http\Controllers;
 
 use App\Models\UserInfo;

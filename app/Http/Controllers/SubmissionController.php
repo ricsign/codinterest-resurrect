@@ -1,5 +1,7 @@
 <?php
 
+// This controller controls all the logics regarding the submissions
+
 namespace App\Http\Controllers;
 
 use App\Models\Problems;
@@ -48,7 +50,8 @@ class SubmissionController extends Controller
         return redirect('/public/getsingleproblem/' . $pid);
     }
 
-    // processing submission
+
+    // processing submission logic
     public function submission(Request $request)
     {
         //1. retrieve problem and user information

@@ -1,61 +1,79 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+﻿# Documentation: how does my project work?
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Design Pattern
 
-## About Laravel
+![MVC Model](https://hackernoon.com/hn-images/0*7LesGFlzQzpGiP8m)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+#### Model
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+The central component of the pattern. It is the application's dynamic data structure, independent of the user interface. It directly manages the data, logic and rules of the application.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### View
 
-## Learning Laravel
+Any representation of information such as a chart, diagram or table. Multiple views of the same information are possible, such as a bar chart for management and a tabular view for accountants.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Controller
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Accepts input and converts it to commands for the model or view.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Structure
 
-### Premium Partners
+#### The App Directory
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+The  `app`  directory contains the core code of the application, such as Controllers and Models. 
 
-## Contributing
+#### The Bootstrap Directory
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+The  `bootstrap`  directory contains the  `app.php`  file which bootstraps the framework. This directory also houses a  `cache`  directory which contains framework generated files for performance optimization such as the route and services cache files.
 
-## Code of Conduct
+#### The Config Directory
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+The  `config`  directory, as the name implies, contains all of the application's configuration files.
 
-## Security Vulnerabilities
+#### The Database Directory
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+The  `database`  directory contains the database migrations, model factories, and seeds.
 
-## License
+#### The Public Directory
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The  `public`  directory contains the  `index.php`  file, which is the entry point for all requests entering the application and configures autoloading. This directory also houses the assets such as images, JavaScript, and CSS.
+
+#### The Resources Directory
+
+The  `resources`  directory contains your views as well as the raw, un-compiled assets such as LESS, SASS, or JavaScript. This directory also houses all of your language files.
+
+#### The Routes Directory
+
+The  `routes`  directory contains all of the route definitions for the application. By default, several route files are included with Laravel:  `web.php`,  `api.php`,  `console.php`  and  `channels.php`.
+
+The  `web.php`  file contains routes that the  `RouteServiceProvider`  places in the  `web`  middleware group, which provides session state, CSRF protection, and cookie encryption.
+
+#### The Storage Directory
+
+The  `storage`  directory contains all compiled Blade templates, file based sessions, file caches, and other files generated by the framework. This directory is segregated into  `app`,  `framework`, and  `logs`  directories. 
+
+
+#### The Tests Directory
+
+The  `tests`  directory contains the automated tests.
+
+#### The Vendor Directory
+
+The  `vendor`  directory contains all  [Composer](https://getcomposer.org/)  dependencies.
+
+## Languages
+
+#### Database
+MySQL
+
+#### Back End
+A pure PHP framework Laravel.
+
+#### Front End
+Blade View, HTML 5, CSS 3, JavaScript, Jquery (JS lib), Bootstrap (CSS lib), Layui (CSS lib), Markdown.
+
+#### Solution
+C++
+
+

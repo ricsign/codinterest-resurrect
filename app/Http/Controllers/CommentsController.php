@@ -1,5 +1,7 @@
 <?php
 
+// This controller controls all the logics regarding the comments & replies
+
 namespace App\Http\Controllers;
 
 use App\Models\Articles;
@@ -10,6 +12,7 @@ use Illuminate\Http\Request;
 
 class CommentsController extends Controller
 {
+    // function that handles post comment logics
     public function postcomment(Request $request)
     {
 
@@ -33,6 +36,7 @@ class CommentsController extends Controller
     }
 
 
+    // function that handles delete comment logic
     public function deletecomment($cid)
     {
         // 1. check if comment exists
@@ -52,6 +56,7 @@ class CommentsController extends Controller
     }
 
 
+    // function that handles post replies logics(talks)
     public function postreply(Request $request)
     {
 
@@ -75,6 +80,7 @@ class CommentsController extends Controller
     }
 
 
+    // function that handles delete replies logics(talks)
     public function deletereply($rid)
     {
         // 1. check if reply exists

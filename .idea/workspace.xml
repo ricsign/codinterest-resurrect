@@ -20,22 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f98f0c-19d7-45a2-9cd0-e9017ae10d2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Models/Replies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/imgs/site/resetform.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/reset-password.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/nonsite/emailreset.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/reenter-password.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InfoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InfoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProblemsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProblemsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RankingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RankingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RedeemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RedeemController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubmissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubmissionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TalksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TalksController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/getsingletalk.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/getsingletalk.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/getsingletalk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/getsingletalk.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/myaccount.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/myaccount.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/nonsite/emailactivation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/nonsite/emailactivation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/scripts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/solution.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/solution.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -248,6 +246,8 @@
       <workItem from="1603156764195" duration="4831000" />
       <workItem from="1603206413705" duration="9218000" />
       <workItem from="1603235992570" duration="6562000" />
+      <workItem from="1603292876708" duration="6546000" />
+      <workItem from="1603322877543" duration="2543000" />
     </task>
     <servers />
   </component>

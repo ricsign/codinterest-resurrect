@@ -87,6 +87,35 @@
             <div class="pagination justify-content-center">{{$submission->links()}}</div>
             <br>
 
+            <h4>Recent Talks</h4>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Topic</th>
+                    <th scope="col">Views</th>
+                    <th scope="col">Replies</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($talks as $talk)
+                    <tr>
+                        <td>{{$talk->ttit}}</td>
+                        <td>
+                            <h6 style="color: white; background-color: rgb({{$talk->topic->topiccolor}}); padding: 5px 10px; border-radius: 10px; max-width: 300px;">
+                                #&nbsp;{{$talk->topic->topicname}}
+                            </h6>
+                        </td>
+                        <td>{{$talk->tviews}}</td>
+                        <td>{{$talk->treplies}}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+
+
+
+            <br><br>
             <h4>Recent Comments</h4>
             <table class="table table-striped">
                 <thead>
@@ -111,6 +140,7 @@
                 </tbody>
             </table>
         </div>
+
         {{--Account--}}
         @if($is_signed)
             <hr>

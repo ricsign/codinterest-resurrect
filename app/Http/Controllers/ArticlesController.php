@@ -1,5 +1,7 @@
 <?php
 
+// This controller controls all the logics regarding the articles
+
 namespace App\Http\Controllers;
 
 use App\Models\Articles;
@@ -7,11 +9,14 @@ use App\Models\Comments;
 
 class ArticlesController extends Controller
 {
+    // function that allows view to get articles from controllers
     public static function allarticlesFromView()
     {
         return Articles::orderBy('aid', 'desc')->get();
     }
 
+
+    // function that yields the articles page
     public function allarticles()
     {
         $pop = Articles::orderBy('aviews', 'desc')->orderBy('acomments', 'desc');
@@ -24,6 +29,8 @@ class ArticlesController extends Controller
         return view('articles', compact('populararticles', 'newarticles', 'topfivenew', 'topfivepopular', 'allpopular'));
     }
 
+
+    // page that only get one individual article
     public function getsinglearticle($aid)
     {
 

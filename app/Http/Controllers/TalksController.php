@@ -1,5 +1,7 @@
 <?php
 
+// This controller controls all the logics regarding the talks
+
 namespace App\Http\Controllers;
 
 use App\Models\Replies;
@@ -21,10 +23,12 @@ class TalksController extends Controller
         return view('talks',compact('talksRecent','talksPopular','talksMostReplies','talksLatestUpdate'));
     }
 
+
     // function that returns a create talk page view
     public function createtalkpage(){
         return view('createtalk');
     }
+
 
     // function that returns a edit talk page view
     public function edittalkpage($tid){
@@ -45,6 +49,7 @@ class TalksController extends Controller
         // 4. return to view
         return view('createtalk',compact('oldtid','oldttit','oldtopicname','oldtcontent'));
     }
+
 
 
     // function that upload a new talk to the database
@@ -92,7 +97,7 @@ class TalksController extends Controller
     }
 
 
-    // function that handle the update request
+    // function that handle the update request logic
     public function handleedittalk(Request $request){
         // 1. validate information and sanity check
         $this->validate($request,[
@@ -172,7 +177,6 @@ class TalksController extends Controller
             }
         }
 
-
         if(count($res) > 0){
             $data = "";
             foreach($res as $talk){
@@ -219,7 +223,6 @@ class TalksController extends Controller
         $selectedtopics = Topics::whereIn("topicid",$tidsarray)->get();
 
         return view('choosetopics',compact('populartopics','newtopics',"talks","selectedtopics"));
-
     }
 
 

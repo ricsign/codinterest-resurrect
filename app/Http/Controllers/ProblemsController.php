@@ -1,5 +1,7 @@
 <?php
 
+// This controller controls all the logics regarding the problems
+
 namespace App\Http\Controllers;
 
 use App\Models\Problems;
@@ -13,8 +15,8 @@ class ProblemsController extends Controller
         return Problems::all();
     }
 
-    // get all accepted problems, no route will be connected to this
 
+    // get all accepted problems, no route will be connected to this
     public function allproblems()
     {
         // every page contains 30 problems
@@ -24,8 +26,8 @@ class ProblemsController extends Controller
         return view('allproblems', compact('problems', 'solved', 'attempted'));
     }
 
-    // all problems page
 
+    // all problems page
     public static function getsolved()
     {
         $solved = array();
@@ -42,8 +44,8 @@ class ProblemsController extends Controller
         return array_unique($solved);
     }
 
-    // all problems page(from a view)
 
+    // all problems page(from a view)
     public static function getattempted()
     {
         $attempted = array();
@@ -59,8 +61,8 @@ class ProblemsController extends Controller
         return array_unique($attempted);
     }
 
-    // getproblems page
 
+    // getproblems page
     public function getproblems($pterrid)
     {
         $problems = Problems::where('pterrid', $pterrid)->get();
@@ -68,6 +70,7 @@ class ProblemsController extends Controller
         $attempted = $this->getattempted();
         return view('getproblems', compact('problems', 'solved', 'attempted'));
     }
+
 
     // get single problem page
     public function getsingleproblem($pid)
@@ -88,6 +91,7 @@ class ProblemsController extends Controller
         return view('getsingleproblem', compact('problem', 'is_ac'));
     }
 
+    // function that returns the solution page
     public function solution($pid)
     {
         $uid = session()->get('user')->uid;
