@@ -226,6 +226,7 @@
 
     {{--JS--}}
     <script>
+        // default load layui
         layui.use('element', function(){
             let element = layui.element;
         });

@@ -60,6 +60,7 @@
 
 
 <script>
+    // default layui load
     layui.use('element', function(){
         let element = layui.element;
 

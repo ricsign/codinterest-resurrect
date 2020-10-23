@@ -118,7 +118,8 @@
                 location = obj.getAttribute('relocate');
         }
 
-        // ajax send submission to the server
+
+        // ajax sends submission to the server
         $(document).ready(function () {
             $("#submit").click(function () {
                 $("#submit").attr('disabled','disabled'); // set the button to disabled

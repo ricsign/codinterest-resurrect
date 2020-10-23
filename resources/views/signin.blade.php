@@ -60,6 +60,7 @@
 </body>
 @include('scripts')
 <script>
+    // form validation
     $().ready(function() {
         $("#signinForm").validate({
             rules: {

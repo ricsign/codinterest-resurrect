@@ -33,6 +33,7 @@
         });
     });
 
+
     // sidebar
     function toggleSideBar(){
         let sidebar = $('#sidebar');

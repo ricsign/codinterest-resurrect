@@ -62,7 +62,7 @@
                     {{csrf_field()}}
                     <input type="hidden" value="{{$article->aid}}" name="aid">
                     <label for="compose-textarea">Compose Your Comment (Maximum 2000 characters, Markdown is supported)</label>
-                    <textarea class="form-control" id="compose-textarea" name="compose-textarea" rows="5" onkeyup="getLength();" placeholder="Please be kind, do not use abusive languages."></textarea>
+                    <textarea class="form-control" id="compose-textarea" name="compose-textarea" rows="5" onkeyup="getlength();" placeholder="Please be kind, do not use abusive languages."></textarea>
                     <small id="characters-len" style="color: red">0/2000</small>
                     <button type="submit" class="btn btn-primary">Submit Comment</button>
                 </form>
@@ -104,10 +104,13 @@
 
     {{--JS--}}
     <script>
+        // default load
         layui.use('element', function(){
             let element = layui.element;
         });
 
+
+        // markdown conversion
         $(document).ready(function (){
             $('#markdown-syntax').load('{{asset('html/markdown-syntax.html')}}');
             $('#preview-btn').click(function (){
@@ -117,7 +120,9 @@
             });
         });
 
-        function getLength(){
+
+        // get the textarea's length
+        function getlength(){
             let len = $('#compose-textarea').val().length;
             if(len <= 2000 && len >= 5){
                 $('#characters-len').html('<span style="color:green">'+len+'/2000</span>');
@@ -127,6 +132,8 @@
             }
         }
 
+
+        // redirect to delete comment logic page
         function deleteComment(cid){
             if(confirm("Are you sure to delete this comment?"))
                 location = "/protected/deletecomment/"+cid;

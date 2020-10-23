@@ -102,12 +102,15 @@
 
 
     <script>
+        // default load layui
         layui.use('element', function(){
             let element = layui.element;
 
             //…
         });
 
+
+        // redirect to add topic page
         function addTopic(obj){
             let loc = String(window.location);
             if(!isNaN(Number(loc[loc.length-1])))

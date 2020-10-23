@@ -51,6 +51,7 @@
     </div>
 
     <script>
+        // pop up the contribution form
         function contribution(type){
             let target_top = $("#contribute").offset().top;
             // type 1: problem, type 2: article, type 3: section

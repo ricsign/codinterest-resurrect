@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="col">
                     <label for="content">Content(Markdown Supported)</label>
-                    <textarea class="form-control" id="content" name="content" rows="15" onkeyup="getLength();">{{isset($oldtcontent)? $oldtcontent: old('content')}}</textarea>
+                    <textarea class="form-control" id="content" name="content" rows="15" onkeyup="getlength();">{{isset($oldtcontent)? $oldtcontent: old('content')}}</textarea>
                     <small id="characters-len" style="color: red">0/20000</small>
                 </div>
                 <div class="col">
@@ -118,8 +118,9 @@
                 $("#post-talk").attr('disabled',false);
         }
 
+
         // remind user the length
-        function getLength(){
+        function getlength(){
             let len = $('#content').val().length;
             if(len <= 20000 && len >= 20){
                 $('#characters-len').html('<span style="color:green">'+len+'/20000</span>');
@@ -128,6 +129,7 @@
                 $('#characters-len').html('<span style="color:red">'+len+'/20000</span>');
             }
         }
+
 
         // prevent from leaving the page
         window.onbeforeunload = function() {

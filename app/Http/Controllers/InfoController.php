@@ -9,6 +9,7 @@ use App\Models\Submission;
 use App\Models\Talks;
 use App\Models\UserInfo;
 use App\Models\UserSign;
+use Illuminate\Http\Request;
 
 class InfoController extends Controller
 {
@@ -49,7 +50,29 @@ class InfoController extends Controller
         $numtalks = 10;
         $talks = Talks::where('uid',$uid)->orderBy('tid','desc')->limit($numtalks)->get();
 
-        // 5. success and redirect
+        // 7. success and redirect
         return view('myaccount', compact('user', 'user_info', 'is_signed', 'submission', 'comments','talks'));
+    }
+
+
+    // save user's personal description logic
+    public function saveuserdesc(Request $request){
+        // 1. validate
+        if(mb_strlen($request->input('userdesc')) > 1000 || mb_strlen($request->input('userdesc')) < 20)
+            return ['status' => -1, 'msg' => 'Please enter at least 20 characters and at most 1000 characters!'];
+
+        // 2. find user
+        $user = UserInfo::where('uid', $request->input('uid'))->first();
+        if(!$user) return ['status' => -1, 'msg' => 'Sorry, we could not update your information right now, please try again later!'];
+
+        // 3. update
+        $res = $user->update([
+            'userdesc' => $request->input('userdesc')
+        ]);
+
+        // 4. redirect
+        if($res)
+            return ['status' => 1, 'msg' => 'You successfully updated your personal information!'];
+        return ['status' => -1, 'msg' => 'Sorry, you did not change your information!'];
     }
 }

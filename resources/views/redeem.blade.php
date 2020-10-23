@@ -92,6 +92,7 @@
     </div>
 
     <script>
+        // confirmation to redeem
         function conf(obj) {
             if(confirm('Are you sure to redeem this item?'))
                 location = obj.getAttribute('value');

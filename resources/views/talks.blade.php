@@ -39,7 +39,7 @@
     </div>
     <br><br><br>
     <div class="content-container">
-        <div class="layui-tab layui-tab-brief">
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
             <ul class="layui-tab-title">
                 <li class="tab-titles layui-this"><b>Popular</b></li>
                 <li class="tab-titles"><b>Recent</b></li>
@@ -47,7 +47,6 @@
                 <li class="tab-titles"><b>Latest Update</b></li>
                 <li class="tab-titles search-title"><b>Search Result</b></li>
             </ul>
-        </div>
             <div class="layui-tab-content">
                 @foreach(array($talksPopular,$talksRecent,$talksMostReplies,$talksLatestUpdate) as $talks)
                     {{--The first element, namely $talkPopular will show--}}
@@ -134,18 +133,21 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
 
 
     <script>
+        // default layui load
         layui.use('element', function(){
             let element = layui.element;
 
             //…
         });
 
+
+        // sending ajax to server if search bar is typed
         $(document).ready(function (){
-            // sending ajax to server if search bar is typed
             $("#topic-search").keyup(function (){
                 // 1. get input and validate
                 let userInput = $('#topic-search').val();

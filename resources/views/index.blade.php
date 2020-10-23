@@ -95,6 +95,7 @@
     </div>
 
     <script>
+        // icon changes
         $(document).ready(function(){
             $("#githubButton").hover(function (){
                 $("#githubImg").attr("src","{{asset('imgs/site/github-black.png')}}");
@@ -112,6 +113,8 @@
                 $("#emailButton")[0].style.color = "white";
             });
 
+
+            // typewriting effect
             let i = 0, content = "Hello World !", speed = 200, title = document.getElementById("index-poster-title");
             function typeWriter() {
                 if (i < content.length) {

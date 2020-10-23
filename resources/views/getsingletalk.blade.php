@@ -87,7 +87,7 @@
                     {{csrf_field()}}
                     <input type="hidden" value="{{$talk->tid}}" name="tid">
                     <label for="compose-textarea">Reply (Maximum 2000 characters, Markdown is supported)</label>
-                    <textarea class="form-control" id="compose-textarea" name="compose-textarea" rows="5" onkeyup="getLength();" placeholder="Please be kind, do not use abusive languages. You can @ some people by @username@ at the beginning."></textarea>
+                    <textarea class="form-control" id="compose-textarea" name="compose-textarea" rows="5" onkeyup="getlength();" placeholder="Please be kind, do not use abusive languages. You can @ some people by @username@ at the beginning."></textarea>
                     <small id="characters-len" style="color: red">0/2000</small>
                     <br><br>
                     <button type="submit" class="btn btn-primary">Reply</button>
@@ -128,10 +128,13 @@
 
 
     <script>
+        // default layui load
         layui.use('element', function(){
             let element = layui.element;
         });
 
+
+        // markdown render
         $(document).ready(function (){
             $('#markdown-syntax').load('{{asset('html/markdown-syntax.html')}}');
             $('#preview-btn').click(function (){
@@ -141,7 +144,9 @@
             });
         });
 
-        function getLength(){
+
+        // get the textarea's length
+        function getlength(){
             let len = $('#compose-textarea').val().length;
             if(len <= 2000 && len >= 5){
                 $('#characters-len').html('<span style="color:green">'+len+'/2000</span>');
@@ -151,6 +156,8 @@
             }
         }
 
+
+        // redirect to delete reply page
         function deleteReply(rid){
             if(confirm("Are you sure to delete this reply?"))
                 location = "/protected/deletereply/"+rid;

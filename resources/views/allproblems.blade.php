@@ -1,6 +1,9 @@
 {{--This is the main area of all problems page, extending the root template--}}
 @extends('root')
 @section('main')
+    @php
+        $terridtoname = array(1 => 'Plain', 2 => 'River', 3 => 'Mountain', 4 => 'Desert', 5 => 'Plateau', 6 => 'Ocean');
+    @endphp
     <link rel="stylesheet" href="{{asset('styles/allproblems.css')}}">
 
     <h2>Problem Set</h2>
@@ -128,7 +131,7 @@
                     <th scope="row">{{$problem->pid}}</th>
                     <td><a href="{{url('/public/getsingleproblem/'.$problem->pid)}}">{{$problem->ptit}}</a></td>
                     <td>{{$problem->preward}}</td>
-                    <td>{{$problem->pterrid}}</td>
+                    <td>{{$terridtoname[$problem->pterrid]}}</td>
                     <td>{{$problem->psub}}</td>
                     @if($problem->psub == 0)
                         <td>N/A</td>
@@ -152,6 +155,7 @@
     </div>
 
     <script>
+        // jump to a random problem
         function jumptoproblem(obj){
             location = obj.getAttribute('redirect') + "/" + (Math.floor(Math.random() * {{count($problems)}}) + 1);
         }

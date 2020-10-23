@@ -28,7 +28,7 @@
                 are all written by myself, using C++ 11.
             </p>
             <p>
-                <a class="btn btn-outline-primary" href="{{'https://laravel.com/'}}">View details »</a>
+                <a class="btn btn-outline-primary" href="{{url('https://laravel.com/')}}">View details »</a>
             </p>
         </div>
         <div class="col-md-4 column">

@@ -101,13 +101,18 @@ Route::group(['prefix'=>'public'],function () {
     // reset password finisher
     Route::post('finishreset','SignController@finishreset');
 
-
+    // playground
+    Route::get('playground',function (){
+        return File::get(public_path().'/html/playground.html');
+    });
 });
 
 // protected page route
 // pages that must need a signed account to view
 // Middleware will be implemented
 Route::group(['prefix'=>'protected','middleware'=>'checksigned'],function (){
+    // processing personal description change
+    Route::post('saveuserdesc','InfoController@saveuserdesc');
 
     // processing signout
     Route::get('signout','SignController@signout');
