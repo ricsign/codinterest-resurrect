@@ -56,6 +56,14 @@
     cursor: pointer;
 }
 
+.reply{
+    color: orange;
+}
+
+.reply:hover{
+    cursor: pointer;
+}
+
 .display-comments{
     text-align: left;
 }

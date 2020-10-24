@@ -91,6 +91,8 @@
                 </small>
                 <div class="display-comment-content">{!! \App\Tools\GeneralTools::convert_markdown_to_html($comment->ccontent) !!}</div>
                 <small class="post-time">{{$comment->created_at}}</small>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <small class="reply" onclick="replyComment({{$comments_size-(($comments ->currentpage()-1) * $comments ->perpage() + $loop->iteration)+1}});">Reply</small>
                 @if(session()->get('user') && session()->get('user')->uid == $comment->uid)
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <small class="delete" onclick="deleteComment({{$comment->cid}});">Delete</small>
@@ -137,6 +139,13 @@
         function deleteComment(cid){
             if(confirm("Are you sure to delete this comment?"))
                 location = "/protected/deletecomment/"+cid;
+        }
+
+
+        // reply to a comment
+        function replyComment(level){
+            $('#compose-textarea').val('@'+level);
+            location.hash = '#compose-textarea';
         }
     </script>
 

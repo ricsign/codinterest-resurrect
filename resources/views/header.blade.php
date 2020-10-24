@@ -34,7 +34,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{url('/public/contribute')}}">Contribute</a>
                     <a class="dropdown-item" href="{{url('/public/redeem')}}">Redeem</a>
-                    <a class="dropdown-item" href="{{url('/public/recreation')}}">Recreation</a>
+                    <a class="dropdown-item" href="{{url('/public/playground')}}">Playground</a>
                 </div>
             </li>
         </ul>

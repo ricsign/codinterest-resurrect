@@ -50,6 +50,7 @@
         <dl class="layui-nav-child">
             <dd><a href="{{url('/public/contribute')}}">Contribute</a></dd>
             <dd><a href="{{url('/public/redeem')}}">Redeem</a></dd>
+            <dd><a href="{{url('/public/playground')}}">Playground</a></dd>
             <dd><a href="{{url('https://wmcicompsci.ca/')}}">WMCI CS</a></dd>
             <dd><a href="{{url('https://laravel.com/')}}">Laravel</a></dd>
             <dd><a href="{{url('https://www.cemc.uwaterloo.ca/')}}">Waterloo CEMC</a></dd>

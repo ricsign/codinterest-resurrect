@@ -1,5 +1,18 @@
 ﻿# Documentation: how does my project work?
 
+## Comments
+Name: Richard Shuai
+Date Start: September 8th
+Date Completed: October 23rd
+Class: Computer Science 30
+Teacher: Mr. Schellenberg
+Project: Capstone Coding Project (Codinterest)
+
+Extra For Expert:
+1. Knowledge from CS 30: Utilize lots of stuff learned in this semester, such as array, map, recursion, libraries and etc.
+2. Knowledge from outside the class: A considerable amount of code is from self-learning, I did not use others code (except libraries), majority of it is learned from official documentation.
+3. Effort: This website is a medium-scale program, I developed front end, back end, problems & solutions and database all by myself. I did put lots of effort in this project. On the way, I conquered a few challenging modules I've never done before: MVC, ajax, email activation and reset, captcha verification code and a lot more. During developing, my laptop crashed, so I lost at least 20% of my progress at that time, I have to revert to the previous version and set up a new local enviornment, therefore I have 2 repos on Github: codinterest and codinterest-resurrect. 
+
 ## Design Pattern
 
 ![MVC Model](https://hackernoon.com/hn-images/0*7LesGFlzQzpGiP8m)
@@ -77,3 +90,46 @@ Blade View, HTML 5, CSS 3, JavaScript, Jquery (JS lib), Bootstrap (CSS lib), Lay
 C++
 
 
+## Developing Process
+
+#### Plan a module
+Have a sense of where I am going to develop a module, how to set up the database, how to configure the model. 
+
+#### Start from static front-end (V)
+I'll first develop the front-end, this is my least favorite part of developing. I'm not much a design person, so it takes a lot of time to choose a font, color, background image and etc.
+
+#### Proceed to database & model (M)
+Then, I'll create a prototype database with the requirements, and then I'll set up the model.
+
+#### Proceed to controller \(C\)
+Controllers are where I implement logics, and connect views and models. It is essential for a module.
+
+#### Back to view (V)
+Replace all static data to dynamic data from controller.
+
+#### Review & Integration
+Then, I'll go back and forth between controllers and views, make sure it's functioning as expected. In the end, I'll integrate the module into the project.
+
+
+## Problems Process
+
+#### Find/Create a cool problem
+Find a problem online(usually leetcode and cemc) or create my own problems that I think it encompasses some important ideas.
+
+#### Write description
+Write down problem description
+
+#### Write solution
+Then, I'll figure a solution, and test it over and over again, making sure it's correct.
+
+#### Create testcases
+Yes, you're right, I have to type all testcases into my program and then run my program to get the answers. That is why a correct solution is essential
+
+#### Convert it to markdown
+Then, I'll go to a markdown editor(Stackedit) and reformat it.
+
+#### Export it as HTML
+After some refurbishing, I will export the md to html file.
+
+#### Upload to database
+Making sure everything is working properly, then, I'll upload my problem to the database.

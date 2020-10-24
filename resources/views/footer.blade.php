@@ -39,10 +39,10 @@
                 Extra practices can be found at LeetCode, CEMC,
                 Code Forces, Kick Start, Code Jam, Project Euler
                 and more! This website referred some problems' ideas
-                from LeetCode.
+                from LeetCode and CEMC.
             </p>
             <p>
-                <a class="btn btn-outline-primary" href="{{url('https://leetcode.com/')}}">View details »</a>
+                <a class="btn btn-outline-primary" href="{{url('https://www.cemc.uwaterloo.ca/')}}">View details »</a>
             </p>
         </div>
     </div>
