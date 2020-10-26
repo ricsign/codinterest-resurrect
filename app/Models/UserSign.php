@@ -1,6 +1,7 @@
 <?php
 
 //Model for user_sign Table
+
 namespace App\Models;
 
 

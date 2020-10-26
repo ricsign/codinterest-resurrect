@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="{{asset('styles/ranking.css')}}">
 
     <h2 class="title">Global Ranking</h2>
+
+    {{--ranking table--}}
     <table class="table table-striped">
         <thead>
         <tr>

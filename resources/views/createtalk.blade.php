@@ -21,13 +21,18 @@
     @endif
     <br>
 
-    <form id="createtalk-form" action="{{isset($oldtid) ? url('/protected/handleedittalk'): url('/protected/newtalk')}}" method="post">
+    {{--create talk form container--}}
+    <form id="createtalk-form" action="{{isset($oldtid) ? url('/protected/handleedittalk'): url('/protected/newtalk')}}"
+          method="post">
         @csrf
         <input type="hidden" name="oldtid" value="{{isset($oldtid) ? $oldtid : -1}}">
         <div class="form-group">
             <label for="talktitle">Talk Title</label>
-            <input type="text" class="form-control" id="talktitle" name="talktitle" aria-describedby="talktitle-small" placeholder="My First Talk" style="width: 40%" value="{{isset($oldttit) ? $oldttit : old('talktitle')}}">
-            <small id="talktitle-small" class="form-text text-muted" style="width: 40%">Name your talk with an appropriate title with length of 5 to 50.</small>
+            <input type="text" class="form-control" id="talktitle" name="talktitle" aria-describedby="talktitle-small"
+                   placeholder="My First Talk" style="width: 40%"
+                   value="{{isset($oldttit) ? $oldttit : old('talktitle')}}">
+            <small id="talktitle-small" class="form-text text-muted" style="width: 40%">Name your talk with an
+                appropriate title with length of 5 to 50.</small>
         </div>
         <div class="form-group">
             <label for="maintopic">Main Topic</label>
@@ -35,15 +40,18 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"><b>#</b></span>
                 </div>
-                <input type="text" class="form-control" id="maintopic" name="maintopic" aria-label="maintopic" aria-describedby="topic-small" value="{{isset($oldtopicname)? $oldtopicname: old('maintopic')}}">
-                <small id="topic-small" class="form-text text-muted">Length 2 to 20. If no one used your topic entered, we will create a new one for you.</small>
+                <input type="text" class="form-control" id="maintopic" name="maintopic" aria-label="maintopic"
+                       aria-describedby="topic-small" value="{{isset($oldtopicname)? $oldtopicname: old('maintopic')}}">
+                <small id="topic-small" class="form-text text-muted">Length 2 to 20. If no one used your topic entered,
+                    we will create a new one for you.</small>
             </div>
         </div>
         <div class="form-group">
             <div class="row">
                 <div class="col">
                     <label for="content">Content(Markdown Supported)</label>
-                    <textarea class="form-control" id="content" name="content" rows="15" onkeyup="getlength();">{{isset($oldtcontent)? $oldtcontent: old('content')}}</textarea>
+                    <textarea class="form-control" id="content" name="content" rows="15"
+                              onkeyup="getlength();">{{isset($oldtcontent)? $oldtcontent: old('content')}}</textarea>
                     <small id="characters-len" style="color: red">0/20000</small>
                 </div>
                 <div class="col">
@@ -59,7 +67,8 @@
         </div>
 
         {{--MarkDown References--}}
-        <button class="btn btn-success md-ref" type="button" data-toggle="collapse" data-target="#md-ref" aria-expanded="false" aria-controls="md-ref">
+        <button class="btn btn-success md-ref" type="button" data-toggle="collapse" data-target="#md-ref"
+                aria-expanded="false" aria-controls="md-ref">
             MarkDown References
         </button>
 
@@ -74,16 +83,16 @@
 
 
     <script>
-        $(document).ready(function (){
+        $(document).ready(function () {
             // load md syntax file
             $('#md-ref').load('{{asset('html/markdown-syntax.html')}}');
 
             // convert markdown to html
-            $("#content").keyup(function (e){
+            $("#content").keyup(function (e) {
                 let md = window.markdownit();
                 let result = md.render($("#content").val());
                 $("#preview").html(result);
-                $("#preview")[0].style.height = $("#preview").height+100+"px";
+                $("#preview")[0].style.height = $("#preview").height + 100 + "px";
             });
 
             // validate data
@@ -95,13 +104,13 @@
                         maxlength: 50,
                         regex: "^[A-Za-z0-9\\s]{5,50}$"
                     },
-                    maintopic:{
+                    maintopic: {
                         required: true,
                         minlength: 2,
                         maxlength: 20,
                         regex: "^\\w{2,30}$"
                     },
-                    content:{
+                    content: {
                         required: true,
                         minlength: 20,
                         maxlength: 20000
@@ -111,28 +120,27 @@
         });
 
         // toggle disability of submit button
-        function toggleSubmit(){
-            if(!$("#confirmation").attr('checked') && !$("#post-talk").attr('disabled'))
-                $("#post-talk").attr('disabled',true);
+        function toggleSubmit() {
+            if (!$("#confirmation").attr('checked') && !$("#post-talk").attr('disabled'))
+                $("#post-talk").attr('disabled', true);
             else
-                $("#post-talk").attr('disabled',false);
+                $("#post-talk").attr('disabled', false);
         }
 
 
         // remind user the length
-        function getlength(){
+        function getlength() {
             let len = $('#content').val().length;
-            if(len <= 20000 && len >= 20){
-                $('#characters-len').html('<span style="color:green">'+len+'/20000</span>');
-            }
-            else{
-                $('#characters-len').html('<span style="color:red">'+len+'/20000</span>');
+            if (len <= 20000 && len >= 20) {
+                $('#characters-len').html('<span style="color:green">' + len + '/20000</span>');
+            } else {
+                $('#characters-len').html('<span style="color:red">' + len + '/20000</span>');
             }
         }
 
 
         // prevent from leaving the page
-        window.onbeforeunload = function() {
+        window.onbeforeunload = function () {
 
         };
     </script>

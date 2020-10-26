@@ -16,6 +16,7 @@
 
     </style>
     <body>
+
     {{--Check if it's legally redirected--}}
     @unless(isset($user))
         <script>window.location={{url('/public/index')}}</script>

@@ -91,7 +91,9 @@ class SubmissionController extends Controller
             } else {
                 return ['status' => 0, 'msg' => 'Incorrect answer or answer format, please click submission tips for details.'];
             }
-        } //4. if answer is correct
+        }
+
+        //4. if answer is correct
         else {
             // update problem total submission and acceptance
             $problem->increment('psub');

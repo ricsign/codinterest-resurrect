@@ -1,5 +1,7 @@
 <?php
 
+//Model for comments Table
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;

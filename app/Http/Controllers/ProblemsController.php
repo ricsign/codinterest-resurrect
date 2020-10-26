@@ -19,8 +19,8 @@ class ProblemsController extends Controller
     // get all accepted problems, no route will be connected to this
     public function allproblems()
     {
-        // every page contains 30 problems
-        $problems = Problems::simplePaginate(30);
+        // every page contains 20 problems
+        $problems = Problems::all();
         $solved = $this->getsolved();
         $attempted = $this->getattempted();
         return view('allproblems', compact('problems', 'solved', 'attempted'));
@@ -90,6 +90,7 @@ class ProblemsController extends Controller
         }
         return view('getsingleproblem', compact('problem', 'is_ac'));
     }
+
 
     // function that returns the solution page
     public function solution($pid)

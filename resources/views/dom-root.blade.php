@@ -1,3 +1,4 @@
+{{--global JS DOM--}}
 <script>
     $(document).ready(function(){
         // previous button

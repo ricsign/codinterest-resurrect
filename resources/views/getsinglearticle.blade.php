@@ -4,10 +4,12 @@
     <link rel="stylesheet" href="{{asset('styles/getsinglearticle.css')}}">
 
     <img id="previous" src="{{asset('imgs/site/previous.png')}}" alt="previous">
+
     {{--article content--}}
     <div id="content-container">
         {!! $article->acontent !!}
     </div>
+
     {{--article footer--}}
     <div class="article-footer">
         <div>
@@ -31,6 +33,7 @@
     </div>
 
     <br><br><br>
+
     <h3 id='compose-h3'>Comments</h3>
     <br>
     {{--comment section (composing)--}}
@@ -61,8 +64,11 @@
                 <form action="{{url('/protected/postcomment')}}" method="post">
                     {{csrf_field()}}
                     <input type="hidden" value="{{$article->aid}}" name="aid">
-                    <label for="compose-textarea">Compose Your Comment (Maximum 2000 characters, Markdown is supported)</label>
-                    <textarea class="form-control" id="compose-textarea" name="compose-textarea" rows="5" onkeyup="getlength();" placeholder="Please be kind, do not use abusive languages."></textarea>
+                    <label for="compose-textarea">Compose Your Comment (Maximum 2000 characters, Markdown is
+                        supported)</label>
+                    <textarea class="form-control" id="compose-textarea" name="compose-textarea" rows="5"
+                              onkeyup="getlength();"
+                              placeholder="Please be kind, do not use abusive languages."></textarea>
                     <small id="characters-len" style="color: red">0/2000</small>
                     <button type="submit" class="btn btn-primary">Submit Comment</button>
                 </form>
@@ -81,7 +87,8 @@
     <div class="display-comments">
         @foreach($comments as $comment)
             <div>
-                <img src="{{asset('imgs/site/userprivil'.$comment->user->userprivil.'.png')}}" alt="user-profile-photo" width="20px" height="20px" class="profile"> &nbsp;&nbsp;&nbsp;
+                <img src="{{asset('imgs/site/userprivil'.$comment->user->userprivil.'.png')}}" alt="user-profile-photo"
+                     width="20px" height="20px" class="profile"> &nbsp;&nbsp;&nbsp;
                 <a href="{{url('/public/myaccount/'.$comment->uid)}}"><b>{{$comment->user->user->username}}</b></a>
                 <small class="level-number">
                     #{{$comments_size-(($comments ->currentpage()-1) * $comments ->perpage() + $loop->iteration)+1}}
@@ -89,10 +96,12 @@
                         &nbsp;(Me)
                     @endif
                 </small>
-                <div class="display-comment-content">{!! \App\Tools\GeneralTools::convert_markdown_to_html($comment->ccontent) !!}</div>
+                <div
+                    class="display-comment-content">{!! \App\Tools\GeneralTools::convert_markdown_to_html($comment->ccontent) !!}</div>
                 <small class="post-time">{{$comment->created_at}}</small>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <small class="reply" onclick="replyComment({{$comments_size-(($comments ->currentpage()-1) * $comments ->perpage() + $loop->iteration)+1}});">Reply</small>
+                <small class="reply"
+                       onclick="replyComment({{$comments_size-(($comments ->currentpage()-1) * $comments ->perpage() + $loop->iteration)+1}});">Reply</small>
                 @if(session()->get('user') && session()->get('user')->uid == $comment->uid)
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <small class="delete" onclick="deleteComment({{$comment->cid}});">Delete</small>
@@ -103,19 +112,18 @@
     </div>
 
 
-
     {{--JS--}}
     <script>
         // default load
-        layui.use('element', function(){
+        layui.use('element', function () {
             let element = layui.element;
         });
 
 
         // markdown conversion
-        $(document).ready(function (){
+        $(document).ready(function () {
             $('#markdown-syntax').load('{{asset('html/markdown-syntax.html')}}');
-            $('#preview-btn').click(function (){
+            $('#preview-btn').click(function () {
                 let md = window.markdownit();
                 let result = md.render($('#compose-textarea').val());
                 $('#preview-textarea').html(result);
@@ -124,27 +132,26 @@
 
 
         // get the textarea's length
-        function getlength(){
+        function getlength() {
             let len = $('#compose-textarea').val().length;
-            if(len <= 2000 && len >= 5){
-                $('#characters-len').html('<span style="color:green">'+len+'/2000</span>');
-            }
-            else{
-                $('#characters-len').html('<span style="color:red">'+len+'/2000</span>');
+            if (len <= 2000 && len >= 5) {
+                $('#characters-len').html('<span style="color:green">' + len + '/2000</span>');
+            } else {
+                $('#characters-len').html('<span style="color:red">' + len + '/2000</span>');
             }
         }
 
 
         // redirect to delete comment logic page
-        function deleteComment(cid){
-            if(confirm("Are you sure to delete this comment?"))
-                location = "/protected/deletecomment/"+cid;
+        function deleteComment(cid) {
+            if (confirm("Are you sure to delete this comment?"))
+                location = "/protected/deletecomment/" + cid;
         }
 
 
         // reply to a comment
-        function replyComment(level){
-            $('#compose-textarea').val('@'+level);
+        function replyComment(level) {
+            $('#compose-textarea').val('@' + level);
             location.hash = '#compose-textarea';
         }
     </script>

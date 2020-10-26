@@ -1,5 +1,7 @@
 <?php
 
+//Model for talks Table
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;

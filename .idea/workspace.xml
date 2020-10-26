@@ -20,13 +20,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3f98f0c-19d7-45a2-9cd0-e9017ae10d2c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/SQL/codinterest (1).sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/SQL/codinterest.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/SQL/codinterest.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reflection.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/getsinglearticle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/getsinglearticle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InfoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InfoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProblemsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProblemsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubmissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubmissionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TalksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TalksController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/checksigned.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/checksigned.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Articles.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Articles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Comments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Replies.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Replies.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Talks.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Talks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Topics.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Topics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/UserSign.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserSign.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr1 sol/absolute value solution.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr1 sol/armstrong numbers solution.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr1 sol/bossy number ii solution.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr1 sol/bossy number sol.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr1 sol/exclamation marks solution.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr1 sol/fruits decomposition solution.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr1/absolute value.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr1/armstrong numbers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr1/bossy number ii.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr1/bossy number.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr1/exclamation marks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr1/fruits decomposition.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr2 sol/holidays solution.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr2 sol/reborg bugs solution.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr2/holidays.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr2/reborg bugs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr4 sol/chameleon numbers solution.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr4 sol/fibonacci sequence solution.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr4/chameleon numbers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/problems/terr4/fibonacci sequence.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/allproblems.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/allproblems.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/articles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/articles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/choosetopics.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/choosetopics.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/contribute.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contribute.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/createtalk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/createtalk.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dom-root.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dom-root.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/getsinglearticle.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/getsinglearticle.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/getsingleproblem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/getsingleproblem.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/getsingletalk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/getsingletalk.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/myaccount.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/myaccount.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/ranking.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ranking.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/redeem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/redeem.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reenter-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reenter-password.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/scripts.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/signin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/signin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/signup.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/signup.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/solution.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/solution.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/styles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/styles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/talks.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/talks.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,6 +302,9 @@
       <workItem from="1603379483958" duration="7383000" />
       <workItem from="1603409862187" duration="6542000" />
       <workItem from="1603465658360" duration="5943000" />
+      <workItem from="1603558978197" duration="4604000" />
+      <workItem from="1603646823518" duration="2187000" />
+      <workItem from="1603748325396" duration="3810000" />
     </task>
     <servers />
   </component>

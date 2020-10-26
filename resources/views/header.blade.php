@@ -1,8 +1,11 @@
 {{--Common Header File--}}
 <link rel="stylesheet" href="{{\Illuminate\Support\Facades\URL::asset('styles/header.css')}}">
+
+{{--navigation bar--}}
 <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" onclick="toggleSideBar()" style="font-family: 'Lobster', cursive; font-size:26px">Codinterest</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -13,7 +16,8 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
                     Problems
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -28,13 +32,14 @@
                 <a class="nav-link" href="{{url('/public/talks')}}">Talks</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
                     Explore
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{url('/public/contribute')}}">Contribute</a>
                     <a class="dropdown-item" href="{{url('/public/redeem')}}">Redeem</a>
-                    <a class="dropdown-item" href="{{url('/public/playground')}}">Playground</a>
+                    <a class="dropdown-item" href="{{url('/public/playground')}}" target="_blank">Playground</a>
                 </div>
             </li>
         </ul>
@@ -52,8 +57,10 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <li class="nav-item">
                 <form class="form-inline">
-                    <input class="form-control mr-sm-2 input-sm" id="search-input" type="search" placeholder="Search Problem By ID" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" id="search-btn" type="submit">Search</button>
+                    <input class="form-control mr-sm-2 input-sm" id="search-input" type="search"
+                           placeholder="Search Problem By ID" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" id="search-btn" type="submit">Search
+                    </button>
                 </form>
             </li>
         </ul>
@@ -62,13 +69,13 @@
 
 <script>
     // redirect based on user's input
-    $("#search-btn").click(function (){
+    $("#search-btn").click(function () {
         let userInput = $("#search-input").val();
-        if(!userInput || !/^[0-9]*$/.test(userInput)){
+        if (!userInput || !/^[0-9]*$/.test(userInput)) {
             alert('Please enter a valid Problem ID!');
             return false;
         }
-        location = '/public/getsingleproblem/'+userInput;
+        location = '/public/getsingleproblem/' + userInput;
         return false;
     });
 </script>

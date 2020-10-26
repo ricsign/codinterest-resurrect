@@ -67,7 +67,10 @@
         </form>
     </div>
 </body>
+
 @include('scripts')
+
+
 <script>
     // jQuery form validation
     $().ready(function() {

@@ -15,7 +15,6 @@ class CommentsController extends Controller
     // function that handles post comment logics
     public function postcomment(Request $request)
     {
-
         // 1. validate user's data
         $this->validate($request, [
             'aid' => 'exists:App\Models\Articles,aid',
@@ -59,7 +58,6 @@ class CommentsController extends Controller
     // function that handles post replies logics(talks)
     public function postreply(Request $request)
     {
-
         // 1. validate user's data
         $this->validate($request, [
             'tid' => 'exists:App\Models\Talks,tid',

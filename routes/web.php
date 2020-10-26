@@ -1,5 +1,37 @@
 <?php
 
+//  Name: Richard Shuai
+//
+//  Date Start: September 8th
+//
+//  Date Completed: October 23rd
+//
+//  Class: Computer Science 30
+//
+//  Teacher: Mr. Schellenberg
+//
+//  Project: Capstone Coding Project (Codinterest)
+//
+//  Extra For Expert:
+//    1. Knowledge from CS 30: Utilize lots of stuff learned in this semester, such as array, map, recursion, object-oriented programming, libraries and etc.
+//    2. Knowledge from outside the class: A considerable amount of code is from self-learning, I did not use others code (except libraries), majority of it is learned from official documentation, and I implemented them on my own.
+//    3. Effort: This website is a medium-scale program, I developed front end, back end, problems & solutions and database all by myself.
+//               I did put lots of effort in this project. On the way, I conquered a few challenging modules I've never done before: MVC, ajax, email activation and reset, captcha verification code and a lot more.
+//               During developing, my laptop crashed, so I lost at least 20% of my progress at that time, I have to revert to the previous version and set up a new local enviornment, therefore I have 2 repos on Github: codinterest and codinterest-resurrect.
+//
+//  Note For Grading:
+//    To run laravel, you will need to install XAMPP(recommended)/Apache+MySQL and package manager Composer
+//
+//    ============================== IMPORTANT FILES INFORMATION ==============================
+//    All SQL files are stored in \App\SQL directory
+//    All controllers are stored in \App\Http\Controllers directory
+//    All models are stored in \App\Models directory
+//    All views are stored in \Resources\views directory
+//    All external JS, CSS, HTML, images, articles, problems are stored in \Public directory
+//    All configurations are stored in \Config directory
+//    All middlewares are stored in \App\Http\Middlewares directory
+
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +45,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// index page
 Route::get('/',function (){
     return redirect(url('/public/index'));
 });
@@ -24,6 +57,8 @@ Route::group(['prefix'=>'public'],function () {
     Route::get('index',function(){
         return view('index');
     });
+
+    // sign in and sign up page
     Route::get('signup','SignController@signup');
     Route::get('signin','SignController@signin');
 
@@ -106,6 +141,7 @@ Route::group(['prefix'=>'public'],function () {
         return File::get(public_path().'/html/playground.html');
     });
 });
+
 
 // protected page route
 // pages that must need a signed account to view

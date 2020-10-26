@@ -60,23 +60,25 @@
                 </div>
             </a>
             @foreach($topfivepopular as $article)
-                <a href="{{url('/public/getsinglearticle/'.$article->aid)}}" class="list-group-item list-group-item-action">
-                    <img src="{{asset('imgs/articles/aid'.$article->aid.'.jpg')}}" alt="" style="height:100%; width: 100%; margin-bottom: 20px">
+                <a href="{{url('/public/getsinglearticle/'.$article->aid)}}"
+                   class="list-group-item list-group-item-action">
+                    <img src="{{asset('imgs/articles/aid'.$article->aid.'.jpg')}}" alt=""
+                         style="height:100%; width: 100%; margin-bottom: 20px">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">{{$article->atit}}</h5>
                         @switch($article->catid)
                             @case(1)
-                                <small>Computer Science</small>
-                                @break
+                            <small>Computer Science</small>
+                            @break
                             @case(2)
-                                <small>Mathematics</small>
-                                @break
+                            <small>Mathematics</small>
+                            @break
                             @case(3)
-                                <small>Sciences & Technologies</small>
-                                @break
+                            <small>Sciences & Technologies</small>
+                            @break
                             @case(4)
-                                <small>Assorted Topics</small>
-                                @break
+                            <small>Assorted Topics</small>
+                            @break
                         @endswitch
                     </div>
                     <br>
@@ -101,8 +103,10 @@
                 </div>
             </a>
             @foreach($topfivenew as $article)
-                <a href="{{url('/public/getsinglearticle/'.$article->aid)}}" class="list-group-item list-group-item-action">
-                    <img src="{{asset('imgs/articles/aid'.$article->aid.'.jpg')}}" height="200px" alt="" style="width: 100%; margin-bottom: 20px">
+                <a href="{{url('/public/getsinglearticle/'.$article->aid)}}"
+                   class="list-group-item list-group-item-action">
+                    <img src="{{asset('imgs/articles/aid'.$article->aid.'.jpg')}}" height="200px" alt=""
+                         style="width: 100%; margin-bottom: 20px">
                     <div class="d-flex w-100 justify-content-between">
                         <br>
                         <h5 class="mb-1">{{$article->atit}}</h5>
@@ -173,16 +177,16 @@
                             <td>
                                 @switch($article->catid)
                                     @case(1)
-                                        Computer Science
+                                    Computer Science
                                     @break
                                     @case(2)
-                                        Mathematics
+                                    Mathematics
                                     @break
                                     @case(3)
-                                        Sciences & Technologies
+                                    Sciences & Technologies
                                     @break
                                     @case(4)
-                                        Assorted Topics
+                                    Assorted Topics
                                     @break
                                 @endswitch
                             </td>
@@ -212,7 +216,8 @@
                         @foreach($allpopular->where('catid',$i) as $article)
                             <tr>
                                 <th scope="row">{{$article->aid}}</th>
-                                <td><a href="{{url('/public/getsinglearticle/'.$article->aid)}}">{{$article->atit}}</a></td>
+                                <td><a href="{{url('/public/getsinglearticle/'.$article->aid)}}">{{$article->atit}}</a>
+                                </td>
                                 <td>{{$article->aviews}}</td>
                                 <td>{{$article->acomments}}</td>
                             </tr>
@@ -227,7 +232,7 @@
     {{--JS--}}
     <script>
         // default load layui
-        layui.use('element', function(){
+        layui.use('element', function () {
             let element = layui.element;
         });
     </script>

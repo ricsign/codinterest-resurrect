@@ -25,41 +25,62 @@
     <div>
         <p>
             {{--return to the main menu--}}
-            <button relocate="{{url('/public/getproblems/'.$problem->pterrid)}}" class="btn btn-secondary btn-sm" onclick="location = this.getAttribute('relocate')">
+            <button relocate="{{url('/public/getproblems/'.$problem->pterrid)}}" class="btn btn-secondary btn-sm"
+                    onclick="location = this.getAttribute('relocate')">
                 Return To Territory
             </button>
             {{--submission tip--}}
-            <button class="btn btn-info btn-sm sub-tip" type="button" data-toggle="collapse" data-target="#sub-tip-text" aria-expanded="false" aria-controls="sub-tips-text">
+            <button class="btn btn-info btn-sm sub-tip" type="button" data-toggle="collapse" data-target="#sub-tip-text"
+                    aria-expanded="false" aria-controls="sub-tips-text">
                 Submission Tips
             </button>
             {{--use key to skip--}}
             @unless($is_ac)
-                <button relocate="{{url('/protected/skip/'.$problem->pid)}}" class="btn btn-success btn-sm" id="skip" type="button" onclick="conf(this)">
+                <button relocate="{{url('/protected/skip/'.$problem->pid)}}" class="btn btn-success btn-sm" id="skip"
+                        type="button" onclick="conf(this)">
                     Skip This Problem
                 </button>
             @endunless
         </p>
         <div class="collapse" id="sub-tip-text">
             <div class="card card-body">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a semi-monitored submission system, which means this system will not
-                judge your submission based on your code but only on your final answer. Some problems may even not require programs.
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a semi-monitored submission system,
+                which means this system will not
+                judge your submission based on your code but only on your final answer. Some problems may even not
+                require programs.
                 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However, for coding problems, in order for you to effectively improve your coding skills, you should use
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;However, for coding problems, in order for
+                you to effectively improve your coding skills, you should use
                 the expected algorithms and your code should meet the minimal complexity. Some problems
                 are solvable with time complexity of O(2^n), but if the problem expects an O(n^3) solution,
                 your program should not exceed that time complexity, but feel free to write an O(n^2logn) solution.
                 Again, the submission system only judges your answer, not your actual program, but you
                 should try your best to ace the problems without cheating and violation, and be self-disciplined.
                 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For pure mathematical problems (in territory 5), you do not need to program.
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For pure mathematical problems (in territory
+                5), you do not need to program.
                 Some problems might prohibit using computer to solve.
                 <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The format of submission is expected as following:
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The format of submission is expected as
+                following:
                 <ol>
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. If the problem has one or more inputs and one output, you should enter your answer directly;</li>
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. If the problem has one or more inputs and multiple outputs (meaning that there are two or more outputs), you should always seperate your answer with an underscore _, for example, if your answers to 5 inputs are [12,60,9,8,-1], the correct format of submission will be 12_60_9_8_-1;</li>
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. If the problem's answer is a boolean, please use 0 or 1 to respectively represent false or true. This is because true or false representation might vary in different languages, 0 and 1 are consistent for all languages. for example, if your answers to 4 inputs are [true,true,false,true], the correct format of submission will be 1_1_0_1;</li>
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Your answer should only be numbers, English alphabets, underscores '_', period '.' and necessary spaces(If required).</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. If the problem has one or more
+                        inputs and one output, you should enter your answer directly;
+                    </li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. If the problem has one or more
+                        inputs and multiple outputs (meaning that there are two or more outputs), you should always
+                        seperate your answer with an underscore _, for example, if your answers to 5 inputs are
+                        [12,60,9,8,-1], the correct format of submission will be 12_60_9_8_-1;
+                    </li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. If the problem's answer is a
+                        boolean, please use 0 or 1 to respectively represent false or true. This is because true or
+                        false representation might vary in different languages, 0 and 1 are consistent for all
+                        languages. for example, if your answers to 4 inputs are [true,true,false,true], the correct
+                        format of submission will be 1_1_0_1;
+                    </li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Your answer should only be
+                        numbers, English alphabets, underscores '_', period '.' and necessary spaces(If required).
+                    </li>
                 </ol>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We wish you best luck.
             </div>
@@ -77,33 +98,41 @@
                 Only core idea will be shown, the solution trims the non-algorithmic part
                 such as handling input, prompt, and etc.
             </h6>
-            <a href="{{url('/protected/solution/'.$problem->pid)}}" class="btn btn-primary btn-lg btn-block submit" >Check Core Solution</a>
+            <a href="{{url('/protected/solution/'.$problem->pid)}}" class="btn btn-primary btn-lg btn-block submit">Check
+                Core Solution</a>
             <br>
-            <button class="btn btn-success btn-lg btn-block" onclick="location = '{{url('/public/getsingleproblem/'.strval($problem->pid+1))}}'" style="margin-top:20px">
+            <button class="btn btn-success btn-lg btn-block"
+                    onclick="location = '{{url('/public/getsingleproblem/'.strval($problem->pid+1))}}'"
+                    style="margin-top:20px">
                 Next Problem
             </button>
         @else
             <div class="input-group-prepend">
                 <span class="input-group-text">Your Answer</span>
             </div>
-            <textarea class="form-control answer" id="answer" aria-label="With textarea" ></textarea>
+            <textarea class="form-control answer" id="answer" aria-label="With textarea"></textarea>
             <p class="input-tip">
                 *Please make sure your answer matches the desired answer format,
                 if you're not sure,
-                please click the submission tips to find out more details. <br>The verdict will be shown at the bottom after you click submit.<br>
-                Every incorrect submission will result in <b>1</b> coin deduction. Please do not click submit multiple times.
+                please click the submission tips to find out more details. <br>The verdict will be shown at the bottom
+                after you click submit.<br>
+                Every incorrect submission will result in <b>1</b> coin deduction. Please do not click submit multiple
+                times.
             </p>
             <button class="btn btn-primary btn-lg btn-block submit" id="submit">
                 Submit
             </button>
             <br>
-            <button class="btn btn-success btn-lg btn-block" onclick="location = '{{url('/public/getsingleproblem/'.strval($problem->pid+1))}}'" style="margin-top:20px">
+            <button class="btn btn-success btn-lg btn-block"
+                    onclick="location = '{{url('/public/getsingleproblem/'.strval($problem->pid+1))}}'"
+                    style="margin-top:20px">
                 Next Problem
             </button>
             <br>
             {{--verdict--}}
             <div>
-                <div id="verdict"></div><br>
+                <div id="verdict"></div>
+                <br>
                 <div id="verdict-description"></div>
             </div>
 
@@ -114,7 +143,7 @@
     <script>
         // using key to skip request
         function conf(obj) {
-            if(confirm('You will not receive any coins, but this problem will be accepted. This operation is irreversible, are you sure to use 1 key to skip this problem? '))
+            if (confirm('You will not receive any coins, but this problem will be accepted. This operation is irreversible, are you sure to use 1 key to skip this problem? '))
                 location = obj.getAttribute('relocate');
         }
 
@@ -122,44 +151,44 @@
         // ajax sends submission to the server
         $(document).ready(function () {
             $("#submit").click(function () {
-                $("#submit").attr('disabled','disabled'); // set the button to disabled
+                $("#submit").attr('disabled', 'disabled'); // set the button to disabled
                 $("#submit").html('<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span><span class="sr-only">Loading...</span>') // set spinner
                 setTimeout(function () {
                     $.ajax({
-                        url:"/protected/submission",
-                        dataType:"json",
-                        type:"POST",
-                        cache:false,
-                        async:false,
-                        headers:{
+                        url: "/protected/submission",
+                        dataType: "json",
+                        type: "POST",
+                        cache: false,
+                        async: false,
+                        headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
                         data: {
                             "pid": {{$problem->pid}},
-                            "answer":$("#answer").val()
+                            "answer": $("#answer").val()
                         },
-                        success:function (data) {
-                            if(data.status === -1){
+                        success: function (data) {
+                            if (data.status === -1) {
                                 $("#verdict").html('<h3 class="text-warning" style="margin: 50px 0 0 0">Invalid</h3>');
-                                $("#verdict-description").html('<p class="text-warning">'+data.msg+'</p>');
-                            }else if(data.status === 0){
+                                $("#verdict-description").html('<p class="text-warning">' + data.msg + '</p>');
+                            } else if (data.status === 0) {
                                 $("#verdict").html('<h3 class="text-danger" style="margin: 50px 0 0 0">Rejected</h3>');
-                                $("#verdict-description").html('<p class="text-danger">'+data.msg+'</p>');
-                            }else if(data.status === 1){
+                                $("#verdict-description").html('<p class="text-danger">' + data.msg + '</p>');
+                            } else if (data.status === 1) {
                                 $("#verdict").html('<h3 class="text-success" style="margin: 50px 0 0 0">Accepted</h3>');
-                                $("#verdict-description").html('<p class="text-success">'+data.msg+'</p>');
+                                $("#verdict-description").html('<p class="text-success">' + data.msg + '</p>');
                             }
                             $("#submit").removeAttr('disabled');
                             $("#submit").html('Submit');
                         },
-                        error:function () {
+                        error: function () {
                             $("#verdict").html('<h3 class="text-danger" style="margin: 50px 0 0 0">Error</h3>');
                             $("#verdict-description").html("<p class='text-danger'>We cannot process your submission right now, you won't be negatively affected, please try again later.</p>");
                             $("#submit").removeAttr('disabled');
                             $("#submit").html('Submit');
                         }
                     })
-                },2000); // set timeout prevents user from repeatedly clicking and constantly sending ajax
+                }, 2000); // set timeout prevents user from repeatedly clicking and constantly sending ajax
             })
         })
     </script>

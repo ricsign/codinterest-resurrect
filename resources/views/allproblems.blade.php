@@ -82,8 +82,10 @@
             </div>
         </div>
     </div>
+
     <br>
     <hr>
+
     {{--all problems area--}}
     <div class="allproblems-area">
         <h3 class="title">All Problems</h3>
@@ -113,6 +115,7 @@
             </div>
         </div>
 
+        {{--problems table--}}
         <table class="table table-striped">
             <thead>
             <tr>
@@ -150,8 +153,6 @@
             @endforeach
             </tbody>
         </table>
-        <br><br>
-        <div class="pagination justify-content-center">{{$problems->links()}}</div>
     </div>
 
     <script>

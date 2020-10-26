@@ -1,5 +1,7 @@
 <?php
 
+//Model for replies Table
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;

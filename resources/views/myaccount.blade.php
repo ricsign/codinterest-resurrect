@@ -12,9 +12,11 @@
     </div>
 
     <img id="previous" src="{{asset('imgs/site/previous.png')}}" alt="previous" title="Return to the last page visited">
+
     {{--Main Block--}}
     <div class="main-block">
         <h2>User Profile</h2>
+
         {{--User Basic Information--}}
         <div id="user-sign">
             <h3>Basic Information</h3>
@@ -26,17 +28,20 @@
                 <br>
                 <li>Personal Description</li>
                 @if($is_signed)
-                    <textarea class="form-control" id="userdesc" rows="5" style="width:50%; margin: auto" onkeyup="getlength();">{{$user_info->userdesc}}</textarea>
+                    <textarea class="form-control" id="userdesc" rows="5" style="width:50%; margin: auto"
+                              onkeyup="getlength();">{{$user_info->userdesc}}</textarea>
                     <small id="characters-len" style="color: red;"></small>
                     <br>
                     <br>
                     <button class="btn btn-primary" onclick="clicksave()" id="save-button">Save Description</button>
                     <div id="save-msg"></div>
                 @else
-                    <textarea class="form-control" id="userdesc" rows="5" style="width:50%; margin: auto" DISABLED>{{$user_info->userdesc}}</textarea>
+                    <textarea class="form-control" id="userdesc" rows="5" style="width:50%; margin: auto"
+                              DISABLED>{{$user_info->userdesc}}</textarea>
                 @endif
             </ul>
         </div>
+
         {{--Codinterest User Stat/User Info--}}
         <hr>
         <div id="user-info">
@@ -55,10 +60,12 @@
             <br>
 
             <li>Total Acceptance: <span class="badge badge-pill badge-primary">{{$user_info->userac}}</span></li>
-            <li>Total Submission: <span class="badge badge-pill badge-primary">{{$user_info->usersubmission}}</span></li>
+            <li>Total Submission: <span class="badge badge-pill badge-primary">{{$user_info->usersubmission}}</span>
+            </li>
             <br>
             @if($user_info->usersubmission > 0)
-                <li>Collective Acceptance Rate: <span class="badge badge-pill badge-primary">{{floor($user_info->userac/$user_info->usersubmission*100)}}%</span></li>
+                <li>Collective Acceptance Rate: <span class="badge badge-pill badge-primary">{{floor($user_info->userac/$user_info->usersubmission*100)}}%</span>
+                </li>
             @else
                 <li>Collective Acceptance Rate: <span class="badge badge-pill badge-primary">N/A</span></li>
             @endif
@@ -66,7 +73,8 @@
 
             @if($is_signed)
                 <ul>
-                    <li>Coins Balance: <span class="badge badge-pill badge-primary">{{$user_info->usercoins}}</span></li>
+                    <li>Coins Balance: <span class="badge badge-pill badge-primary">{{$user_info->usercoins}}</span>
+                    </li>
                     <li>Keys Balance: <span class="badge badge-pill badge-primary">{{$user_info->userkeys}}</span></li>
                 </ul>
                 <br>
@@ -125,7 +133,6 @@
             </table>
 
 
-
             <br><br>
             <h4>Recent Comments</h4>
             <table class="table table-striped">
@@ -139,7 +146,8 @@
                 <tbody>
                 @foreach($comments as $comment)
                     <tr>
-                        <td><a href="{{url('/public/getsinglearticle/'.$comment->aid)}}">{{$comment->article->atit}}</a></td>
+                        <td><a href="{{url('/public/getsinglearticle/'.$comment->aid)}}">{{$comment->article->atit}}</a>
+                        </td>
                         @if(mb_strlen($comment->ccontent) <= 80)
                             <td>{{$comment->ccontent}}</td>
                         @else
@@ -177,105 +185,104 @@
     </div>
 
 
-
+    {{--my account JS--}}
     <script>
         @if($is_signed)
-            $(document).ready(function (){
-                getlength();
-            });
+        $(document).ready(function () {
+            getlength();
+        });
 
 
-            // prompt the logout confirmation
-            function conf() {
-                if(confirm('Are you sure to sign out? Your session will be closed.'))
-                    location = '/protected/signout';
-            }
+        // prompt the logout confirmation
+        function conf() {
+            if (confirm('Are you sure to sign out? Your session will be closed.'))
+                location = '/protected/signout';
+        }
 
 
-            // function that send the reset password ajax
-            function resetpassword(){
-                $.ajax({
-                    url:"/public/resetpassword",
-                    type:"GET",
-                    dataType:"json",
-                    cache:false,
-                    async:false,
-                    data:{
-                        'uid':{{$user->uid}}
-                    },
-                    success: function (data){
-                        if(data.status === -1){
-                            $("#reset-msg").html(
-                                "<h5 class=\"text-danger\" style=\"margin: 50px 0 0 0\">" +
-                                data.msg +
-                                "</h5>");
-                        }else{
-                            $("#reset-msg").html("<h5 class=\"text-success\" style=\"margin: 50px 0 0 0\">" +
+        // function that send the reset password ajax
+        function resetpassword() {
+            $.ajax({
+                url: "/public/resetpassword",
+                type: "GET",
+                dataType: "json",
+                cache: false,
+                async: false,
+                data: {
+                    'uid':{{$user->uid}}
+                },
+                success: function (data) {
+                    if (data.status === -1) {
+                        $("#reset-msg").html(
+                            "<h5 class=\"text-danger\" style=\"margin: 50px 0 0 0\">" +
                             data.msg +
                             "</h5>");
-                        }
-                    },
-                    error: function (){
-                        $("#reset-msg").html("" +
-                            "<h5 class=\"text-danger\" style=\"margin: 50px 0 0 0\">" +
-                            "Sorry, we could not process your request right now, please try again later!" +
+                    } else {
+                        $("#reset-msg").html("<h5 class=\"text-success\" style=\"margin: 50px 0 0 0\">" +
+                            data.msg +
                             "</h5>");
                     }
-                });
+                },
+                error: function () {
+                    $("#reset-msg").html("" +
+                        "<h5 class=\"text-danger\" style=\"margin: 50px 0 0 0\">" +
+                        "Sorry, we could not process your request right now, please try again later!" +
+                        "</h5>");
+                }
+            });
+        }
+
+
+        // function that get the textarea's length
+        function getlength() {
+            let len = $('#userdesc').val().length;
+            if (len <= 1000 && len >= 20) {
+                $('#characters-len').html('<span style="color:green">' + len + '/1000</span>');
+            } else {
+                $('#characters-len').html('<span style="color:red">' + len + '/1000</span>');
             }
+        }
 
 
-            // function that get the textarea's length
-            function getlength(){
-                let len = $('#userdesc').val().length;
-                if(len <= 1000 && len >= 20){
-                    $('#characters-len').html('<span style="color:green">'+len+'/1000</span>');
-                }
-                else{
-                    $('#characters-len').html('<span style="color:red">'+len+'/1000</span>');
-                }
+        // function that send saving description ajax request
+        function clicksave() {
+            if ($("#userdesc").val().length < 20 || $("#userdesc").val().length > 1000) {
+                $("#save-msg").html('<p class="text-warning">Please enter at least 20 characters and at most 1000 characters!</p>');
+                return;
             }
-
-
-            // function that send saving description ajax request
-            function clicksave(){
-                if($("#userdesc").val().length < 20 || $("#userdesc").val().length > 1000){
-                    $("#save-msg").html('<p class="text-warning">Please enter at least 20 characters and at most 1000 characters!</p>');
-                    return;
-                }
-                $("#save-button").attr('disabled','disabled'); // set the button to disabled
-                $("#save-button").html('<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span><span class="sr-only">Loading...</span>') // set spinner
-                setTimeout(function (){
-                    $.ajax({
-                        url:"/protected/saveuserdesc",
-                        dataType:"json",
-                        type:"POST",
-                        cache:false,
-                        async:false,
-                        headers:{
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        },
-                        data: {
-                            "uid": {{$user->uid}},
-                            "userdesc": $("#userdesc").val()
-                        },
-                        success: function (data){
-                            if(data.status === -1){
-                                $("#save-msg").html('<p class="text-warning">'+data.msg+'</p>');
-                            } else{
-                                $("#save-msg").html('<p class="text-success">'+data.msg+'</p>');
-                            }
-                            $("#save-button").removeAttr('disabled');
-                            $("#save-button").html('Save Description');
-                        },
-                        error: function (){
-                            $("#save-msg").html('<p class="text-warning">Sorry, we could not update your information right now, please try again later!</p>');
-                            $("#save-button").removeAttr('disabled');
-                            $("#save-button").html('Save Description');
+            $("#save-button").attr('disabled', 'disabled'); // set the button to disabled
+            $("#save-button").html('<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span><span class="sr-only">Loading...</span>') // set spinner
+            setTimeout(function () {
+                $.ajax({
+                    url: "/protected/saveuserdesc",
+                    dataType: "json",
+                    type: "POST",
+                    cache: false,
+                    async: false,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: {
+                        "uid": {{$user->uid}},
+                        "userdesc": $("#userdesc").val()
+                    },
+                    success: function (data) {
+                        if (data.status === -1) {
+                            $("#save-msg").html('<p class="text-warning">' + data.msg + '</p>');
+                        } else {
+                            $("#save-msg").html('<p class="text-success">' + data.msg + '</p>');
                         }
-                    });
-                },2000);
-            }
+                        $("#save-button").removeAttr('disabled');
+                        $("#save-button").html('Save Description');
+                    },
+                    error: function () {
+                        $("#save-msg").html('<p class="text-warning">Sorry, we could not update your information right now, please try again later!</p>');
+                        $("#save-button").removeAttr('disabled');
+                        $("#save-button").html('Save Description');
+                    }
+                });
+            }, 2000);
+        }
         @endif
     </script>
 @endsection

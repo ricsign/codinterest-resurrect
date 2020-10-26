@@ -16,6 +16,7 @@
                 <a class="btn btn-outline-primary" href="{{url('https://wmcicompsci.ca/')}}">View details »</a>
             </p>
         </div>
+
         <div class="col-md-4 column">
             <h2>
                 Languages
@@ -31,6 +32,7 @@
                 <a class="btn btn-outline-primary" href="{{url('https://laravel.com/')}}">View details »</a>
             </p>
         </div>
+
         <div class="col-md-4 column">
             <h2>
                 Extra Practices
@@ -47,8 +49,12 @@
         </div>
     </div>
     <small>
-        Icons made by <a href="{{url('https://www.flaticon.com/authors/freepik')}}" title="Freepik">Freepik</a> and <a href="{{url('https://www.flaticon.com/authors/dighital')}}" title="Dighital">Dighital</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a><br>
-        The animation used <a href="{{url('https://a-oss.zmki.cn/20190502/baozatexiao.js')}}">Baozatexiao's</a> and <a href="{{url('https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js')}}">L2Dwidget's</a> JS library
+        Icons made by <a href="{{url('https://www.flaticon.com/authors/freepik')}}" title="Freepik">Freepik</a> and <a
+            href="{{url('https://www.flaticon.com/authors/dighital')}}" title="Dighital">Dighital</a> from <a
+            href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a><br>
+        The animation used <a href="{{url('https://a-oss.zmki.cn/20190502/baozatexiao.js')}}">Baozatexiao's</a> and <a
+            href="{{url('https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js')}}">L2Dwidget's</a>
+        JS library
     </small>
     <br>
     <small>This website is a non-profit project</small>

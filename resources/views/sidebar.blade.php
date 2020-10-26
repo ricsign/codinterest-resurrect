@@ -1,20 +1,27 @@
 <link rel="stylesheet" href="{{asset('styles/sidebar.css')}}">
+
 @php
-    $problems = \App\Http\Controllers\ProblemsController::allproblemsFromView();
-    $articles = \App\Http\Controllers\ArticlesController::allarticlesFromView();
+    use App\Http\Controllers\ArticlesController;use App\Http\Controllers\InfoController;use App\Http\Controllers\ProblemsController;$problems = ProblemsController::allproblemsFromView();
+    $articles = ArticlesController::allarticlesFromView();
     $user = false;
     if(session()->get('user'))
-        $user = \App\Http\Controllers\InfoController::getUserInfoFromView(session()->get('user')->uid);
+        $user = InfoController::getUserInfoFromView(session()->get('user')->uid)
 @endphp
-<ul id="sidebar" class="layui-nav layui-nav-tree layui-bg-cyan layui-inline show-sidebar" lay-filter="sidebar" title="Click the brand, empty space on the left of the screen or simply 'Menu' to toggle sidebar">
+
+<ul id="sidebar" class="layui-nav layui-nav-tree layui-bg-cyan layui-inline show-sidebar" lay-filter="sidebar"
+    title="Click the brand, empty space on the left of the screen or simply 'Menu' to toggle sidebar">
     @if($user)
         <li>
-            <img src="{{asset('imgs/site/userprivil'.$user->userprivil.'.png')}}" alt="" class="rounded mx-auto d-block">
+            <img src="{{asset('imgs/site/userprivil'.$user->userprivil.'.png')}}" alt=""
+                 class="rounded mx-auto d-block">
         </li>
         <li>
             <br>
-            <a href="{{url('/public/myaccount/'.session()->get('user')->uid)}}" class="d-flex justify-content-center" style="font-size: 20px;color: white">My Account</a>
-            <br><hr><br>
+            <a href="{{url('/public/myaccount/'.session()->get('user')->uid)}}" class="d-flex justify-content-center"
+               style="font-size: 20px;color: white">My Account</a>
+            <br>
+            <hr>
+            <br>
         </li>
     @endif
     <li class="menu" onclick="toggleSideBar()">
@@ -50,7 +57,7 @@
         <dl class="layui-nav-child">
             <dd><a href="{{url('/public/contribute')}}">Contribute</a></dd>
             <dd><a href="{{url('/public/redeem')}}">Redeem</a></dd>
-            <dd><a href="{{url('/public/playground')}}">Playground</a></dd>
+            <dd><a href="{{url('/public/playground')}}" target="_blank">Playground</a></dd>
             <dd><a href="{{url('https://wmcicompsci.ca/')}}">WMCI CS</a></dd>
             <dd><a href="{{url('https://laravel.com/')}}">Laravel</a></dd>
             <dd><a href="{{url('https://www.cemc.uwaterloo.ca/')}}">Waterloo CEMC</a></dd>
@@ -60,12 +67,13 @@
 </ul>
 
 
+{{--sidebar JS--}}
 <script>
     // default layui load
-    layui.use('element', function(){
+    layui.use('element', function () {
         let element = layui.element;
 
-        element.on('nav(sidebar)', function(elem){
+        element.on('nav(sidebar)', function (elem) {
             layer.msg(elem.text());
         });
     });

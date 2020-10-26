@@ -8,7 +8,8 @@
                 <br><br><br>
                 <h4>Codinterest dedicates to let you explore computer sciences and problems solving!</h4>
                 <br><br><br>
-                <a href="{{url('https://github.com/ricsign')}}" class="btn btn-lg btn-outline-light" id="githubButton" style="margin-right: 5%">
+                <a href="{{url('https://github.com/ricsign')}}" class="btn btn-lg btn-outline-light" id="githubButton"
+                   style="margin-right: 5%">
                     <img src="{{asset('imgs/site/github.png')}}" alt="" id="githubImg">&nbsp;&nbsp;
                     GitHub
                 </a>
@@ -32,6 +33,7 @@
     @unless(empty(session()->get('success_signin')))
         <div class="alert alert-success alert-dismissible fade show">{{session()->get('success_signin')}}</div>
     @endunless
+
     {{--jumbotron--}}
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -78,7 +80,8 @@
         <p class="section-text">
             This is the major project of Computer Science 30.
             The majority of materials are based on my own knowledge. All references will be attributed and listed.
-            It's an open sources and free website made using php(laravel) and blade. The entire website is based on MVC design model.
+            It's an open sources and free website made using php(laravel) and blade. The entire website is based on MVC
+            design model.
             The website does not use website generating using WordPress, DreamWeaver or etc.
             I'm very happy to take advices and make changes. Please
             feel free to visit code on github and request a pull.
@@ -87,46 +90,50 @@
         <img class="section-img" src="{{asset('imgs/site/index4.svg')}}" alt="">
         <h3 class="section-title">Pure Experiences Share</h3>
         <p class="section-text">
-            Codinterest is an introductory resource to computer sciences, algorithms & data structures and competitive programming.
+            Codinterest is an introductory resource to computer sciences, algorithms & data structures and competitive
+            programming.
             I'll try my best to add more and more problems and solutions using modern C++. I will refrain
-            from using complex or vintage C++ idiosyncratic features and try my best to accommodate users using Java, Python, C, and other
-            languages. The main focus of Codinterest is based on pure personal experiences share instead of frustration of linguistics.
+            from using complex or vintage C++ idiosyncratic features and try my best to accommodate users using Java,
+            Python, C, and other
+            languages. The main focus of Codinterest is based on pure personal experiences share instead of frustration
+            of linguistics.
         </p>
     </div>
 
     <script>
         // icon changes
-        $(document).ready(function(){
-            $("#githubButton").hover(function (){
-                $("#githubImg").attr("src","{{asset('imgs/site/github-black.png')}}");
+        $(document).ready(function () {
+            $("#githubButton").hover(function () {
+                $("#githubImg").attr("src", "{{asset('imgs/site/github-black.png')}}");
                 $("#githubButton")[0].style.color = "black";
-            }, function (){
-                $("#githubImg").attr("src","{{asset('imgs/site/github.png')}}");
+            }, function () {
+                $("#githubImg").attr("src", "{{asset('imgs/site/github.png')}}");
                 $("#githubButton")[0].style.color = "white";
             });
 
-            $("#emailButton").hover(function (){
-                $("#emailImg").attr("src","{{asset('imgs/site/email-black.png')}}");
+            $("#emailButton").hover(function () {
+                $("#emailImg").attr("src", "{{asset('imgs/site/email-black.png')}}");
                 $("#emailButton")[0].style.color = "black";
-            }, function (){
-                $("#emailImg").attr("src","{{asset('imgs/site/email.png')}}");
+            }, function () {
+                $("#emailImg").attr("src", "{{asset('imgs/site/email.png')}}");
                 $("#emailButton")[0].style.color = "white";
             });
 
 
             // typewriting effect
             let i = 0, content = "Hello World !", speed = 200, title = document.getElementById("index-poster-title");
+
             function typeWriter() {
                 if (i < content.length) {
                     title.innerHTML += content.charAt(i++);
                     setTimeout(typeWriter, speed);
-                }
-                else{
+                } else {
                     title.innerHTML = content.charAt(0);
                     i = 1;
                     setTimeout(typeWriter, speed);
                 }
             }
+
             typeWriter();
         });
     </script>

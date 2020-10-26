@@ -17,6 +17,7 @@
             </button>
         </div>
     @endif
+
     <h2 class="title">Redeem Center</h2>
     <div class="card-group">
         <div class="card">
@@ -42,6 +43,7 @@
             </div>
         </div>
     </div>
+
     <div class="card-group">
         <div class="card">
             <div class="card-body">
@@ -71,6 +73,7 @@
             </div>
         </div>
     </div>
+
     <div class="card-group">
         <div class="card">
             <div class="card-body">

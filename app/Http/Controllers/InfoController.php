@@ -29,6 +29,7 @@ class InfoController extends Controller
         if (!session()->get('user') || session()->get('user')->uid != $uid)
             $is_signed = false;
         else $is_signed = true;
+
         // 2. here invoke userinfo again is because our session doesn't change once after signing in,
         // so whenever user's information changes, we need to capture it
         $user = UserSign::where('uid', $uid)->first();

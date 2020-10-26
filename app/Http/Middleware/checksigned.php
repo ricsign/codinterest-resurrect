@@ -1,5 +1,7 @@
 <?php
 
+// middleware to check if user is signed in
+
 namespace App\Http\Middleware;
 
 use Closure;

@@ -11,13 +11,16 @@
         <br>
         <h2>{{$talk->ttit}}</h2>
         <br>
-        <div style="font-weight: bold;color: white; float:right"><h5 style=" background-color: rgb({{$talk->topic->topiccolor}}); padding: 5px 10px; border-radius: 10px">#&nbsp;{{$talk->topic->topicname}}</h5></div>
+        <div style="font-weight: bold;color: white; float:right"><h5
+                style=" background-color: rgb({{$talk->topic->topiccolor}}); padding: 5px 10px; border-radius: 10px">#&nbsp;{{$talk->topic->topicname}}</h5>
+        </div>
         <br><br>
         <div class="talk-content">
             {!! \App\Tools\GeneralTools::convert_markdown_to_html($talk->tcontent) !!}
         </div>
     </div>
     <br>
+
     {{--talk footer--}}
     <div class="talk-footer">
         <div>
@@ -87,7 +90,9 @@
                     {{csrf_field()}}
                     <input type="hidden" value="{{$talk->tid}}" name="tid">
                     <label for="compose-textarea">Reply (Maximum 2000 characters, Markdown is supported)</label>
-                    <textarea class="form-control" id="compose-textarea" name="compose-textarea" rows="5" onkeyup="getlength();" placeholder="Please be kind, do not use abusive languages. You can @ some people by @username@ at the beginning."></textarea>
+                    <textarea class="form-control" id="compose-textarea" name="compose-textarea" rows="5"
+                              onkeyup="getlength();"
+                              placeholder="Please be kind, do not use abusive languages. You can @ some people by @username@ at the beginning."></textarea>
                     <small id="characters-len" style="color: red">0/2000</small>
                     <br><br>
                     <button type="submit" class="btn btn-primary">Reply</button>
@@ -106,7 +111,8 @@
     <div class="display-replies">
         @foreach($replies as $reply)
             <div>
-                <img src="{{asset('imgs/site/userprivil'.$reply->user->userprivil.'.png')}}" alt="user-profile-photo" width="20px" height="20px" class="profile"> &nbsp;&nbsp;&nbsp;
+                <img src="{{asset('imgs/site/userprivil'.$reply->user->userprivil.'.png')}}" alt="user-profile-photo"
+                     width="20px" height="20px" class="profile"> &nbsp;&nbsp;&nbsp;
                 <a href="{{url('/public/myaccount/'.$reply->uid)}}"><b>{{$reply->user->user->username}}</b></a>
                 <small class="level-number">
                     #{{$replies_size-(($replies ->currentpage()-1) * $replies ->perpage() + $loop->iteration)+1}}
@@ -114,7 +120,8 @@
                         &nbsp;(Me)
                     @endif
                 </small>
-                <div class="display-reply-content">{!! \App\Tools\GeneralTools::convert_markdown_to_html($reply->rcontent) !!}</div>
+                <div
+                    class="display-reply-content">{!! \App\Tools\GeneralTools::convert_markdown_to_html($reply->rcontent) !!}</div>
                 <small class="post-time">{{$reply->created_at}}</small>
                 @if(session()->get('user') && session()->get('user')->uid == $reply->uid)
                     &nbsp;&nbsp;&nbsp;&nbsp;
@@ -129,15 +136,15 @@
 
     <script>
         // default layui load
-        layui.use('element', function(){
+        layui.use('element', function () {
             let element = layui.element;
         });
 
 
         // markdown render
-        $(document).ready(function (){
+        $(document).ready(function () {
             $('#markdown-syntax').load('{{asset('html/markdown-syntax.html')}}');
-            $('#preview-btn').click(function (){
+            $('#preview-btn').click(function () {
                 let md = window.markdownit();
                 let result = md.render($('#compose-textarea').val());
                 $('#preview-textarea').html(result);
@@ -146,21 +153,20 @@
 
 
         // get the textarea's length
-        function getlength(){
+        function getlength() {
             let len = $('#compose-textarea').val().length;
-            if(len <= 2000 && len >= 5){
-                $('#characters-len').html('<span style="color:green">'+len+'/2000</span>');
-            }
-            else{
-                $('#characters-len').html('<span style="color:red">'+len+'/2000</span>');
+            if (len <= 2000 && len >= 5) {
+                $('#characters-len').html('<span style="color:green">' + len + '/2000</span>');
+            } else {
+                $('#characters-len').html('<span style="color:red">' + len + '/2000</span>');
             }
         }
 
 
         // redirect to delete reply page
-        function deleteReply(rid){
-            if(confirm("Are you sure to delete this reply?"))
-                location = "/protected/deletereply/"+rid;
+        function deleteReply(rid) {
+            if (confirm("Are you sure to delete this reply?"))
+                location = "/protected/deletereply/" + rid;
         }
     </script>
 @endsection

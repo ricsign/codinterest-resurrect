@@ -1,5 +1,7 @@
 <?php
 
+//Model for articles Table
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
