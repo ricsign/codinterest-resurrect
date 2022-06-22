@@ -7,10 +7,6 @@ Date Start: September 8th
 
 Date Completed: October 23rd
 
-Class: Computer Science 30
-
-Teacher: Mr. Schellenberg
-
 Project: Capstone Coding Project (Codinterest)
 
 Extra For Expert:
