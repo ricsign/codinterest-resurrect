@@ -9,13 +9,13 @@ Date Completed: October 23rd
 
 Project: Capstone Coding Project (Codinterest)
 
-Extra For Expert:
+<!--- Extra For Expert:
 1. Knowledge from CS 30: Utilize lots of stuff learned in this semester, such as array, map, recursion, object-oriented programming, libraries and etc.
 2. Knowledge from outside the class: A considerable amount of code is from self-learning, I did not use others code (except libraries), majority of it is learned from official documentation, and I implemented them on my own.
-3. Effort: This website is a medium-scale program, I developed front end, back end, problems & solutions and database all by myself. I did put lots of effort in this project. On the way, I conquered a few challenging modules I've never done before: MVC, ajax, email activation and reset, captcha verification code and a lot more. During developing, my laptop crashed, so I lost at least 20% of my progress at that time, I have to revert to the previous version and set up a new local enviornment, therefore I have 2 repos on Github: codinterest and codinterest-resurrect. 
+3. Effort: This website is a medium-scale program, I developed front end, back end, problems & solutions and database all by myself. I did put lots of effort in this project. On the way, I conquered a few challenging modules I've never done before: MVC, ajax, email activation and reset, captcha verification code and a lot more. During developing, my laptop crashed, so I lost at least 20% of my progress at that time, I have to revert to the previous version and set up a new local enviornment, therefore I have 2 repos on Github: codinterest and codinterest-resurrect. --->
 
 
-**Note For Grading:**  
+**Note:**  
 To run laravel, you will need to install XAMPP(recommended)/Apache+MySQL and package manager Composer
 
 ## Files Information (Important)
