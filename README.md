@@ -1,11 +1,52 @@
-﻿# Documentation: how does my project work?
+# Codinterest
+A capstone web application that inspires students to code. Students can learn algorithms and submit solutions. Integrated blog, auth, and comment features with CRUD using RESTful techniques. Incorporated C++ for solutions. 
+
+## Project Gallery
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture1.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture2.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture3.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture4.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture5.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture6.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture7.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture8.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture9.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture10.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture11.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture12.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture13.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture14.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture15.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture16.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture17.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture18.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture19.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture20.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture21.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture22.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture23.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture24.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture25.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture26.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture27.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture28.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture29.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture30.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture31.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture32.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture33.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture34.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture35.PNG" width="800" />
+<img src="https://raw.githubusercontent.com/ricsign/codinterest-resurrect/master/_PROJECT%20PHOTOS/Capture36.PNG" width="800" />
+
 
 ## Comments
 Name: Richard Shuai
 
-Date Start: September 8th
+Date Start: September 8th,
 
-Date Completed: October 23rd
+Date Completed: November 23rd
 
 Project: Capstone Coding Project (Codinterest)
 
